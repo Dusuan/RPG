@@ -1,0 +1,79 @@
+Index: src/main/java/org/example/cambioStats.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/cambioStats.java b/src/main/java/org/example/cambioStats.java
+new file mode 100644
+--- /dev/null	(date 1715038250059)
++++ b/src/main/java/org/example/cambioStats.java	(date 1715038250059)
+@@ -0,0 +1,4 @@
++package org.example;
++
++public class cambioStats {
++}
+Index: src/main/java/org/example/Healing.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Healing.java b/src/main/java/org/example/Healing.java
+new file mode 100644
+--- /dev/null	(date 1715038250069)
++++ b/src/main/java/org/example/Healing.java	(date 1715038250069)
+@@ -0,0 +1,4 @@
++package org.example;
++
++public class Healing {
++}
+Index: src/main/java/org/example/Duelo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\n\r\nimport listas.NodoDE;\r\n\r\npublic class Duelo {\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Duelo.java b/src/main/java/org/example/Duelo.java
+--- a/src/main/java/org/example/Duelo.java	(revision cd9239430166112780667f3442e2ef7634cda9e2)
++++ b/src/main/java/org/example/Duelo.java	(date 1715038250081)
+@@ -1,7 +1,11 @@
+ package org.example;
+ 
+ 
+-import listas.NodoDE;
+ 
+ public class Duelo {
++
++
++
++
++
+ }
+Index: src/main/java/org/example/Ataques.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Ataques.java b/src/main/java/org/example/Ataques.java
+new file mode 100644
+--- /dev/null	(date 1715038250099)
++++ b/src/main/java/org/example/Ataques.java	(date 1715038250099)
+@@ -0,0 +1,4 @@
++package org.example;
++
++public class Ataques {
++}
+Index: src/main/java/org/example/Movimientos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Movimientos.java b/src/main/java/org/example/Movimientos.java
+new file mode 100644
+--- /dev/null	(date 1715038250091)
++++ b/src/main/java/org/example/Movimientos.java	(date 1715038250091)
+@@ -0,0 +1,4 @@
++package org.example;
++
++public abstract class Movimientos {
++}

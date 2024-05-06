@@ -1,0 +1,15 @@
+Index: src/main/java/org/example/Interface.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\npublic interface Interface<T>\r\n{\r\n    public boolean empty();\r\n    public int size();\r\n    public void adicionar(T x);\r\n    public void insertar (T x, int posicion) throws Exception;\r\n    public void eliminar (T x, int posicion) throws Exception;\r\n    public T obtener(int posicion) throws Exception;\r\n    public T buscar (T x) throws Exception; // es de tipo int o T\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/Interface.java b/src/main/java/org/example/Interface.java
+--- a/src/main/java/org/example/Interface.java	
++++ b/src/main/java/org/example/Interface.java	
+@@ -8,5 +8,5 @@
+     public void insertar (T x, int posicion) throws Exception;
+     public void eliminar (T x, int posicion) throws Exception;
+     public T obtener(int posicion) throws Exception;
+-    public T buscar (T x) throws Exception; // es de tipo int o T
++    public T buscar (T x) throws Exception;
+ }

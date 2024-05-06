@@ -1,4 +1,4 @@
-package org.example;
+package listas;
 
 public interface Interface<T>
 {

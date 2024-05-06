@@ -1,4 +1,4 @@
-package org.example;
+package listas;
 
 public class ListaDE<T> implements Interface<T>
 {

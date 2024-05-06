@@ -1,4 +1,4 @@
-package org.example;
+package listas;
 
 public class NodoDE<T>
 {

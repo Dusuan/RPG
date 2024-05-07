@@ -4,7 +4,7 @@ import listas.ListaDE;
 
 public abstract class Mounstritos {
 
-    private String sprite;
+    protected String sprite;
     private String name;
     private int HP;
     private int ID;

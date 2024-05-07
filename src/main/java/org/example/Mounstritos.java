@@ -4,13 +4,13 @@ import listas.ListaDE;
 
 public abstract class Mounstritos {
 
-    private String sprite;
-    private String name;
-    private int HP;
-    private int ID;
-    private ListaDE<Movimientos> ataques;
-    private int defense;
-    private int ataque;
+    protected String sprite;
+    protected String name;
+    protected int HP;
+    protected int ID;
+    protected ListaDE<Movimientos> ataques;
+    protected int defense;
+    protected int ataque;
 
     public Mounstritos(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {
         this.name = name;

@@ -7,11 +7,9 @@ public class Ataques extends Movimientos
         super(nombre, accuracy, PP);
         this.damage=damage;
     }
-
     public float getDamage() {
         return damage;
     }
-
     public void setDamage(int damage) {
         this.damage = damage;
     }

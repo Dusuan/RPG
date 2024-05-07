@@ -1,8 +1,9 @@
-package org.example;
+package pokemones;
 
 import listas.ListaDE;
+import movimientos.Movimientos;
 
-public class tipoFuego extends Mounstritos{
+public class tipoFuego extends Mounstritos {
 
 
 

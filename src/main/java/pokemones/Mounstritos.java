@@ -1,6 +1,7 @@
-package org.example;
+package pokemones;
 
 import listas.ListaDE;
+import movimientos.Movimientos;
 
 public abstract class Mounstritos {
 

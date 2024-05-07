@@ -1,6 +1,7 @@
 package org.example;
 
 import listas.ListaDE;
+import pokemones.Mounstritos;
 
 public class Jugador
 {

@@ -1,4 +1,4 @@
-package org.example;
+package movimientos;
 
 public class Ataques {
 }

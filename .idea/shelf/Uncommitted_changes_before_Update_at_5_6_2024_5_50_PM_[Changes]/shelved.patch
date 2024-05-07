@@ -1,0 +1,23 @@
+Index: src/main/java/org/example/tipoAgua.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport listas.ListaDE;\r\n\r\npublic class tipoAgua extends Mounstritos{\r\n\r\n    public tipoAgua(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {\r\n        super(name, HP, ID, ataques, defense, ataque, sprite);\r\n    }\r\n\r\n    @Override\r\n    public void AtaqueTipoEspecial() {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/tipoAgua.java b/src/main/java/org/example/tipoAgua.java
+--- a/src/main/java/org/example/tipoAgua.java	
++++ b/src/main/java/org/example/tipoAgua.java	
+@@ -4,12 +4,12 @@
+ 
+ public class tipoAgua extends Mounstritos{
+ 
++
++
+     public tipoAgua(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
+         super(name, HP, ID, ataques, defense, ataque, sprite);
+     }
+-
+     @Override
+     public void AtaqueTipoEspecial() {
+-
+     }
+ }

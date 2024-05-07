@@ -1,7 +1,4 @@
 package org.example;
-
-
-
 public class Duelo {
     private int turno;
     private Jugador jugador1;
@@ -12,7 +9,6 @@ public class Duelo {
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
     }
-
     public int getTurno() {
         return turno;
     }

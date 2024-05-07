@@ -1,0 +1,110 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"228f609c-aa3b-45f8-8a38-f8bd7e35a217\" name=\"Changes\" comment=\"\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\"><![CDATA[{\r\n  \"associatedIndex\": 1\r\n}]]></component>\r\n  <component name=\"ProjectId\" id=\"2g74LNCf2n7SKjY6BshQHeJjg8I\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"228f609c-aa3b-45f8-8a38-f8bd7e35a217\" name=\"Changes\" comment=\"\" />\r\n      <created>1715035226375</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1715035226375</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,27 +4,44 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="" />
++    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Listas">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/tipoAgua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/tipoAgua.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
+-  <component name="ProjectColorInfo"><![CDATA[{
+-  "associatedIndex": 1
++  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
++  "lastFilter": {
++  }
+ }]]></component>
++  <component name="GithubPullRequestsUISettings">
++    <option name="selectedUrlAndAccountId">
++      <UrlAndAccount>
++        <option name="accountId" value="7246867f-702b-4f59-aaed-5fd03401b630" />
++        <option name="url" value="https://github.com/Dusuan/RPG.git" />
++      </UrlAndAccount>
++    </option>
++  </component>
++  <component name="ProjectColorInfo">{
++  &quot;associatedIndex&quot;: 1
++}</component>
+   <component name="ProjectId" id="2g74LNCf2n7SKjY6BshQHeJjg8I" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -34,6 +51,19 @@
+       <option name="presentableId" value="Default" />
+       <updated>1715035226375</updated>
+     </task>
++    <task id="LOCAL-00001" summary="Listas">
++      <option name="closed" value="true" />
++      <created>1715040060299</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1715040060299</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Listas" />
++    <option name="LAST_COMMIT_MESSAGE" value="Listas" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: src/main/java/org/example/Duelo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\n\r\n\r\npublic class Duelo {\r\n    private int turno;\r\n    private Jugador jugador1;\r\n    private Jugador jugador2;\r\n\r\n    public Duelo(int turno, Jugador jugador1, Jugador jugador2) {\r\n        this.turno = turno;\r\n        this.jugador1 = jugador1;\r\n        this.jugador2 = jugador2;\r\n    }\r\n\r\n    public int getTurno() {\r\n        return turno;\r\n    }\r\n\r\n    public void setTurno(int turno) {\r\n        this.turno = turno;\r\n    }\r\n\r\n    public Jugador getJugador1() {\r\n        return jugador1;\r\n    }\r\n\r\n    public void setJugador1(Jugador jugador1) {\r\n        this.jugador1 = jugador1;\r\n    }\r\n\r\n    public Jugador getJugador2() {\r\n        return jugador2;\r\n    }\r\n\r\n    public void setJugador2(Jugador jugador2) {\r\n        this.jugador2 = jugador2;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/org/example/Duelo.java b/src/main/java/org/example/Duelo.java
+--- a/src/main/java/org/example/Duelo.java	
++++ b/src/main/java/org/example/Duelo.java	
+@@ -1,7 +1,4 @@
+ package org.example;
+-
+-
+-
+ public class Duelo {
+     private int turno;
+     private Jugador jugador1;
+@@ -12,7 +9,6 @@
+         this.jugador1 = jugador1;
+         this.jugador2 = jugador2;
+     }
+-
+     public int getTurno() {
+         return turno;
+     }

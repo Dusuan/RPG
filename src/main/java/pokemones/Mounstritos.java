@@ -8,15 +8,13 @@ public abstract class Mounstritos {
     protected String sprite;
     protected String name;
     protected int HP;
-    protected int ID;
     protected ListaDE<Movimientos> ataques;
     protected int defense;
     protected int ataque;
 
-    public Mounstritos(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {
+    public Mounstritos(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {
         this.name = name;
         this.HP = HP;
-        this.ID = ID;
         this.ataques = ataques;
         this.defense = defense;
         this.ataque = ataque;
@@ -43,10 +41,6 @@ public abstract class Mounstritos {
         return sprite;
     }
 
-    public int getID() {
-        return ID;
-    }
-
     public ListaDE<Movimientos> getAtaques() {
         return ataques;
     }
@@ -71,9 +65,6 @@ public abstract class Mounstritos {
         this.sprite = sprite;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
 
     public void setAtaques(ListaDE<Movimientos> ataques) {
         this.ataques = ataques;

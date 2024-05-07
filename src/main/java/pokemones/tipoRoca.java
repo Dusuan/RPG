@@ -4,8 +4,20 @@ import listas.ListaDE;
 import movimientos.Movimientos;
 
 public class tipoRoca extends Mounstritos {
-    public tipoRoca(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
-        super(name, HP, ID, ataques, defense, ataque, sprite);
+
+    private ListaDE<String> debilidades;
+
+    public tipoRoca(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debilidades) {
+        super(name, HP,ataques, defense, ataque, sprite);
+        this.debilidades = debilidades;
+    }
+
+    public ListaDE<String> getDebilidades() {
+        return debilidades;
+    }
+
+    public void setDebilidades(ListaDE<String> debilidades) {
+        this.debilidades = debilidades;
     }
 
     @Override

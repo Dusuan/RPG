@@ -5,10 +5,19 @@ import movimientos.Movimientos;
 
 public class tipoFuego extends Mounstritos {
 
+    private ListaDE<String> debilidades;
 
+    public tipoFuego(String name, int HP,ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debiliades) {
+        super(name, HP,ataques, defense, ataque, sprite);
+        this.debilidades = debiliades;
+    }
 
-    public tipoFuego(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
-        super(name, HP, ID, ataques, defense, ataque, sprite);
+    public ListaDE<String> getDebilidades() {
+        return debilidades;
+    }
+
+    public void setDebilidades(ListaDE<String> debilidades) {
+        this.debilidades = debilidades;
     }
 
     @Override

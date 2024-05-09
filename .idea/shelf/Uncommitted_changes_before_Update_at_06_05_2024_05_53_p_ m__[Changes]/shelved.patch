@@ -1,0 +1,153 @@
+Index: src/main/java/org/example/Mounstritos.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport listas.ListaDE;\r\n\r\npublic abstract class Mounstritos {\r\n\r\n    protected String sprite;\r\n    protected String name;\r\n    protected int HP;\r\n    protected int ID;\r\n    protected ListaDE<Movimientos> ataques;\r\n    protected int defense;\r\n    protected int ataque;\r\n\r\n    public Mounstritos(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {\r\n        this.name = name;\r\n        this.HP = HP;\r\n        this.ID = ID;\r\n        this.ataques = ataques;\r\n        this.defense = defense;\r\n        this.ataque = ataque;\r\n        this.sprite = sprite;\r\n    }\r\n\r\n    public String getName() {\r\n        return name;\r\n    }\r\n\r\n    public int getHP() {\r\n        return HP;\r\n    }\r\n\r\n    public int getDefense() {\r\n        return defense;\r\n    }\r\n\r\n    public int getAtaque() {\r\n        return ataque;\r\n    }\r\n\r\n    public String getSprite() {\r\n        return sprite;\r\n    }\r\n\r\n    public int getID() {\r\n        return ID;\r\n    }\r\n\r\n    public ListaDE<Movimientos> getAtaques() {\r\n        return ataques;\r\n    }\r\n\r\n    public void setName(String name) {\r\n        this.name = name;\r\n    }\r\n\r\n    public void setHP(int HP) {\r\n        this.HP = HP;\r\n    }\r\n\r\n    public void setDefense(int defense) {\r\n        this.defense = defense;\r\n    }\r\n\r\n    public void setAtaque(int ataque) {\r\n        this.ataque = ataque;\r\n    }\r\n\r\n    public void setSprite(String sprite) {\r\n        this.sprite = sprite;\r\n    }\r\n\r\n    public void setID(int ID) {\r\n        this.ID = ID;\r\n    }\r\n\r\n    public void setAtaques(ListaDE<Movimientos> ataques) {\r\n        this.ataques = ataques;\r\n    }\r\n\r\n    public abstract void AtaqueTipoEspecial();\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/Mounstritos.java b/src/main/java/org/example/Mounstritos.java
+--- a/src/main/java/org/example/Mounstritos.java	
++++ b/src/main/java/org/example/Mounstritos.java	
+@@ -7,15 +7,13 @@
+     protected String sprite;
+     protected String name;
+     protected int HP;
+-    protected int ID;
+     protected ListaDE<Movimientos> ataques;
+     protected int defense;
+     protected int ataque;
+ 
+-    public Mounstritos(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {
++    public Mounstritos(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {
+         this.name = name;
+         this.HP = HP;
+-        this.ID = ID;
+         this.ataques = ataques;
+         this.defense = defense;
+         this.ataque = ataque;
+@@ -42,10 +40,6 @@
+         return sprite;
+     }
+ 
+-    public int getID() {
+-        return ID;
+-    }
+-
+     public ListaDE<Movimientos> getAtaques() {
+         return ataques;
+     }
+@@ -70,10 +64,6 @@
+         this.sprite = sprite;
+     }
+ 
+-    public void setID(int ID) {
+-        this.ID = ID;
+-    }
+-
+     public void setAtaques(ListaDE<Movimientos> ataques) {
+         this.ataques = ataques;
+     }
+Index: src/main/java/org/example/tipoFuego.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport listas.ListaDE;\r\n\r\npublic class tipoFuego extends Mounstritos{\r\n\r\n\r\n\r\n    public tipoFuego(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {\r\n        super(name, HP, ID, ataques, defense, ataque, sprite);\r\n    }\r\n\r\n    @Override\r\n    public void AtaqueTipoEspecial() {\r\n\r\n    }\r\n\r\n\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/tipoFuego.java b/src/main/java/org/example/tipoFuego.java
+--- a/src/main/java/org/example/tipoFuego.java	
++++ b/src/main/java/org/example/tipoFuego.java	
+@@ -7,7 +7,7 @@
+ 
+ 
+     public tipoFuego(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
+-        super(name, HP, ID, ataques, defense, ataque, sprite);
++        super(name, HP, ataques, defense, ataque, sprite);
+     }
+ 
+     @Override
+Index: src/main/java/org/example/tipoAire.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport listas.ListaDE;\r\n\r\npublic class tipoAire extends Mounstritos{\r\n\r\n    public tipoAire(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {\r\n        super(name, HP, ID, ataques, defense, ataque, sprite);\r\n    }\r\n\r\n    @Override\r\n    public void AtaqueTipoEspecial() {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/tipoAire.java b/src/main/java/org/example/tipoAire.java
+--- a/src/main/java/org/example/tipoAire.java	
++++ b/src/main/java/org/example/tipoAire.java	
+@@ -4,8 +4,10 @@
+ 
+ public class tipoAire extends Mounstritos{
+ 
+-    public tipoAire(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
+-        super(name, HP, ID, ataques, defense, ataque, sprite);
++
++
++    public tipoAire(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
++        super(name, HP,ataques, defense, ataque, sprite);
+     }
+ 
+     @Override
+Index: src/main/java/org/example/tipoAgua.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport listas.ListaDE;\r\n\r\npublic class tipoAgua extends Mounstritos{\r\n\r\n    public tipoAgua(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {\r\n        super(name, HP, ID, ataques, defense, ataque, sprite);\r\n    }\r\n\r\n    @Override\r\n    public void AtaqueTipoEspecial() {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/tipoAgua.java b/src/main/java/org/example/tipoAgua.java
+--- a/src/main/java/org/example/tipoAgua.java	
++++ b/src/main/java/org/example/tipoAgua.java	
+@@ -4,8 +4,19 @@
+ 
+ public class tipoAgua extends Mounstritos{
+ 
+-    public tipoAgua(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
+-        super(name, HP, ID, ataques, defense, ataque, sprite);
++    private ListaDE<String> debilidades;
++
++    public tipoAgua(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debilidades) {
++        super(name, HP, ataques, defense, ataque, sprite);
++        this.debilidades = debilidades;
++    }
++
++    public ListaDE<String> getDebilidades() {
++        return debilidades;
++    }
++
++    public void setDebilidades(ListaDE<String> debilidades) {
++        this.debilidades = debilidades;
+     }
+ 
+     @Override
+Index: src/main/java/org/example/tipoRoca.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport listas.ListaDE;\r\n\r\npublic class tipoRoca extends Mounstritos{\r\n    public tipoRoca(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {\r\n        super(name, HP, ID, ataques, defense, ataque, sprite);\r\n    }\r\n\r\n    @Override\r\n    public void AtaqueTipoEspecial() {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/tipoRoca.java b/src/main/java/org/example/tipoRoca.java
+--- a/src/main/java/org/example/tipoRoca.java	
++++ b/src/main/java/org/example/tipoRoca.java	
+@@ -3,8 +3,8 @@
+ import listas.ListaDE;
+ 
+ public class tipoRoca extends Mounstritos{
+-    public tipoRoca(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
+-        super(name, HP, ID, ataques, defense, ataque, sprite);
++    public tipoRoca(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
++        super(name, HP, ataques, defense, ataque, sprite);
+     }
+ 
+     @Override
+Index: src/main/java/org/example/tipoPlanta.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport listas.ListaDE;\r\n\r\npublic class tipoPlanta extends Mounstritos{\r\n\r\n    public tipoPlanta(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {\r\n        super(name, HP, ID, ataques, defense, ataque, sprite);\r\n    }\r\n\r\n    @Override\r\n    public void AtaqueTipoEspecial() {\r\n\r\n    }\r\n}\r\n
+===================================================================
+diff --git a/src/main/java/org/example/tipoPlanta.java b/src/main/java/org/example/tipoPlanta.java
+--- a/src/main/java/org/example/tipoPlanta.java	
++++ b/src/main/java/org/example/tipoPlanta.java	
+@@ -4,8 +4,8 @@
+ 
+ public class tipoPlanta extends Mounstritos{
+ 
+-    public tipoPlanta(String name, int HP, int ID, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
+-        super(name, HP, ID, ataques, defense, ataque, sprite);
++    public tipoPlanta(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite) {
++        super(name, HP,ataques, defense, ataque, sprite);
+     }
+ 
+     @Override

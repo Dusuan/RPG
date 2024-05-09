@@ -44,6 +44,9 @@ public class Duelo {
     {
         try{
             if( jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Ataques){
+                //Primero consigo la vida del pokemno activo del jugador 2,
+                //Del ataque consigo el daño que hace
+                //Multiplico el daño por la vida del pokemon, para que me de un porcentaje
                 jugador2
                         .getListaMounstritos()
                         .obtener(0)
@@ -57,14 +60,38 @@ public class Duelo {
                                                 .obtener(0)
                                                 .getAtaques()
                                                 .obtener(0))
-                                                .getDamage());
+                                                .getDamage()*
+                                                        jugador2.getListaMounstritos()
+                                                        .obtener(0)
+                                                        .getHP());
+            }
+            else if( jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Healing){
+                jugador1
+                        .getListaMounstritos()
+                        .obtener(0)
+                        .setHP
+                                (
+                                        jugador1.getListaMounstritos()
+                                                .obtener(0)
+                                                .getHP() +
+                                                ((Healing) jugador1
+                                                        .getListaMounstritos()
+                                                        .obtener(0)
+                                                        .getAtaques()
+                                                        .obtener(0))
+                                                        .getHeal());
             }
         }
-        catch(Exception e){
+        catch(Exception e)
+        {
+            System.out.println("Ha ocurrido un error: relacionado con los movimientos" + e.getMessage());
 
         }
 
     }
+
+
+
 
 
 }

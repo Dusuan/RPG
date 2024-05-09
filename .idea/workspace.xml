@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Duelos: agregue accion de atacar, para que quite vida" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Duelos: agregue accion de atacar, para que quite vida">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,31 +83,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715284208629</updated>
     </task>
-    <task id="LOCAL-00005" summary="Duelos: agregue accion de atacar, para que quite vida">
-      <option name="closed" value="true" />
-      <created>1715285772655</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1715285772655</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Duelos: agregue accion de atacar, para que quite vida">
-      <option name="closed" value="true" />
-      <created>1715285865417</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1715285865417</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Duelos: agregue accion de atacar, para que quite vida">
-      <option name="closed" value="true" />
-      <created>1715287036041</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1715287036041</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

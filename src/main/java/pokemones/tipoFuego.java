@@ -7,7 +7,7 @@ public class tipoFuego extends Mounstritos {
 
     private ListaDE<String> debilidades;
 
-    public tipoFuego(String name, int HP,ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debiliades) {
+    public tipoFuego(String name, float HP,ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debiliades) {
         super(name, HP,ataques, defense, ataque, sprite);
         this.debilidades = debiliades;
     }

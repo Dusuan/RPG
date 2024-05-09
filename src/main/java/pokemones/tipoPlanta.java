@@ -7,7 +7,7 @@ public class tipoPlanta extends Mounstritos {
 
     private ListaDE<String> debilidades;
 
-    public tipoPlanta(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debilidades) {
+    public tipoPlanta(String name, float HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debilidades) {
         super(name, HP,ataques, defense, ataque, sprite);
         this.debilidades = debilidades;
     }

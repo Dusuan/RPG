@@ -1,4 +1,11 @@
 package org.example;
+
+import movimientos.Ataques;
+import movimientos.buff;
+import movimientos.Default;
+import movimientos.Healing;
+
+
 public class Duelo {
     private int turno;
     private Jugador jugador1;
@@ -32,4 +39,32 @@ public class Duelo {
     public void setJugador2(Jugador jugador2) {
         this.jugador2 = jugador2;
     }
+
+    public void movimientoPLayer1(int attk)
+    {
+        try{
+            if( jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Ataques){
+                jugador2
+                        .getListaMounstritos()
+                        .obtener(0)
+                        .setHP
+                                (
+                                        jugador2.getListaMounstritos()
+                                                .obtener(0)
+                                                .getHP() -
+                                                ((Ataques) jugador1
+                                                .getListaMounstritos()
+                                                .obtener(0)
+                                                .getAtaques()
+                                                .obtener(0))
+                                                .getDamage());
+            }
+        }
+        catch(Exception e){
+
+        }
+
+    }
+
+
 }

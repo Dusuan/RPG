@@ -7,7 +7,7 @@ public class tipoAgua extends Mounstritos {
 
     private ListaDE<String> debilidades;
 
-    public tipoAgua(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debilidades) {
+    public tipoAgua(String name, float HP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite,ListaDE<String> debilidades) {
         super(name, HP,ataques, defense, ataque, sprite);
         this.debilidades = debilidades;
     }

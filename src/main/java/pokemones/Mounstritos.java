@@ -7,12 +7,12 @@ public abstract class Mounstritos {
 
     protected String sprite;
     protected String name;
-    protected int HP;
+    protected float HP;
     protected ListaDE<Movimientos> ataques;
     protected int defense;
     protected int ataque;
 
-    public Mounstritos(String name, int HP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {
+    public Mounstritos(String name, float HP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite) {
         this.name = name;
         this.HP = HP;
         this.ataques = ataques;
@@ -25,7 +25,7 @@ public abstract class Mounstritos {
         return name;
     }
 
-    public int getHP() {
+    public float getHP() {
         return HP;
     }
 
@@ -49,7 +49,7 @@ public abstract class Mounstritos {
         this.name = name;
     }
 
-    public void setHP(int HP) {
+    public void setHP(float HP) {
         this.HP = HP;
     }
 

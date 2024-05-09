@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="movimientos" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Pokemones actualizados" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,6 +15,20 @@
       <list>
         <option value="Class" />
       </list>
+    </option>
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Emiliano0X1"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6b1b605e-de57-46b9-9c78-b0f391bf4677" />
+        <option name="url" value="https://github.com/Dusuan/RPG.git" />
+      </UrlAndAccount>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
@@ -75,6 +89,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Listas" />
     <MESSAGE value="movimientos" />
-    <option name="LAST_COMMIT_MESSAGE" value="movimientos" />
+    <MESSAGE value="Pokemones actualizados" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pokemones actualizados" />
   </component>
 </project>

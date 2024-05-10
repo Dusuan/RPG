@@ -64,9 +64,13 @@ public class Duelo {
                                                         jugador2.getListaMounstritos()
                                                         .obtener(0)
                                                         .getMaxHP());
+                //checar los elementos para ver si hace mas damage
+                if()
+                {
 
+                }
 
-                //checar si sigue vivo el pokemon
+                    //checar si sigue vivo el pokemon
                 if(jugador2.getListaMounstritos().obtener(0).getHP()<=0)
                 {
                     jugador2.getListaMounstritos()

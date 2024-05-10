@@ -7,7 +7,7 @@ public class tipoRoca extends Mounstritos {
 
     private String[] debilidades;
 
-    public tipoRoca(String name, float HP, float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo) {
+    public tipoRoca(String name, double HP, double maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo) {
         super(name, HP, maxHP, ataques, defense, ataque, sprite, vivo,new String[]{"Agua", "Planta"});
     }
 

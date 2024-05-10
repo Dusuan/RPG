@@ -43,7 +43,7 @@ public class Duelo {
     public void movimientoPLayer1(int attk)
     {
         try{
-            if( jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Ataques){
+            if(jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Ataques){
                 //Primero consigo la vida del pokemno activo del jugador 2,
                 //Del ataque consigo el daño que hace
                 //Multiplico el daño por la vida del pokemon, para que me de un porcentaje
@@ -65,8 +65,21 @@ public class Duelo {
                                                         .obtener(0)
                                                         .getMaxHP());
                 //checar los elementos para ver si hace mas damage
-                if()
+                if(jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0).getTipo()== jugador2.getListaMounstritos().obtener(0).getDebilidades1() ||
+                        jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0).getTipo()== jugador2.getListaMounstritos().obtener(0).getDebilidades2())
                 {
+                    double extraDamage=((Ataques) jugador1
+                            .getListaMounstritos()
+                            .obtener(0)
+                            .getAtaques()
+                            .obtener(0)
+                    )
+                            .getDamage()*.5;
+                    jugador2
+                            .getListaMounstritos()
+                            .obtener(0)
+                            .setHP
+                                    (jugador2.getListaMounstritos().obtener(0).getHP() - extraDamage);
 
                 }
 

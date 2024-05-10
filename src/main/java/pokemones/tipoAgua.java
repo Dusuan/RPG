@@ -7,7 +7,7 @@ import movimientos.Movimientos;
 public class tipoAgua extends Mounstritos {
 
 
-    public tipoAgua(String name, float HP, float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo) {
+    public tipoAgua(String name, double HP, double maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo) {
         super(name, HP, maxHP, ataques, defense, ataque, sprite, vivo, new String[]{"Planta", "Aire"});
     }
 

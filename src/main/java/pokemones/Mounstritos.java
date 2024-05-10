@@ -27,8 +27,11 @@ public abstract class Mounstritos {
         this.Debilidades = debilidades;
     }
 
-    public String[] getDebilidades() {
-        return Debilidades;
+    public String getDebilidades1() {
+        return Debilidades[0];
+    }
+    public String getDebilidades2() {
+        return Debilidades[1];
     }
 
     public void setDebilidades(String[] debilidades) {

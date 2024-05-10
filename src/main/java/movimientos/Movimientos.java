@@ -37,13 +37,6 @@ public abstract class Movimientos {
         this.PP = PP;
     }
 
-    public String[] getDebilidades() {
-        return debilidades;
-    }
-
-    public void setDebilidades(String[] debilidades) {
-        this.debilidades = debilidades;
-    }
 
     public String getTipo() {
         return tipo;

@@ -63,7 +63,16 @@ public class Duelo {
                                                 .getDamage()*
                                                         jugador2.getListaMounstritos()
                                                         .obtener(0)
-                                                        .getHP());
+                                                        .getMaxHP());
+
+                if(jugador2.getListaMounstritos()
+                        .obtener(0)
+                        .getHP()<=0)
+                {
+                    jugador2.getListaMounstritos()
+                            .obtener(0)
+                            .setVivo(false);
+                }
             }
             else if( jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Healing){
                 jugador1

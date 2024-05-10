@@ -3,8 +3,8 @@ package movimientos;
 public class Default extends Movimientos
 {
     private int damage;
-    public Default(String nombre, int accuracy, int PP) {
-        super(nombre, accuracy, PP);
+    public Default(String nombre, int accuracy, int PP, String tipo) {
+        super(nombre, accuracy, PP, tipo);
         this.damage=10;
     }
 

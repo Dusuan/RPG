@@ -3,8 +3,8 @@ package movimientos;
 public class buff extends Movimientos{
 
     private float buffStat;
-    public buff(String nombre, int accuracy, int PP, float buffStat) {
-        super(nombre, accuracy, PP);
+    public buff(String nombre, int accuracy, int PP, float buffStat, String tipo) {
+        super(nombre, accuracy, PP, tipo);
         this.buffStat=buffStat;
     }
     public float getBuffStat() {

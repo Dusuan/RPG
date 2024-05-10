@@ -7,10 +7,8 @@ public class tipoFuego extends Mounstritos {
 
     private String[] debilidades;
 
-    public tipoFuego(String name, float HP, float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo,String[]debilidades) {
-        super(name, HP, maxHP, ataques, defense, ataque, sprite, vivo);
-
-        this.debilidades = new String[] {"Agua", "Roca"};
+    public tipoFuego(String name, float HP, float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo) {
+        super(name, HP, maxHP, ataques, defense, ataque, sprite, vivo, new String[] {"Agua", "Roca"});
     }
 
 

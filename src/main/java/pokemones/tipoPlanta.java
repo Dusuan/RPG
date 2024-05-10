@@ -6,10 +6,9 @@ import movimientos.Movimientos;
 public class tipoPlanta extends Mounstritos {
 
     private String[] debilidades;
-    public tipoPlanta(String name, float HP, float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo,String [] debilidades) {
-        super(name, HP, maxHP, ataques, defense, ataque, sprite, vivo);
+    public tipoPlanta(String name, float HP, float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo) {
+        super(name, HP, maxHP, ataques, defense, ataque, sprite, vivo,new String[]{"Fuego", "Aire"});
 
-        this.debilidades = new String[]{"Fuego", "Aire"};
     }
 
     public String[] getDebilidades() {

@@ -4,6 +4,7 @@ import listas.ListaDE;
 import movimientos.Movimientos;
 
 public abstract class Mounstritos {
+    protected String[] Debilidades;
 
     protected String sprite;
     protected String name;
@@ -14,7 +15,7 @@ public abstract class Mounstritos {
     protected int ataque;
     protected boolean vivo;
 
-    public Mounstritos(String name, float HP,float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite,boolean vivo) {
+    public Mounstritos(String name, float HP,float maxHP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite,boolean vivo, String [] debilidades) {
         this.name = name;
         this.HP = maxHP;
         this.maxHP = maxHP;
@@ -23,6 +24,15 @@ public abstract class Mounstritos {
         this.ataque = ataque;
         this.sprite = sprite;
         this.vivo = vivo;
+        this.Debilidades = debilidades;
+    }
+
+    public String[] getDebilidades() {
+        return Debilidades;
+    }
+
+    public void setDebilidades(String[] debilidades) {
+        Debilidades = debilidades;
     }
 
     public String getName() {

@@ -84,7 +84,7 @@ public class ListaDE<T> implements Interface<T>
     }
 
     @Override
-    public void eliminar(T x, int posicion) throws Exception
+    public void eliminar(int posicion) throws Exception
     {
         if(empty())
         {

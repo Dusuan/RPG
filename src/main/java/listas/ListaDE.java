@@ -152,4 +152,23 @@ public class ListaDE<T> implements Interface<T>
         }
         throw new Exception("El dato no se encontró en la lista");
     }
+
+    public void SwapPoke(int poke){
+        try {
+            T pokemon = obtener(poke);
+            eliminar(poke);
+            adicionar(pokemon);
+        }catch(Exception e){
+            System.out.println("Algo ocurrio relacionado a SwapPoke");
+        }
+    }
+
+
+
+
+
+
+
+
+
 }

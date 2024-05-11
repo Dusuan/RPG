@@ -116,8 +116,114 @@ public class Duelo {
 
     }
 
+    public void movimientoPLayer2(int attk) // solo lo copie y cambie los jugadores
+    {
+        try{
+            if(jugador2.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Ataques){
+                //Primero consigo la vida del pokemno activo del jugador 1,
+                //Del ataque consigo el daño que hace
+                //Multiplico el daño por la vida del pokemon, para que me de un porcentaje
+                jugador1
+                        .getListaMounstritos()
+                        .obtener(0)
+                        .setHP
+                                (
+                                        jugador1.getListaMounstritos()
+                                                .obtener(0)
+                                                .getHP() -
+                                                ((Ataques) jugador2
+                                                        .getListaMounstritos()
+                                                        .obtener(0)
+                                                        .getAtaques()
+                                                        .obtener(0))
+                                                        .getDamage()*
+                                                        jugador1.getListaMounstritos()
+                                                                .obtener(0)
+                                                                .getMaxHP());
+                //checar los elementos para ver si hace mas damage
+                if(jugador2.getListaMounstritos().obtener(0).getAtaques().obtener(0).getTipo()== jugador1.getListaMounstritos().obtener(0).getDebilidades1() ||
+                        jugador2.getListaMounstritos().obtener(0).getAtaques().obtener(0).getTipo()== jugador1.getListaMounstritos().obtener(0).getDebilidades2())
+                {
+                    double extraDamage=((Ataques) jugador2
+                            .getListaMounstritos()
+                            .obtener(0)
+                            .getAtaques()
+                            .obtener(0)
+                    )
+                            .getDamage()*.5;
+                    jugador1
+                            .getListaMounstritos()
+                            .obtener(0)
+                            .setHP
+                                    (jugador1.getListaMounstritos().obtener(0).getHP() - extraDamage);
+
+                }
+
+                //checar si sigue vivo el pokemon
+                if(jugador1.getListaMounstritos().obtener(0).getHP()<=0)
+                {
+                    jugador1.getListaMounstritos()
+                            .obtener(0)
+                            .setVivo(false);
+                }
+            }
+            else if( jugador2.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Healing){
+                jugador2
+                        .getListaMounstritos()
+                        .obtener(0)
+                        .setHP
+                                (
+                                        jugador2.getListaMounstritos()
+                                                .obtener(0)
+                                                .getHP() +
+                                                ((Healing) jugador2
+                                                        .getListaMounstritos()
+                                                        .obtener(0)
+                                                        .getAtaques()
+                                                        .obtener(0))
+                                                        .getHeal());
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("Ha ocurrido un error: relacionado con los movimientos" + e.getMessage());
+
+        }
+
+    }
 
 
+    public void cambioPoke1(int poke){
+
+        try{
+        if(jugador1.getListaMounstritos().obtener(poke).isVivo()){
+                jugador1
+                        .getListaMounstritos()
+                        .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
+        }
+        else{
+            System.out.println("Este pokemon ha sido derrotado!");
+        }
+        }catch(Exception e){
+            System.out.println("Ocurrio un error relacionado con el cambio de pokemon");
+        }
+    }
+
+    public void cambioPoke2(int poke){
+
+        try{
+            if(jugador2.getListaMounstritos().obtener(poke).isVivo()){
+                jugador2
+                        .getListaMounstritos()
+                        .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
+            }
+            else{
+                System.out.println("Este pokemon ha sido derrotado!");
+            }
+        }catch(Exception e){
+            System.out.println("Ocurrio un error relacionado con el cambio de pokemon");
+        }
+    }
 
 
 }

@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Actualizacion de tipaje en los movimientos" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Duelos: agregue accion de atacar, para que quite vida">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,19 +20,8 @@
       </list>
     </option>
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Emiliano0X1&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="6b1b605e-de57-46b9-9c78-b0f391bf4677" />
-        <option name="url" value="https://github.com/Dusuan/RPG.git" />
-      </UrlAndAccount>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -85,22 +77,32 @@
       <option name="project" value="LOCAL" />
       <updated>1715046689359</updated>
     </task>
-    <task id="LOCAL-00004" summary="Actualizacion de tipaje en los movimientos">
+    <task id="LOCAL-00004" summary="Duelos: agregue accion de atacar, para que quite vida">
       <option name="closed" value="true" />
-      <created>1715372331278</created>
+      <created>1715284208629</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1715372331278</updated>
+      <updated>1715284208629</updated>
     </task>
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Listas" />
     <MESSAGE value="movimientos" />
-    <MESSAGE value="Pokemones actualizados" />
-    <MESSAGE value="Actualizacion de tipaje en los movimientos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Actualizacion de tipaje en los movimientos" />
+    <MESSAGE value="Duelos: agregue accion de atacar, para que quite vida" />
+    <option name="LAST_COMMIT_MESSAGE" value="Duelos: agregue accion de atacar, para que quite vida" />
   </component>
 </project>

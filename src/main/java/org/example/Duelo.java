@@ -43,7 +43,10 @@ public class Duelo {
     public void movimientoPLayer1(int attk)
     {
         try{
-            if(jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Ataques){
+
+            //Damage
+            if(jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Ataques)
+            {
                 //Primero consigo la vida del pokemno activo del jugador 2,
                 //Del ataque consigo el daño que hace
                 //Multiplico el daño por la vida del pokemon, para que me de un porcentaje
@@ -91,22 +94,49 @@ public class Duelo {
                             .setVivo(false);
                 }
             }
-            else if( jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Healing){
-                jugador1
-                        .getListaMounstritos()
-                        .obtener(0)
-                        .setHP
-                                (
-                                        jugador1.getListaMounstritos()
-                                                .obtener(0)
-                                                .getHP() +
-                                                ((Healing) jugador1
-                                                        .getListaMounstritos()
-                                                        .obtener(0)
-                                                        .getAtaques()
-                                                        .obtener(0))
-                                                        .getHeal());
+
+            //Healing
+            else if(jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Healing)
+            {
+                //funcion para curar
+                // checo si esta al tope de su vida, si no esta no pasa nada
+                //y al no pasar nada, no se llama la funcion para cambio de turno
+                if(jugador1.getListaMounstritos().obtener(0).getHP()==jugador1.getListaMounstritos().obtener(0).getMaxHP())
+                {
+                    jugador1
+                            .getListaMounstritos()
+                            .obtener(0)
+                            .setHP
+                                    (
+                                            jugador1.getListaMounstritos()
+                                                    .obtener(0)
+                                                    .getHP() +
+                                                    ((Healing) jugador1
+                                                            .getListaMounstritos()
+                                                            .obtener(0)
+                                                            .getAtaques()
+                                                            .obtener(0))
+                                                            .getHeal());
+
+                    //checar si al sumar vida, esta es mayor a la vida max
+                    //si es, solo lo igualo a vida max y ya
+                    if((jugador1.getListaMounstritos().obtener(0).getHP() + ((Healing) jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0)).getHeal())>jugador1.getListaMounstritos().obtener(0).getMaxHP())
+                    {
+                        jugador1
+                                .getListaMounstritos()
+                                .obtener(0)
+                                .setHP(jugador1
+                                        .getListaMounstritos()
+                                        .obtener(0)
+                                        .getMaxHP());
+                    }
+                }
             }
+            else if(jugador1.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof buff)
+            {
+
+            }
+
         }
         catch(Exception e)
         {
@@ -115,6 +145,8 @@ public class Duelo {
         }
 
     }
+
+
 
     public void movimientoPLayer2(int attk) // solo lo copie y cambie los jugadores
     {

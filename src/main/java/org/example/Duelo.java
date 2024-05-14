@@ -136,9 +136,6 @@ public class Duelo {
         return attack;
     }
 
-
-
-
     public void movimientoPLayer1(int ataque, int pokemon1, int pokemon2)
     {
         try {
@@ -240,12 +237,15 @@ public class Duelo {
                 }
 
                 //checar si sigue vivo el pokemon
-                if (jugador1.getListaMounstritos().obtener(0).getHP() <= 0) {
+                if (jugador1.getListaMounstritos().obtener(0).getHP() <= 0)
+                {
                     jugador1.getListaMounstritos()
                             .obtener(0)
                             .setVivo(false);
                 }
-            } else if (jugador2.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Healing) {
+            }
+            else if (jugador2.getListaMounstritos().obtener(0).getAtaques().obtener(0) instanceof Healing)
+            {
                 jugador2
                         .getListaMounstritos()
                         .obtener(0)
@@ -261,7 +261,8 @@ public class Duelo {
                                                         .obtener(0))
                                                         .getHeal());
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             System.out.println("Ha ocurrido un error: relacionado con los movimientos" + e.getMessage());
 
         }

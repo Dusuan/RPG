@@ -182,8 +182,8 @@ public class Duelo {
             }
             else if (ataquePokemon1(ataque, pokemon1) instanceof buff)
             {
-
-
+                pokemonJugador1(pokemon1).getDefense();
+                ((buff) ataquePokemon1(ataque, pokemon1)).setBuffActivado(true);
             }
 
         }

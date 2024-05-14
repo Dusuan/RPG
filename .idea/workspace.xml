@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="buff actualizado para tener un boolean y avizar si esta activado o no">
-      <change beforePath="$PROJECT_DIR$/src/main/java/movimientos/buff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/movimientos/buff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
-    </list>
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,23 +106,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715656795570</updated>
     </task>
-    <task id="LOCAL-00008" summary="a">
-      <option name="closed" value="true" />
-      <created>1715657013891</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1715657013891</updated>
-    </task>
-    <task id="LOCAL-00009" summary="buff actualizado para tener un boolean y avizar si esta activado o no">
-      <option name="closed" value="true" />
-      <created>1715657176218</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1715657176218</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -146,8 +127,6 @@
     <MESSAGE value="Agregue la funcion de healing" />
     <MESSAGE value="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien" />
     <MESSAGE value="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
-    <MESSAGE value="a" />
-    <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
-    <option name="LAST_COMMIT_MESSAGE" value="buff actualizado para tener un boolean y avizar si esta activado o no" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
   </component>
 </project>

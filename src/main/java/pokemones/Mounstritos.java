@@ -11,11 +11,11 @@ public abstract class Mounstritos {
     protected double HP;
     protected double maxHP;
     protected ListaDE<Movimientos> ataques;
-    protected float defense;
+    protected int defense;
     protected int ataque;
     protected boolean vivo;
 
-    public Mounstritos(String name, double HP,double maxHP, ListaDE<Movimientos> ataques, float defense, int ataque,String sprite,boolean vivo, String [] debilidades) {
+    public Mounstritos(String name, double HP,double maxHP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite,boolean vivo, String [] debilidades) {
         this.name = name;
         this.HP = maxHP;
         this.maxHP = maxHP;
@@ -49,7 +49,7 @@ public abstract class Mounstritos {
     public double getMaxHP() {
         return maxHP;
     }
-    public float getDefense() {
+    public int getDefense() {
         return defense;
     }
 
@@ -76,7 +76,7 @@ public abstract class Mounstritos {
         this.HP = HP;
     }
 
-    public void setDefense(float defense) {
+    public void setDefense(int defense) {
         this.defense = defense;
     }
 

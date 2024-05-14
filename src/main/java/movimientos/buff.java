@@ -3,14 +3,24 @@ package movimientos;
 public class buff extends Movimientos{
 
     private float buffStat;
-    public buff(String nombre, int accuracy, int PP, float buffStat, String tipo) {
+    private boolean buffActivado;
+    public buff(String nombre, int accuracy, int PP, float buffStat, String tipo,boolean buffActivado) {
         super(nombre, accuracy, PP, tipo);
         this.buffStat=buffStat;
+        this.buffActivado=buffActivado;
     }
     public float getBuffStat() {
         return buffStat;
     }
     public void setBuffStat(float buffStat) {
         this.buffStat = buffStat;
+    }
+
+    public boolean isBuffActivado() {
+        return buffActivado;
+    }
+
+    public void setBuffActivado(boolean buffActivado) {
+        this.buffActivado = buffActivado;
     }
 }

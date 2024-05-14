@@ -4,9 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Agregue la funcion de healing">
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_6_2024_4_06_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_5_6_2024_4_06_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_04_15_p__m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_04_15_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_04_17_p__m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_04_17_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_05_26_p__m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_05_26_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_05_53_p__m___Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_05_2024_05_53_p_ m__[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_17_PM_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_17_PM__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_30_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_30_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_37_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_37_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_43_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_4_43_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_5_37_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_5_37_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_5_6_2024_5_50_PM_[Changes]1/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/Mounstritos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/Mounstritos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoAgua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoAgua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoAire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoAire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoFuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoFuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoPlanta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoPlanta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoRoca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoRoca.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715628563502</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien">
+      <option name="closed" value="true" />
+      <created>1715643840648</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715643840648</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +147,7 @@
     <MESSAGE value="movimientos" />
     <MESSAGE value="Duelos: agregue accion de atacar, para que quite vida" />
     <MESSAGE value="Agregue la funcion de healing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Agregue la funcion de healing" />
+    <MESSAGE value="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien" />
   </component>
 </project>

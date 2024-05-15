@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Inicio de buff. Tengo el problema que desde la instancia buff no puedo cambiar o modificar los ataques, solo puedo modificar el defense">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Agregue el buff, ahora la clase movimiento cuenta con buffActivado y buffStat. Cuando el buff esta activado siempre mejora el escudo y el damage X2, y despues de hacer tu ataque te lo quita dividiendolo entre 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715657775495</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Agregue el buff, ahora la clase movimiento cuenta con buffActivado y buffStat. Cuando el buff esta activado siempre mejora el escudo y el damage X2, y despues de hacer tu ataque te lo quita dividiendolo entre 2">
+      <option name="closed" value="true" />
+      <created>1715798526725</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715798526725</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +162,7 @@
     <MESSAGE value="a" />
     <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
     <MESSAGE value="Inicio de buff. Tengo el problema que desde la instancia buff no puedo cambiar o modificar los ataques, solo puedo modificar el defense" />
-    <option name="LAST_COMMIT_MESSAGE" value="Inicio de buff. Tengo el problema que desde la instancia buff no puedo cambiar o modificar los ataques, solo puedo modificar el defense" />
+    <MESSAGE value="Agregue el buff, ahora la clase movimiento cuenta con buffActivado y buffStat. Cuando el buff esta activado siempre mejora el escudo y el damage X2, y despues de hacer tu ataque te lo quita dividiendolo entre 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregue el buff, ahora la clase movimiento cuenta con buffActivado y buffStat. Cuando el buff esta activado siempre mejora el escudo y el damage X2, y despues de hacer tu ataque te lo quita dividiendolo entre 2" />
   </component>
 </project>

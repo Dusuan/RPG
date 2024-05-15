@@ -162,6 +162,7 @@ public class Duelo {
 
                 }
 
+                //devolver el damage y el escudo a la normalidad
                 if(((Ataques) ataquePokemon1(ataque, pokemon1)).isBuffActivado())
                 {
                     ataquePokemon1(ataque, pokemon1).setBuffActivado(false);

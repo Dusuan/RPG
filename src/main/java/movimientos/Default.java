@@ -3,9 +3,11 @@ package movimientos;
 public class Default extends Movimientos
 {
     private int damage;
-    public Default(String nombre, int accuracy, int PP, String tipo) {
-        super(nombre, accuracy, PP, tipo);
-        this.damage=10;
+
+    public Default(String nombre, int accuracy, int PP, String tipo, float buffStat)
+    {
+        super(nombre, accuracy, PP, tipo, buffStat);
+        this.damage = 10;
     }
 
     public int getDamage() {

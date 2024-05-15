@@ -142,9 +142,13 @@ public class Duelo {
             //Damage
             if (ataquePokemon1(ataque, pokemon1) instanceof Ataques)
             {
+                if( ((Ataques) ataquePokemon1(ataque, pokemon1)).isBuffActivado())
+                {
+                   ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()*2);
+                }
                 //checar los elementos para ver si el ataque mas damage, sino hacer damage normal
-                if (ataquePokemon1(ataque, pokemon1).getTipo() == pokemonJugador2(pokemon2).getDebilidades1() ||
-                        ataquePokemon1(ataque, pokemon1).getTipo() == pokemonJugador2(pokemon2).getDebilidades2())
+                if (ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades1()) ||
+                        ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades2()))
                 {
                     //consigo el daño extra, solo que este no esta afectado por el defense, hago la funcion normal para quitar vida, solo que le sumo el extra damage
                     pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
@@ -156,6 +160,13 @@ public class Duelo {
                     //Primero consigo la vida del pokemno activo del jugador 2, del ataque consigo el daño que hace, Multiplico el daño por la vida del pokemon, para que me de un porcentaje
                     pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
 
+                }
+
+                if(((Ataques) ataquePokemon1(ataque, pokemon1)).isBuffActivado())
+                {
+                    ataquePokemon1(ataque, pokemon1).setBuffActivado(false);
+                    ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()/2);
+                    pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()/2);
                 }
 
                 //checar si sigue vivo el pokemon
@@ -182,8 +193,8 @@ public class Duelo {
             }
             else if (ataquePokemon1(ataque, pokemon1) instanceof buff)
             {
-                pokemonJugador1(pokemon1).getDefense();
                 ((buff) ataquePokemon1(ataque, pokemon1)).setBuffActivado(true);
+                pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()*2);
             }
 
         }

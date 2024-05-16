@@ -4,10 +4,10 @@ public class Default extends Movimientos
 {
     private int damage;
 
-    public Default(String nombre, int accuracy, int PP, String tipo, float buffStat)
-    {
-        super(nombre, accuracy, PP, tipo, buffStat);
-        this.damage = 10;
+
+    public Default(String tipo, String nombre, int accuracy, int PP, int damage) {
+        super(tipo, nombre, accuracy, PP);
+        this.damage = damage;
     }
 
     public int getDamage() {

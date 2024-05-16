@@ -1,9 +1,7 @@
 package movimientos;
 
 public class buff extends Movimientos{
-
-    public buff(String nombre, int accuracy, int PP, String tipo, float buffStat)
-    {
-        super(nombre, accuracy, PP, tipo, buffStat);
+    public buff(String tipo, String nombre, int accuracy, int PP) {
+        super(tipo, nombre, accuracy, PP);
     }
 }

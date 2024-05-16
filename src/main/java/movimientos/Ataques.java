@@ -4,8 +4,8 @@ public class Ataques extends Movimientos
 {
     private float damage;
 
-    public Ataques(String nombre, int accuracy, int PP, String tipo, float buffStat, float damage) {
-        super(nombre, accuracy, PP, tipo, buffStat);
+    public Ataques(String tipo, String nombre, int accuracy, int PP, float damage) {
+        super(tipo, nombre, accuracy, PP);
         this.damage = damage;
     }
 

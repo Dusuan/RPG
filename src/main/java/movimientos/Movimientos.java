@@ -5,16 +5,15 @@ public abstract class Movimientos {
     protected String nombre;
     protected int accuracy;
     protected int PP;
-    private float buffStat;
-    private boolean buffActivado;
 
-    public Movimientos(String nombre, int accuracy, int PP, String tipo, float buffStat) {
+
+    public Movimientos(String tipo, String nombre, int accuracy, int PP)
+    {
+        this.tipo = tipo;
         this.nombre = nombre;
         this.accuracy = accuracy;
         this.PP = PP;
-        this.tipo = tipo;
-        this.buffStat=buffStat;
-        this.buffActivado=false;
+
     }
 
     public String getNombre() {
@@ -46,20 +45,5 @@ public abstract class Movimientos {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public float getBuffStat() {
-        return buffStat;
-    }
-    public void setBuffStat(float buffStat) {
-        this.buffStat = buffStat;
-    }
-
-    public boolean isBuffActivado() {
-        return buffActivado;
-    }
-
-    public void setBuffActivado(boolean buffActivado) {
-        this.buffActivado = buffActivado;
     }
 }

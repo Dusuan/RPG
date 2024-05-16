@@ -4,8 +4,8 @@ public class Healing extends Movimientos{
 
     private int heal;
 
-    public Healing(String nombre, int accuracy, int PP, String tipo, float buffStat, int heal) {
-        super(nombre, accuracy, PP, tipo, buffStat);
+    public Healing(String tipo, String nombre, int accuracy, int PP, int heal) {
+        super(tipo, nombre, accuracy, PP);
         this.heal = heal;
     }
 

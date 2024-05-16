@@ -142,10 +142,18 @@ public class Duelo {
             //Damage
             if (ataquePokemon1(ataque, pokemon1) instanceof Ataques)
             {
-                if( ((Ataques) ataquePokemon1(ataque, pokemon1)).isBuffActivado())
+                //poner buff al daño
+                if(pokemonJugador1(pokemon1).isBuffActivado())
                 {
                    ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()*2);
                 }
+                //Ponerl el debuff en el daño
+                if(pokemonJugador1(pokemon1).isDebuffActivado())
+                {
+                    ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()/2);
+                }
+
+
                 //checar los elementos para ver si el ataque mas damage, sino hacer damage normal
                 if (ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades1()) ||
                         ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades2()))
@@ -153,7 +161,7 @@ public class Duelo {
                     //consigo el daño extra, solo que este no esta afectado por el defense, hago la funcion normal para quitar vida, solo que le sumo el extra damage
                     pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
                     double extraDamage = (attack1(ataque,pokemon1,pokemon2) * .5);
-                    pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - (DamageDefense1(ataque, pokemon1, pokemon2)+extraDamage));
+                    pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - (DamageDefense1(ataque, pokemon1, pokemon2)+extraDamage));
                 }
                 else
                 {
@@ -162,12 +170,23 @@ public class Duelo {
 
                 }
 
-                //devolver el damage y el escudo a la normalidad
-                if(((Ataques) ataquePokemon1(ataque, pokemon1)).isBuffActivado())
+                //devolver el damage y el escudo a la normalidad despues de un buff
+                if(pokemonJugador1(pokemon1).isBuffActivado())
                 {
-                    ataquePokemon1(ataque, pokemon1).setBuffActivado(false);
+                    pokemonJugador1(pokemon1).setBuffActivado(false);
                     ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()/2);
                     pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()/2);
+                }
+
+                if(pokemonJugador1(pokemon1).isDebuffActivado())
+                {
+                    ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()*2);
+                }
+
+                if(pokemonJugador2(pokemon2).isDebuffActivado())
+                {
+                    pokemonJugador2(pokemon2).setDebuffActivado(false);
+                    pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()*2);
                 }
 
                 //checar si sigue vivo el pokemon
@@ -194,8 +213,13 @@ public class Duelo {
             }
             else if (ataquePokemon1(ataque, pokemon1) instanceof buff)
             {
-                ((buff) ataquePokemon1(ataque, pokemon1)).setBuffActivado(true);
+                pokemonJugador1(pokemon1).setBuffActivado(true);
                 pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()*2);
+            }
+            else if(ataquePokemon1(ataque, pokemon1) instanceof Debuff)
+            {
+                pokemonJugador2(pokemon2).setBuffActivado(true);
+                pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()/2);
             }
 
         }
@@ -206,10 +230,6 @@ public class Duelo {
         }
 
     }
-
-
-
-
 
     public void cambioPoke1(int poke) {
 

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,7 +138,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715883933356</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya">
+      <option name="closed" value="true" />
+      <created>1715884756328</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715884756328</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -162,6 +170,7 @@
     <MESSAGE value="a" />
     <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
     <MESSAGE value="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
+    <MESSAGE value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
   </component>
 </project>

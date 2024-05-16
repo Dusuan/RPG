@@ -7,15 +7,10 @@ public class Default extends Movimientos
 
     public Default(String tipo, String nombre, int accuracy, int PP, int damage) {
         super(tipo, nombre, accuracy, PP);
-        this.damage = damage;
+        this.damage = 20;
     }
-
     public int getDamage() {
         return damage;
     }
-    public int attack(int vida)
-    {
-        int newVida=vida-getDamage();
-        return newVida;
-    }
+
 }

@@ -221,7 +221,14 @@ public class Duelo {
                 pokemonJugador2(pokemon2).setBuffActivado(true);
                 pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()/2);
             }
-
+            else if(ataquePokemon1(ataque, pokemon1) instanceof Default)
+            {
+                pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage() );
+            }
+            else
+            {
+                System.out.println("Ha ocurrido un error: ninguno de los else if de movimientos se cumplio");
+            }
         }
         catch (Exception e)
         {

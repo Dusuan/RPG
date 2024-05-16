@@ -259,32 +259,43 @@ public class Duelo {
         }
     }
 
-    public void cambioPoke1(int poke) {
-
-        try {
-            if (jugador1.getListaMounstritos().obtener(poke).isVivo()) {
+    public void cambioPoke1(int poke)
+    {
+        try
+        {
+            if (jugador1.getListaMounstritos().obtener(poke).isVivo())
+            {
                 jugador1
                         .getListaMounstritos()
                         .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
-            } else {
+            } else
+            {
                 System.out.println("Este pokemon ha sido derrotado!");
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             System.out.println("Ocurrio un error relacionado con el cambio de pokemon");
         }
     }
 
-    public void cambioPoke2(int poke) {
-
-        try {
-            if (jugador2.getListaMounstritos().obtener(poke).isVivo()) {
+    public void cambioPoke2(int poke)
+    {
+        try
+        {
+            if (jugador2.getListaMounstritos().obtener(poke).isVivo())
+            {
                 jugador2
                         .getListaMounstritos()
                         .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
-            } else {
+            }
+            else
+            {
                 System.out.println("Este pokemon ha sido derrotado!");
             }
-        } catch (Exception e) {
+        }
+        catch (Exception e)
+        {
             System.out.println("Ocurrio un error relacionado con el cambio de pokemon");
         }
     }

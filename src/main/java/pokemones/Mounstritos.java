@@ -5,11 +5,11 @@ import movimientos.Movimientos;
 
 public abstract class Mounstritos {
     protected String[] Debilidades;
-
     protected String sprite;
     protected String name;
     protected double HP;
     protected double maxHP;
+    protected int Ulti;
     protected ListaDE<Movimientos> ataques;
     protected int ultimate;
     protected int defense;

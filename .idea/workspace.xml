@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="i hate fucking ... they need to die ( Ya cambie el ultimate)" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +154,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715884818807</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento.">
+      <option name="closed" value="true" />
+      <created>1715887483111</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1715887483111</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +187,7 @@
     <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
     <MESSAGE value="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
     <MESSAGE value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
+    <MESSAGE value="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
+    <option name="LAST_COMMIT_MESSAGE" value="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
   </component>
 </project>

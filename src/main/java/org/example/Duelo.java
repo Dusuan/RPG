@@ -2,8 +2,6 @@ package org.example;
 import java.util.Random;
 import movimientos.*;
 import pokemones.Mounstritos;
-
-
 public class Duelo {
     private int turno;
     private Jugador jugador1;
@@ -244,6 +242,11 @@ public class Duelo {
             else if(ataquePokemon1(ataque, pokemon1) instanceof Default)
             {
                 pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage() );
+                //checar si sigue vivo el pokemon
+                if (pokemonJugador2(pokemon2).getHP() <= 0)
+                {
+                    pokemonJugador2(pokemon2).setVivo(false);
+                }
             }
             //Error
             else
@@ -348,6 +351,7 @@ public class Duelo {
                     pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()*2);
                 }
             }
+            //Debuff
             else if(ataquePokemon2(ataque, pokemon2) instanceof Debuff)
             {
                 int randomIntInRange = random.nextInt(100);
@@ -357,6 +361,16 @@ public class Duelo {
                     pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()/2);
                 }
 
+            }
+            //Default
+            else if(ataquePokemon2(ataque, pokemon2) instanceof Default)
+            {
+                pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - ((Default) ataquePokemon2(ataque, pokemon2)).getDamage());
+                //checar si sigue vivo el pokemon
+                if (pokemonJugador1(pokemon1).getHP() <= 0)
+                {
+                    pokemonJugador1(pokemon1).setVivo(false);
+                }
             }
             //Error
             else
@@ -371,6 +385,25 @@ public class Duelo {
         }
     }
 
+    public void Ulti2(int pokemon1, int pokemon2)
+    {
+        pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() - pokemonJugador2(pokemon2).getUltimate());
+        //checar si sigue vivo el pokemon
+        if (pokemonJugador1(pokemon1).getHP() <= 0)
+        {
+            pokemonJugador1(pokemon1).setVivo(false);
+        }
+    }
+    public void Ulti1(int pokemon1, int pokemon2)
+    {
+        pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - pokemonJugador1(pokemon1).getUltimate());
+        //checar si sigue vivo el pokemon
+        if (pokemonJugador1(pokemon2).getHP() <= 0)
+        {
+            pokemonJugador2(pokemon2).setVivo(false);
+        }
+    }
+
     public void cambioPoke1(int poke)
     {
         try
@@ -380,7 +413,8 @@ public class Duelo {
                 jugador1
                         .getListaMounstritos()
                         .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
-            } else
+            }
+            else
             {
                 System.out.println("Este pokemon ha sido derrotado!");
             }

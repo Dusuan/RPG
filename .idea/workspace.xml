@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,7 +149,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715884756328</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya">
+      <option name="closed" value="true" />
+      <created>1715884818807</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1715884818807</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

@@ -1,5 +1,5 @@
 package org.example;
-
+import java.util.Random;
 import movimientos.*;
 import pokemones.Mounstritos;
 
@@ -138,93 +138,115 @@ public class Duelo {
 
     public void movimientoPLayer1(int ataque, int pokemon1, int pokemon2)
     {
+        Random random = new Random();
         try {
             //Damage
             if (ataquePokemon1(ataque, pokemon1) instanceof Ataques)
             {
-                //poner buff al daño
-                if(pokemonJugador1(pokemon1).isBuffActivado())
+                int randomIntInRange = random.nextInt(100);
+                if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
                 {
-                   ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()*2);
-                }
-                //Ponerl el debuff en el daño
-                if(pokemonJugador1(pokemon1).isDebuffActivado())
-                {
-                    ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()/2);
-                }
-
-
-                //checar los elementos para ver si el ataque mas damage, sino hacer damage normal
-                if (ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades1()) ||
-                        ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades2()))
-                {
-                    //consigo el daño extra, solo que este no esta afectado por el defense, hago la funcion normal para quitar vida, solo que le sumo el extra damage
-                    pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
-                    double extraDamage = (attack1(ataque,pokemon1,pokemon2) * .5);
-                    pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - (DamageDefense1(ataque, pokemon1, pokemon2)+extraDamage));
-                }
-                else
-                {
-                    //Primero consigo la vida del pokemno activo del jugador 2, del ataque consigo el daño que hace, Multiplico el daño por la vida del pokemon, para que me de un porcentaje
-                    pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
-
-                }
-
-                //devolver el damage y el escudo a la normalidad despues de un buff
-                if(pokemonJugador1(pokemon1).isBuffActivado())
-                {
-                    pokemonJugador1(pokemon1).setBuffActivado(false);
-                    ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()/2);
-                    pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()/2);
-                }
-
-                if(pokemonJugador1(pokemon1).isDebuffActivado())
-                {
-                    ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()*2);
-                }
-
-                if(pokemonJugador2(pokemon2).isDebuffActivado())
-                {
-                    pokemonJugador2(pokemon2).setDebuffActivado(false);
-                    pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()*2);
-                }
-
-                //checar si sigue vivo el pokemon
-                if (pokemonJugador2(pokemon2).getHP() <= 0)
-                {
-                    pokemonJugador2(pokemon2).setVivo(false);
-                }
-            }
-
-            //Healing
-            else if (ataquePokemon1(ataque, pokemon1) instanceof Healing)
-            {
-                //funcion para curar: checo si esta al tope de su vida, si no esta hago el heal
-                if (pokemonJugador1(pokemon1).getHP() < pokemonJugador1(pokemon1).getMaxHP())
-                {
-                    pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() + ((Healing) ataquePokemon1(ataque, pokemon1)).getHeal());
-
-                    //checar si al sumar vida, esta es mayor a la vida max, si es, solo lo igualo a vida max y ya
-                    if ((pokemonJugador1(pokemon1).getHP() + ((Healing) ataquePokemon1(ataque, pokemon1)).getHeal()) > pokemonJugador1(pokemon1).getMaxHP())
+                    //poner buff al daño
+                    if(pokemonJugador1(pokemon1).isBuffActivado())
                     {
-                        pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getMaxHP());
+                        ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()*2);
+                    }
+                    //Ponerl el debuff en el daño
+                    if(pokemonJugador1(pokemon1).isDebuffActivado())
+                    {
+                        ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()/2);
+                    }
+
+                    //checar los elementos para ver si el ataque mas damage, sino hacer damage normal
+                    if (ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades1()) ||
+                            ataquePokemon1(ataque, pokemon1).getTipo().equals(pokemonJugador2(pokemon2).getDebilidades2()))
+                    {
+                        //consigo el daño extra, solo que este no esta afectado por el defense, hago la funcion normal para quitar vida, solo que le sumo el extra damage
+                        pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
+                        double extraDamage = (attack1(ataque,pokemon1,pokemon2) * .5);
+                        pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - (DamageDefense1(ataque, pokemon1, pokemon2)+extraDamage));
+                    }
+                    else
+                    {
+                        //Primero consigo la vida del pokemno activo del jugador 2, del ataque consigo el daño que hace, Multiplico el daño por la vida del pokemon, para que me de un porcentaje
+                        pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
+
+                    }
+
+                    //devolver el damage y el escudo a la normalidad despues de un buff
+                    if(pokemonJugador1(pokemon1).isBuffActivado())
+                    {
+                        pokemonJugador1(pokemon1).setBuffActivado(false);
+                        ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()/2);
+                        pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()/2);
+                    }
+
+                    if(pokemonJugador1(pokemon1).isDebuffActivado())
+                    {
+                        ((Ataques) ataquePokemon1(ataque,pokemon1)).setDamage(((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()*2);
+                    }
+
+                    if(pokemonJugador2(pokemon2).isDebuffActivado())
+                    {
+                        pokemonJugador2(pokemon2).setDebuffActivado(false);
+                        pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()*2);
+                    }
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador2(pokemon2).getHP() <= 0)
+                    {
+                        pokemonJugador2(pokemon2).setVivo(false);
                     }
                 }
             }
+            //Healing
+            else if (ataquePokemon1(ataque, pokemon1) instanceof Healing)
+            {
+                int randomIntInRange = random.nextInt(100);
+                if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
+                {
+                    //funcion para curar: checo si esta al tope de su vida, si no esta hago el heal
+                    if (pokemonJugador1(pokemon1).getHP() < pokemonJugador1(pokemon1).getMaxHP())
+                    {
+                        pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() + ((Healing) ataquePokemon1(ataque, pokemon1)).getHeal());
+
+                        //checar si al sumar vida, esta es mayor a la vida max, si es, solo lo igualo a vida max y ya
+                        if ((pokemonJugador1(pokemon1).getHP() + ((Healing) ataquePokemon1(ataque, pokemon1)).getHeal()) > pokemonJugador1(pokemon1).getMaxHP())
+                        {
+                            pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getMaxHP());
+                        }
+                    }
+
+                }
+
+            }
+            //buff
             else if (ataquePokemon1(ataque, pokemon1) instanceof buff)
             {
-                pokemonJugador1(pokemon1).setBuffActivado(true);
-                pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()*2);
+                int randomIntInRange = random.nextInt(100);
+                if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
+                {
+                    pokemonJugador1(pokemon1).setBuffActivado(true);
+                    pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()*2);
+                }
             }
+            //Debuff
             else if(ataquePokemon1(ataque, pokemon1) instanceof Debuff)
             {
-                pokemonJugador2(pokemon2).setBuffActivado(true);
-                pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()/2);
+                int randomIntInRange = random.nextInt(100);
+                if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
+                {
+                    pokemonJugador2(pokemon2).setBuffActivado(true);
+                    pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()/2);
+                }
+
             }
+            //Default
             else if(ataquePokemon1(ataque, pokemon1) instanceof Default)
             {
                 pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage() );
             }
+            //Error
             else
             {
                 System.out.println("Ha ocurrido un error: ninguno de los else if de movimientos se cumplio");
@@ -235,7 +257,6 @@ public class Duelo {
             System.out.println("Ha ocurrido un error: relacionado con los movimientos" + e.getMessage());
 
         }
-
     }
 
     public void cambioPoke1(int poke) {

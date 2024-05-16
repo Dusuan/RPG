@@ -13,4 +13,7 @@ public class Default extends Movimientos
         return damage;
     }
 
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
 }

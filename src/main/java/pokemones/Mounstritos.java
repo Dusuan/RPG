@@ -12,18 +12,16 @@ public abstract class Mounstritos {
     protected double maxHP;
     protected ListaDE<Movimientos> ataques;
     protected int defense;
-    protected int ataque;
     protected boolean vivo;
     private boolean buffActivado;
     private boolean debuffActivado;
 
-    public Mounstritos(String name, double HP,double maxHP, ListaDE<Movimientos> ataques, int defense, int ataque,String sprite,boolean vivo, String [] debilidades) {
+    public Mounstritos(String name, double HP,double maxHP, ListaDE<Movimientos> ataques, int defense,String sprite,boolean vivo, String [] debilidades) {
         this.name = name;
         this.HP = maxHP;
         this.maxHP = maxHP;
         this.ataques = ataques;
         this.defense = defense;
-        this.ataque = ataque;
         this.sprite = sprite;
         this.vivo = vivo;
         this.Debilidades = debilidades;
@@ -57,10 +55,6 @@ public abstract class Mounstritos {
         return defense;
     }
 
-    public int getAtaque() {
-        return ataque;
-    }
-
     public boolean isVivo() {
         return vivo;
     }
@@ -83,11 +77,6 @@ public abstract class Mounstritos {
     public void setDefense(int defense) {
         this.defense = defense;
     }
-
-    public void setAtaque(int ataque) {
-        this.ataque = ataque;
-    }
-
     public void setSprite(String sprite) {
         this.sprite = sprite;
     }
@@ -102,7 +91,7 @@ public abstract class Mounstritos {
     public void setMaxHP(double maxHP) {
         this.maxHP = maxHP;
     }
-    public abstract void AtaqueTipoEspecial() throws Exception;
+    public abstract int AtaqueTipoEspecial(int ataqueDefault) throws Exception;
 
     public boolean isBuffActivado() {
         return buffActivado;

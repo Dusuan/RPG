@@ -7,8 +7,6 @@ public class Time implements Runnable{
     private long sleepTime; //Creo que estaria bien que fuera de 30 segundos o menos
     private Jugador actualPlayer;
     private boolean movimientoRealizado;
-
-
     public Time(Jugador player1,Jugador player2,long sleepTime){ // Constructor para crear el tiempo de juego del jugador
         this.player1 = player1;
         this.sleepTime = sleepTime;
@@ -16,7 +14,6 @@ public class Time implements Runnable{
         this.player2 = player2;
         this.movimientoRealizado = false;
     }
-
     @Override
     public void run() {
             try {

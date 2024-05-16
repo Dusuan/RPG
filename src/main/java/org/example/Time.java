@@ -22,7 +22,8 @@ public class Time implements Runnable{
                     changeTurno(); // Cambia de turno automaticamente si no hizo nada
                 }
                 else{
-                    movimientoRealizado = false; // Se reinicia el hilo
+                    movimientoRealizado = false;// Se reinicia el hilo
+                    actualPlayer = player2;
                 }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);

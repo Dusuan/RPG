@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="a" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,23 +162,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715887483111</updated>
     </task>
-    <task id="LOCAL-00015" summary="a">
-      <option name="closed" value="true" />
-      <created>1715887567784</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1715887567784</updated>
-    </task>
-    <task id="LOCAL-00016" summary="a">
-      <option name="closed" value="true" />
-      <created>1715887648328</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1715887648328</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -199,11 +183,11 @@
     <MESSAGE value="Agregue la funcion de healing" />
     <MESSAGE value="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien" />
     <MESSAGE value="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
+    <MESSAGE value="a" />
     <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
     <MESSAGE value="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
     <MESSAGE value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
     <MESSAGE value="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
-    <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
   </component>
 </project>

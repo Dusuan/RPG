@@ -7,15 +7,17 @@ import movimientos.Movimientos;
 public class tipoAgua extends Mounstritos {
 
 
-    public tipoAgua(String name, double HP, double maxHP, ListaDE<Movimientos> ataques, int defense, int ataque, String sprite, boolean vivo, String[] debilidades) {
-        super(name, HP, maxHP, ataques, defense, ataque, sprite, vivo, debilidades);
+    public tipoAgua(String name, double HP, double maxHP, ListaDE<Movimientos> ataques, int defense,String sprite, boolean vivo, String[] debilidades) {
+        super(name, HP, maxHP, ataques, defense, sprite, vivo, debilidades);
     }
 
     @Override
-    public void AtaqueTipoEspecial() throws Exception {
+    public int AtaqueTipoEspecial(int ataqueDefault) throws Exception {
 
-        int ultimate = getAtaque() * 2;
-        setAtaque(ultimate);
+        int ultimate = ataqueDefault * 5;
+
+        return ultimate;
+
 
         /*Potenciador
         if(getAtaques().empty()){

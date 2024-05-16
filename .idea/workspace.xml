@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Arregle las clases de los tipajes ya que unos no se implementaba bien el metodo abstracto y hice una version beta de los ultimates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-    </list>
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Cree una clase nueva (Time) donde implemnte hilos para los turnos de los jugadores , por ejemplo si uno se queda AFK se pasa el turno al otro jugador y asi, puse los metodos que se ocupan para el cambio de turno, pero aun no se si funcione bien." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +19,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Emiliano0X1"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6b1b605e-de57-46b9-9c78-b0f391bf4677" />
+        <option name="url" value="https://github.com/Dusuan/RPG.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -109,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715656795570</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Cree una clase nueva (Time) donde implemnte hilos para los turnos de los jugadores , por ejemplo si uno se queda AFK se pasa el turno al otro jugador y asi, puse los metodos que se ocupan para el cambio de turno, pero aun no se si funcione bien.">
+      <option name="closed" value="true" />
+      <created>1715840449397</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715840449397</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +149,7 @@
     <MESSAGE value="Agregue la funcion de healing" />
     <MESSAGE value="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien" />
     <MESSAGE value="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
+    <MESSAGE value="Cree una clase nueva (Time) donde implemnte hilos para los turnos de los jugadores , por ejemplo si uno se queda AFK se pasa el turno al otro jugador y asi, puse los metodos que se ocupan para el cambio de turno, pero aun no se si funcione bien." />
+    <option name="LAST_COMMIT_MESSAGE" value="Cree una clase nueva (Time) donde implemnte hilos para los turnos de los jugadores , por ejemplo si uno se queda AFK se pasa el turno al otro jugador y asi, puse los metodos que se ocupan para el cambio de turno, pero aun no se si funcione bien." />
   </component>
 </project>

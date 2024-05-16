@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Quite el atributo ataque de la clase Mounstritos y modifiqueel metodo abstracto del ataque, ya que ahora regrese un nuevo damage y este lo pueden usar como nuevo ataque default">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/movimientos/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/movimientos/Default.java" afterDir="false" />
-    </list>
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Quite el atributo ataque de la clase Mounstritos y modifiqueel metodo abstracto del ataque, ya que ahora regrese un nuevo damage y este lo pueden usar como nuevo ataque default" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,20 +19,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Emiliano0X1"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="6b1b605e-de57-46b9-9c78-b0f391bf4677" />
-        <option name="url" value="https://github.com/Dusuan/RPG.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -171,15 +154,7 @@
       <option name="project" value="LOCAL" />
       <updated>1715884818807</updated>
     </task>
-    <task id="LOCAL-00014" summary="Quite el atributo ataque de la clase Mounstritos y modifiqueel metodo abstracto del ataque, ya que ahora regrese un nuevo damage y este lo pueden usar como nuevo ataque default">
-      <option name="closed" value="true" />
-      <created>1715889169418</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1715889169418</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,7 +179,6 @@
     <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
     <MESSAGE value="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
     <MESSAGE value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
-    <MESSAGE value="Quite el atributo ataque de la clase Mounstritos y modifiqueel metodo abstracto del ataque, ya que ahora regrese un nuevo damage y este lo pueden usar como nuevo ataque default" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quite el atributo ataque de la clase Mounstritos y modifiqueel metodo abstracto del ataque, ya que ahora regrese un nuevo damage y este lo pueden usar como nuevo ataque default" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
   </component>
 </project>

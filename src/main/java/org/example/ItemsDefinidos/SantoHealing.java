@@ -18,7 +18,7 @@ public class SantoHealing extends Items {
             }
 
         }catch(Exception e){
-
+            System.out.println("Algo ocurrio mal con el healing");
         }
     }
 }

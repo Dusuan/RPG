@@ -1,8 +1,10 @@
 package org.example;
 
-public class Items {
+public abstract class Items {
+    protected String nombre;
 
-    private String nombre;
-
-
+    public Items(String nombre){
+        this.nombre = nombre;
+    }
+    public abstract void UsarItem(Jugador jugadorAplicando, Jugador jugadorRecibiendo);
 }

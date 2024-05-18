@@ -1,5 +1,7 @@
 package org.example;
 import java.util.Random;
+
+import listas.NodoDE;
 import movimientos.*;
 import pokemones.Mounstritos;
 public class Duelo {
@@ -445,5 +447,41 @@ public class Duelo {
             System.out.println("Ocurrio un error relacionado con el cambio de pokemon");
         }
     }
+
+
+    public void UsarITEMJugador1(int pos) {
+        try{
+        Items item = jugador1.getObjetos().obtener(pos);
+        item.UsarItem(jugador1,jugador2);
+    }catch(Exception e){
+            System.out.println("Error en UsarITEMJugador1");
+        }
+    }
+
+    // basicamente reduce la cantidad de vida entre dos (la actual, no la max) y posteriormente multiplica por 1.5 todos los ataques del pokemon
+//    public void BerserkPotion(Jugador jugadorAfectado, Jugador jugador2, int pos){ // ya lo hice en la clase Berserk
+//      try{
+//       Mounstritos Afectado =  jugadorAfectado.getListaMounstritos().obtener(pos);
+//
+//       Afectado.setHP(Afectado.getHP() / 2);
+//
+//       for(int i = 0 ; i<Afectado.getAtaques().size(); i++) {
+//           Movimientos Ataque = Afectado.getAtaques().obtener(i);
+//           if(Ataque instanceof Ataques){
+//               ((Ataques) Ataque).setDamage(((Ataques) Ataque).getDamage() * 1.5F);
+//           }
+//       }
+//      }catch(Exception e){
+//          System.out.println("Error de obtener lista");
+//      }
+//    }
+
+    public void Remolino(){}
+    public void VidaVoodoo(){}
+    public void SantoHealing(){}
+    public void TotemRevivir(){}
+
+
 }
+
 

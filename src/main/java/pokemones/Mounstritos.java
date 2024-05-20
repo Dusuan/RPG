@@ -9,7 +9,6 @@ public abstract class Mounstritos {
     protected String name;
     protected double HP;
     protected double maxHP;
-    protected int Ulti;
     protected ListaDE<Movimientos> ataques;
     protected int ultimate;
     protected int defense;

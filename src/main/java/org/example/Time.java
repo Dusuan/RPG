@@ -7,6 +7,7 @@ public class Time implements Runnable{
     private long sleepTime; //Creo que estaria bien que fuera de 30 segundos o menos
     private Jugador actualPlayer;
     private boolean movimientoRealizado;
+
     public Time(Jugador player1,Jugador player2,long sleepTime){ // Constructor para crear el tiempo de juego del jugador
         this.player1 = player1;
         this.sleepTime = sleepTime;
@@ -18,16 +19,20 @@ public class Time implements Runnable{
     public void run() {
             try {
                 Thread.sleep(sleepTime);
-                if(!movimientoRealizado){
-                    changeTurno(); // Cambia de turno automaticamente si no hizo nada
-                }
-                else{
-                    movimientoRealizado = false;// Se reinicia el hilo
-                    actualPlayer = player2;
+                synchronized (this) {
+                    if (!movimientoRealizado) {
+                        changeTurno(); // Cambia de turno automaticamente si no hizo nada
+                    } else {
+                        movimientoRealizado = false;// Se reinicia el hilo
+                        actualPlayer = player2;
+                    }
+
                 }
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
+
+
     }
 
     public void hizoMovimiento(){ // Este metodo sirve para poner que si ya se hizo el movimiento, aunque no se si se podra implmenetar bien,CHECK

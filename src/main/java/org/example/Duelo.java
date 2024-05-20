@@ -1,5 +1,7 @@
 package org.example;
+import java.io.*;
 import java.util.Random;
+import java.util.logging.Logger;
 
 import listas.NodoDE;
 import movimientos.*;
@@ -452,35 +454,54 @@ public class Duelo {
     public void UsarITEMJugador1(int pos) {
         try{
         Items item = jugador1.getObjetos().obtener(pos);
-        item.UsarItem(jugador1,jugador2);
-    }catch(Exception e){
+        if(item.isUsado()){
+            System.out.println("El item ya ha sido usado");
+        }
+        else {
+            item.UsarItem(jugador1, jugador2);
+        }
+        }catch(Exception e){
+            System.out.println("Error en UsarITEMJugador1");
+        }
+    }
+    public void UsarITEMJugador2(int pos) {
+        try{
+            Items item = jugador2.getObjetos().obtener(pos);
+            if(item.isUsado()){
+                System.out.println("El item ya ha sido usado");
+            }
+            else {
+                item.UsarItem(jugador2, jugador1);
+            }
+        }catch(Exception e){
             System.out.println("Error en UsarITEMJugador1");
         }
     }
 
-    // basicamente reduce la cantidad de vida entre dos (la actual, no la max) y posteriormente multiplica por 1.5 todos los ataques del pokemon
-//    public void BerserkPotion(Jugador jugadorAfectado, Jugador jugador2, int pos){ // ya lo hice en la clase Berserk
-//      try{
-//       Mounstritos Afectado =  jugadorAfectado.getListaMounstritos().obtener(pos);
-//
-//       Afectado.setHP(Afectado.getHP() / 2);
-//
-//       for(int i = 0 ; i<Afectado.getAtaques().size(); i++) {
-//           Movimientos Ataque = Afectado.getAtaques().obtener(i);
-//           if(Ataque instanceof Ataques){
-//               ((Ataques) Ataque).setDamage(((Ataques) Ataque).getDamage() * 1.5F);
-//           }
-//       }
-//      }catch(Exception e){
-//          System.out.println("Error de obtener lista");
-//      }
-//    }
 
-    public void Remolino(){}
-    public void VidaVoodoo(){}
-    public void SantoHealing(){}
-    public void TotemRevivir(){}
+    public void Logger(String LOG, String DireccionArchivo) {
+        try { // toma un archivo y escribe en el lo que se meta en el log
+            BufferedWriter writer = new BufferedWriter(new FileWriter(DireccionArchivo));
+            writer.write(LOG);
+            writer.close();
+        } catch (IOException ex) {
+            System.out.println("NO se logeo bien papu");
+        }
+    }
 
+    public static void LeerArchivo(String DireccionArchivo)
+    {
+        try { // para leer el log en tiempo real
+            BufferedReader reader = new BufferedReader(new FileReader(DireccionArchivo));
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                System.out.println(linea);
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
 

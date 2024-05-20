@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Implemente Polimorfismo para los items e hice los metodos de SantoHealing y Berserk">
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Termine LifeTotem y VidaVoodoo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Items.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Items.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/Berserk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/Berserk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/LifeTotem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/LifeTotem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/SantoHealing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/SantoHealing.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/Tornado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/Tornado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/VidaVoodo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/VidaVoodo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715996499753</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Termine LifeTotem y VidaVoodoo">
+      <option name="closed" value="true" />
+      <created>1716001670783</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716001670783</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -114,19 +126,20 @@
     <MESSAGE value="movimientos" />
     <MESSAGE value="Duelos: agregue accion de atacar, para que quite vida" />
     <MESSAGE value="Implemente Polimorfismo para los items e hice los metodos de SantoHealing y Berserk" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemente Polimorfismo para los items e hice los metodos de SantoHealing y Berserk" />
+    <MESSAGE value="Termine LifeTotem y VidaVoodoo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Termine LifeTotem y VidaVoodoo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>44</line>
+          <line>46</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/ItemsDefinidos/SantoHealing.java</url>
-          <line>10</line>
+          <line>8</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

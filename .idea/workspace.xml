@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Ya inicialice las debilidades">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/Mounstritos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/Mounstritos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoAgua.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoAgua.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoAire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoAire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoFuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoFuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoPlanta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoPlanta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/tipoRoca.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/tipoRoca.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +28,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Emiliano0X1&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6b1b605e-de57-46b9-9c78-b0f391bf4677" />
+        <option name="url" value="https://github.com/Dusuan/RPG.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -189,5 +212,20 @@
     <MESSAGE value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
     <MESSAGE value="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
     <option name="LAST_COMMIT_MESSAGE" value="El accuracy esta completo. POr cada movimiento, menos el default, se checa el accuracy de cada movimiento, y con un random generator, se crea un numero del 0 al 99, y si este numero es mayor que el acurracy, no se hace el evento." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>14</line>
+          <properties class="org.example.Main" method="MousntritosMatch">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

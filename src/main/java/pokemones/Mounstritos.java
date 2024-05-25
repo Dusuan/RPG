@@ -3,6 +3,10 @@ package pokemones;
 import listas.ListaDE;
 import movimientos.Movimientos;
 
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
+
 public abstract class Mounstritos {
     protected String[] Debilidades;
     protected String sprite;
@@ -16,19 +20,40 @@ public abstract class Mounstritos {
     private boolean buffActivado;
     private boolean debuffActivado;
 
-    public Mounstritos(String name, double HP,double maxHP, ListaDE<Movimientos> ataques,int ultimate, int defense,String sprite,boolean vivo, String [] debilidades) {
+    public Mounstritos(String name, double HP,double maxHP, ListaDE<Movimientos> movimientosTotales,int ultimate, int defense,String sprite,boolean vivo) throws Exception {
         this.name = name;
         this.HP = maxHP;
         this.maxHP = maxHP;
-        this.ataques = ataques;
+        this.ataques = new ListaDE<>(); // lo inicializo como una lista vacia
         this.defense = defense;
         this.sprite = sprite;
         this.vivo = vivo;
-        this.Debilidades = debilidades;
+        this.Debilidades = setDebilidades(); // Asi queda inicializado dependiendo de cada tipaje
         this.buffActivado = false;
         this.debuffActivado = false;
         this.ultimate = ultimate;
+
+        // Metodo para conseguir los movimientos al azar y sin duplicados por mousntrito
+
+        Random random = new Random();
+        Set<Integer> movSelecccionado = new HashSet<>(); // Cree un nuevo Hash Set para guardar los indices
+
+            while(ataques.size() < 4){ // Lo puse en 4 en lo mientras, aunque no se si el buff va a estar de afuerzas en los 4 movimientos
+            if (movimientosTotales.empty()) {
+                break;
+            }
+
+                int index = random.nextInt(movimientosTotales.size()); // se busca el index al azar dependiendo del tamaño de la lista
+
+            if(!movSelecccionado.contains(index)){
+                 ataques.adicionar(movimientosTotales.obtener(index));// al final se añade el ataque o healing encontrado al Mousntrito
+                    movSelecccionado.add(index);
+            }
+
+        }
+
     }
+
 
     public String getDebilidades1() {
         return Debilidades[0];
@@ -37,9 +62,7 @@ public abstract class Mounstritos {
         return Debilidades[1];
     }
 
-    public void setDebilidades(String[] debilidades) {
-        Debilidades = debilidades;
-    }
+    public abstract String[] setDebilidades(); // Implemente un metodo abstracto ya que no se inicializaba bien con lo pasada porque aun me pedia las debilidades como parametro y para quitarlo no se podia
 
     public String getName() {
         return name;

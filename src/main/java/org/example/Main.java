@@ -65,7 +65,7 @@ public class Main {
         Movimientos num12 = new Ataques("Planta", "Lanza-Guisantes", 75, 5, 40);
         Movimientos num13 = new Ataques("Planta", "Cacahuete", 15, 1, 280);
         Movimientos num14 = new Ataques("Agua", "Chorros Chorreantes", 65, 4, 60);
-        Movimientos num15 = new Ataques("Roca", "Who is in Paris?", 10, 1, 550);
+        Movimientos num15 = new Ataques("Roca", "Paris blast", 10, 1, 550);
 
         Movimientos num16 = new Ataques("Roca", "Backend in JS", 50, 3, 100);
         Movimientos num17 = new Ataques("Aire", "Aniversario Volaris", 20, 3, 95);
@@ -138,20 +138,20 @@ public class Main {
 
         //Mousntritos
 
-        Mounstritos mon1 = new tipoFuego("Andy Hot",200,200,movimientosPlayers,500,200,"No definido",true);
+        Mounstritos mon1 = new tipoFuego("Andy Chad",200,200,movimientosPlayers,500,200,"No definido",true);
         Mounstritos mon2 = new tipoRoca("Many Dormilon",500,500,movimientosPlayers,100,50,"No definido",true);
         Mounstritos mon3 = new tipoAgua("Pepino White",300,350,movimientosPlayers,200,75,"No definido",true);
         Mounstritos mon4 = new tipoAire("Blind Guy",250,250,movimientosPlayers,175,100,"No definido",true);
-        Mounstritos mon5 = new tipoFuego("Sex Guy",300,350,movimientosPlayers,350,50,"No definido",true);
+        Mounstritos mon5 = new tipoFuego("Huh Guy",300,350,movimientosPlayers,350,50,"No definido",true);
 
-        Mounstritos mon6 = new tipoPlanta("White Igga",200,200,movimientosPlayers,300,150,"No definido",true);
+        Mounstritos mon6 = new tipoPlanta("White Bro",200,200,movimientosPlayers,300,150,"No definido",true);
         Mounstritos mon7 = new tipoAire("Helicopter",400,400,movimientosPlayers,400,20,"No definido",true);
         Mounstritos mon8 = new tipoRoca("Juan",450,450,movimientosPlayers,90,50,"No definido",true);
         Mounstritos mon9 = new tipoRoca("Omni-Man",350,350,movimientosPlayers,400,25,"No definido",true);
         Mounstritos mon10 = new tipoPlanta("Pepina",200,200,movimientosPlayers,200,100,"No definido",true);
 
         Mounstritos mon11 = new tipoAgua("Te Falta Alcohol",350,350,movimientosPlayers,1000,300,"No definido",true);
-        Mounstritos mon12 = new tipoFuego("No quema Cu",250,250,movimientosPlayers,350,120,"No definido",true);
+        Mounstritos mon12 = new tipoFuego("No quema Cuh",250,250,movimientosPlayers,350,120,"No definido",true);
         Mounstritos mon13 = new tipoFuego("Kenny",1,1,movimientosPlayers,300,100,"No definido",true);
         Mounstritos mon14 = new tipoPlanta("Uwu",200,200,movimientosPlayers,275,150,"No definido",true);
         Mounstritos mon15 = new tipoAgua("NPC AVERAGE",150,250,movimientosPlayers,325,250,"No definido",true);
@@ -163,7 +163,7 @@ public class Main {
         Mounstritos mon20 = new tipoPlanta("NPC",150,150,movimientosPlayers,200,75,"No definido",true);
 
         Mounstritos mon21= new tipoAire("OMG",300,300,movimientosPlayers,300,175,"No definido",true);
-        Mounstritos mon22= new tipoRoca("KikeKum",500,500,movimientosPlayers,200,20,"No definido",true);
+        Mounstritos mon22= new tipoRoca("KikeKun",500,500,movimientosPlayers,200,20,"No definido",true);
         Mounstritos mon23 = new tipoPlanta("Eric-Chan",80,80,movimientosPlayers,150,300,"No definido",true);
         Mounstritos mon24= new tipoAgua("Tucan",50,50,movimientosPlayers,666,205,"No definido",true);
         Mounstritos mon25 = new tipoRoca("Little Demon",50,200,movimientosPlayers,777,50,"No definido",true);

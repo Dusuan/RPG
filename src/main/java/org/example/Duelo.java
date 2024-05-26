@@ -42,6 +42,8 @@ public class Duelo {
     }
 
 
+    String LOGMSSG = "";
+
     // funciones del Pokemon 1
     public Movimientos ataquePokemon1(int ataque, int pokemon1)
     {
@@ -137,6 +139,12 @@ public class Duelo {
         double attack=((Ataques) ataquePokemon2(ataque, pokemon2)).getDamage() * pokemonJugador1(pokemon1).getMaxHP();
         return attack;
     }
+
+
+
+
+
+
 
     public void movimientoPLayer1(int ataque, int pokemon1, int pokemon2)
     {
@@ -237,6 +245,7 @@ public class Duelo {
                     int randomIntInRange = random.nextInt(100);
                     if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
                     {
+
                         pokemonJugador1(pokemon1).setBuffActivado(true);
                         pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()*2);
                     }
@@ -251,6 +260,8 @@ public class Duelo {
                     int randomIntInRange = random.nextInt(100);
                     if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
                     {
+                        LOGMSSG = pokemonJugador1(pokemon1).getName()+" de "+jugador1.getNombre() + " ha reducido la defensa de "+ pokemonJugador2(pokemon2).getName() + " a la mitad!" ;
+                        LOGMSSG = "";
                         pokemonJugador2(pokemon2).setBuffActivado(true);
                         pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()/2);
                     }
@@ -261,6 +272,10 @@ public class Duelo {
             else if(ataquePokemon1(ataque, pokemon1) instanceof Default)
             {
                 pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage() );
+
+                LOGMSSG = pokemonJugador1(pokemon1).getName() + " de " + jugador1.getNombre() + " ha hecho "+((Default) ataquePokemon1(ataque, pokemon1)).getDamage() +" de daño al mounstrito "+pokemonJugador2(pokemon2).getName();
+                LOGMSSG = "";
+
                 //checar si sigue vivo el pokemon
                 if (pokemonJugador2(pokemon2).getHP() <= 0)
                 {
@@ -420,9 +435,18 @@ public class Duelo {
         }
     }
 
+
+
+
+    // hay logmssg
+
     public void Ulti2(int pokemon1, int pokemon2)
     {
         pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() - pokemonJugador2(pokemon2).getUltimate());
+
+        LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha usado su Ultimate!";
+        LOGMSSG = "";
+
         //checar si sigue vivo el pokemon
         if (pokemonJugador1(pokemon1).getHP() <= 0)
         {
@@ -432,6 +456,10 @@ public class Duelo {
     public void Ulti1(int pokemon1, int pokemon2)
     {
         pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - pokemonJugador1(pokemon1).getUltimate());
+
+        LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha usado su Ultimate!";
+        LOGMSSG = "";
+
         //checar si sigue vivo el pokemon
         if (pokemonJugador1(pokemon2).getHP() <= 0)
         {
@@ -439,6 +467,9 @@ public class Duelo {
         }
     }
 
+
+
+    // hay logmssg
     public void cambioPoke1(int poke)
     {
         try
@@ -448,6 +479,8 @@ public class Duelo {
                 jugador1
                         .getListaMounstritos()
                         .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
+                LOGMSSG = jugador1.getNombre()+" ha cambiado "+jugador1.getListaMounstritos().obtener(0).getName()+ " por "+jugador1.getListaMounstritos().obtener(poke).getName();
+                LOGMSSG = "";
             }
             else
             {
@@ -460,6 +493,8 @@ public class Duelo {
         }
     }
 
+
+    // hay logmssg
     public void cambioPoke2(int poke)
     {
         try
@@ -468,7 +503,12 @@ public class Duelo {
             {
                 jugador2
                         .getListaMounstritos()
-                        .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
+                        .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar!
+                        LOGMSSG = jugador2.getNombre()+" ha cambiado "+jugador2.getListaMounstritos().obtener(0).getName()+ " por "+jugador2.getListaMounstritos().obtener(poke).getName();
+
+                        LOGMSSG = " ";
+
+
             }
             else
             {
@@ -481,8 +521,8 @@ public class Duelo {
         }
     }
 
-
-    public void UsarITEMJugador1(int pos) {
+ // ya hay logmssg en los dos items
+    public void UsarITEMJugador1(int pos) { // dentro de usar item ya estan los logs
         try{
         Items item = jugador1.getObjetos().obtener(pos);
         if(item.isUsado()){
@@ -495,7 +535,7 @@ public class Duelo {
             System.out.println("Error en UsarITEMJugador1");
         }
     }
-    public void UsarITEMJugador2(int pos) {
+    public void UsarITEMJugador2(int pos) { // dentro de el metodo usar item ya estan los logs
         try{
             Items item = jugador2.getObjetos().obtener(pos);
             if(item.isUsado()){

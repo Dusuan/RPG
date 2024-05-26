@@ -271,13 +271,12 @@ public class Duelo {
                         pokemonJugador1(pokemon1).setBuffActivado(true);
                         pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()*2);
                     }
-                    LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!" ;
-                    LOGMSSG = "";
+                    else{
+                        LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
+                        LOGMSSG = "";
+                    }
                     ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
-                }
-                else{
-                    LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
-                    LOGMSSG = "";
+
                 }
             }
             //Debuff
@@ -356,11 +355,19 @@ public class Duelo {
                             pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - DamageDefense2(ataque, pokemon1, pokemon2));
                             double extraDamage = (attack2(ataque,pokemon1,pokemon2) * .5);
                             pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() - (DamageDefense2(ataque, pokemon1, pokemon2)+extraDamage));
+
+                            LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha usado " + ataquePokemon2(ataque, pokemon2).getNombre()+ " en " + pokemonJugador1(pokemon1).getName() + " causando " + ((Ataques) ataquePokemon2(ataque,pokemon2)).getDamage()+ " de daño!";
+                            LOGMSSG = "Ataque super efectivo!";
+                            LOGMSSG = "";
+
+
                         }
                         else
                         {
                             //Primero consigo la vida del pokemno activo del jugador 2, del ataque consigo el daño que hace, Multiplico el daño por la vida del pokemon, para que me de un porcentaje
                             pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - DamageDefense2(ataque, pokemon1, pokemon2));
+                            LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha usado " + ataquePokemon2(ataque, pokemon2).getNombre()+ " en " + pokemonJugador1(pokemon1).getName() + " causando " + ((Ataques) ataquePokemon2(ataque,pokemon2)).getDamage()+ " de daño!";
+                            LOGMSSG = "";
                         }
                         //devolver el damage y el escudo a la normalidad despues de un buff
                         if(pokemonJugador2(pokemon2).isBuffActivado())
@@ -387,6 +394,10 @@ public class Duelo {
                         }
                         ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
                     }
+                    else{
+                        LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha fallado!";
+                        LOGMSSG = "";
+                    }
                 }
 
 
@@ -410,8 +421,14 @@ public class Duelo {
                                 pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getMaxHP());
                             }
                         }
-                        ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
+                        LOGMSSG = pokemonJugador2(pokemon2).getName() + " se ha curado una cantidad de "+((Healing) ataquePokemon2(ataque, pokemon2)).getHeal()+ " de vida";
+                        LOGMSSG = "";
                     }
+                    else{
+                        LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha fallado!";
+                        LOGMSSG = "";
+                    }
+                    ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
                 }
 
 
@@ -424,10 +441,17 @@ public class Duelo {
                     int randomIntInRange = random.nextInt(100);
                     if(ataquePokemon2(ataque, pokemon2).getAccuracy()>randomIntInRange)
                     {
+                        LOGMSSG = pokemonJugador2(pokemon2).getName()+" de "+jugador2.getNombre() + " ha aumentado su defensa el doble!" ;
+                        LOGMSSG = "";
                         pokemonJugador2(pokemon2).setBuffActivado(true);
                         pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()*2);
                     }
+                    else{
+                        LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
+                        LOGMSSG = "";
+                    }
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
+
                 }
             }
             //Debuff
@@ -438,8 +462,14 @@ public class Duelo {
                     int randomIntInRange = random.nextInt(100);
                     if(ataquePokemon2(ataque, pokemon2).getAccuracy()>randomIntInRange)
                     {
+                        LOGMSSG = pokemonJugador2(pokemon2).getName()+" de "+jugador2.getNombre() + " ha reducido la defensa de "+ pokemonJugador1(pokemon1).getName() + " a la mitad!" ;
+                        LOGMSSG = "";
                         pokemonJugador1(pokemon1).setBuffActivado(true);
                         pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()/2);
+                    }
+                    else{
+                        LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha fallado!";
+                        LOGMSSG = "";
                     }
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
                 }
@@ -448,6 +478,9 @@ public class Duelo {
             else if(ataquePokemon2(ataque, pokemon2) instanceof Default)
             {
                 pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - ((Default) ataquePokemon2(ataque, pokemon2)).getDamage());
+                LOGMSSG = pokemonJugador2(pokemon2).getName() + " de " + jugador2.getNombre() + " ha hecho "+((Default) ataquePokemon2(ataque, pokemon2)).getDamage() +" de daño al mounstrito "+pokemonJugador1(pokemon1).getName();
+                LOGMSSG = "";
+
                 //checar si sigue vivo el pokemon
                 if (pokemonJugador1(pokemon1).getHP() <= 0)
                 {

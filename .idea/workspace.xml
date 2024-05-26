@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Algunos logs y el mas importante de player 1">
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
     </list>
@@ -228,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716761262419</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere">
+      <option name="closed" value="true" />
+      <created>1716762461069</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1716762461069</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,26 +268,12 @@
     <MESSAGE value="Cree los log messages de los items ez win" />
     <MESSAGE value="Comenze con los logs de el duelo, me faltan gran parte de los ataques" />
     <MESSAGE value="Algunos logs y el mas importante de player 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Algunos logs y el mas importante de player 1" />
+    <MESSAGE value="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>136</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>149</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
           <line>77</line>

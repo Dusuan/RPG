@@ -213,6 +213,8 @@ public class Duelo {
                         //checar si sigue vivo el pokemon
                         if (pokemonJugador2(pokemon2).getHP() <= 0)
                         {
+                            LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                            LOGMSSG = "";
                             pokemonJugador2(pokemon2).setVivo(false);
                         }
                         ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
@@ -310,6 +312,8 @@ public class Duelo {
                 //checar si sigue vivo el pokemon
                 if (pokemonJugador2(pokemon2).getHP() <= 0)
                 {
+                    LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                    LOGMSSG = "";
                     pokemonJugador2(pokemon2).setVivo(false);
                 }
             }
@@ -390,6 +394,8 @@ public class Duelo {
                         //checar si sigue vivo el pokemon
                         if (pokemonJugador1(pokemon1).getHP() <= 0)
                         {
+                            LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                            LOGMSSG = "";
                             pokemonJugador1(pokemon1).setVivo(false);
                         }
                         ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
@@ -484,6 +490,8 @@ public class Duelo {
                 //checar si sigue vivo el pokemon
                 if (pokemonJugador1(pokemon1).getHP() <= 0)
                 {
+                    LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                    LOGMSSG = "";
                     pokemonJugador1(pokemon1).setVivo(false);
                 }
             }
@@ -515,6 +523,8 @@ public class Duelo {
         //checar si sigue vivo el pokemon
         if (pokemonJugador1(pokemon1).getHP() <= 0)
         {
+            LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+            LOGMSSG = "";
             pokemonJugador1(pokemon1).setVivo(false);
         }
     }
@@ -528,6 +538,8 @@ public class Duelo {
         //checar si sigue vivo el pokemon
         if (pokemonJugador1(pokemon2).getHP() <= 0)
         {
+            LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+            LOGMSSG = "";
             pokemonJugador2(pokemon2).setVivo(false);
         }
     }

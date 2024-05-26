@@ -2,7 +2,8 @@ package org.example;
 
 import listas.ListaDE;
 import movimientos.*;
-import org.example.ItemsDefinidos.Berserk;
+import org.example.ItemsDefinidos.*;
+
 import pokemones.*;
 
 import java.util.HashSet;
@@ -205,19 +206,32 @@ public class Main {
 
 
         //Falta completar los Items
-        ListaDE<Items> items = new ListaDE<>();
-        Items ite1 = new Berserk("Bersi",false);
+        Items item1 = new Berserk("Berserk",false);
+        Items item2 = new LifeTotem("LifeTotem",false);
+        Items item3 = new SantoHealing("SantoHealing",false);
+        Items item4 = new Tornado("Tornado",false);
+        Items item5 = new VidaVoodo("VidaVoodo",false);
 
-        items.adicionar(ite1);
+        ListaDE<Items> Itemstotales = new ListaDE<>();
 
-        Jugador player1 = new Jugador("NPC",mons1,items); // Esta es como una version beta de la creacion de jugadores
-        Jugador player2 = new Jugador("NPC 2",mons2,items);
+        Itemstotales.adicionar(item1);
+        Itemstotales.adicionar(item2);
+        Itemstotales.adicionar(item3);
+        Itemstotales.adicionar(item4);
+        Itemstotales.adicionar(item5);
+
+
+
+
+
+        Jugador player1 = new Jugador("NPC",mons1, Itemstotales); // Esta es como una version beta de la creacion de jugadores
+        Jugador player2 = new Jugador("NPC 2",mons2, Itemstotales);
 
         // Para debugear y ver que si se estan guardando bien los ataques y los pokemones
         int opcion = 0;
         do{
 
-            System.out.println("Ingresa una opcion : [1] Ver Datos de los Pokemones del Player 1, [2] Ver Datos de los Pokemones del Player 2,[3] Salir");
+            System.out.println("Ingresa una opcion : [1] Ver Datos de los Pokemones del Player 1, [2] Ver Datos de los Pokemones del Player 2,[3] Objetos jugador 1,[4] Objetos jugador 2,[5] Salir");
             opcion = sc.nextInt();
             switch (opcion) {
                 case 1:
@@ -275,9 +289,19 @@ public class Main {
 
                     break;
 
+                case 3:
+                    for(int i = 0 ; i<player1.getObjetos().size(); i++){
+                        System.out.println("Movimiento "+i+": "+player1.getObjetos().obtener(i).getNombre());
+                    }
+                    break;
+                    case 4:
+                        for(int i = 0 ; i<player2.getObjetos().size(); i++){
+                            System.out.println("Movimiento "+i+": "+player2.getObjetos().obtener(i).getNombre());
+                        }
+                   break;
             }
 
-        }while(opcion != 3);
+        }while(opcion != 5);
 
 
 

@@ -38,7 +38,7 @@ public abstract class Mounstritos {
         Random random = new Random();
         Set<Integer> movSelecccionado = new HashSet<>(); // Cree un nuevo Hash Set para guardar los indices
 
-            while(ataques.size() < 4){ // Lo puse en 4 en lo mientras, aunque no se si el buff va a estar de afuerzas en los 4 movimientos
+            while(ataques.size() < 4){ // Lo puse en 4 en lo mientras, aunque no se si el buff va a estar de afuerzas en los 4 movimientos // Juan: no necesariamente
             if (movimientosTotales.empty()) {
                 break;
             }
@@ -47,7 +47,7 @@ public abstract class Mounstritos {
 
             if(!movSelecccionado.contains(index)){
                  ataques.adicionar(movimientosTotales.obtener(index));// al final se añade el ataque o healing encontrado al Mousntrito
-                    movSelecccionado.add(index);
+                 movSelecccionado.add(index);
             }
 
         }

@@ -10,6 +10,7 @@ public class LifeTotem extends Items {
     }
     public void UsarItem(Jugador jugadorAfectado, Jugador jugador2){
 try {
+    String LOGMESSAGE = "";
 if(usado){
     System.out.println("Esta habilidad ya ha sido usada");
 }
@@ -19,11 +20,17 @@ else {
         if (!lol.isVivo()) {
             lol.setHP(lol.getMaxHP());
             usado = true;
+
+            LOGMESSAGE = "El jugador "+jugadorAfectado.getNombre()+" ha revivido a "+lol.getName()+"!";
+
             break;
         }
     }
+    if(!usado){
+        System.out.println("Todos tus pokemones están vivos!");
+    }
+
 }
-    System.out.println("Todos tus pokemones estan vivos!");
 }catch(Exception e){
     System.out.println("Algo ocurrio mal con LifeTotem");
 }

@@ -11,6 +11,9 @@ public class Berserk extends Items {
         super(nombre, usado);
     }
     public void UsarItem(Jugador jugadorAfectado, Jugador jugador2){
+
+        String LOGMESSAGE = "";
+
         try{
             if(usado){
                 System.out.println("Esta habilidad ya ha sido usada");
@@ -26,7 +29,14 @@ public class Berserk extends Items {
                     }
                 }
                 usado = true;
+
+                LOGMESSAGE = "El jugador "+jugadorAfectado.getNombre()+" ha usado Berserk en "+Afectado.getName()+"!";
+
             }
+
+
+
+
         }catch(Exception e){
             System.out.println("Error de obtener lista");
         }

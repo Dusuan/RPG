@@ -9,6 +9,7 @@ public class VidaVoodo extends Items {
     }
     public void UsarItem(Jugador jugadorAfectado, Jugador jugador2){
 try{
+    String LOGMESSAGE = "";
     if(usado){
         System.out.println("Esta habilidad ya ha sido usada");
     }else{
@@ -18,6 +19,10 @@ try{
   jugadorAfectado.getListaMounstritos().obtener(0).setHP(vida2);
   jugador2.getListaMounstritos().obtener(0).setHP(vida1);
   usado = true;
+
+        LOGMESSAGE = "El mounstrito "+ jugadorAfectado.getListaMounstritos().obtener(0)+ " de " +jugadorAfectado.getNombre()+ " ha cambiado su vida por la del mounstrito "+jugador2.getListaMounstritos().obtener(0) + " del jugador "+ jugador2.getNombre() ;
+
+
     }
 }catch(Exception e) {
     System.out.println("Algo ocurrio mal con VidVoodoo");

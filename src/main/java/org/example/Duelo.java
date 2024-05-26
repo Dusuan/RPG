@@ -638,8 +638,7 @@ public class Duelo {
         }
     }
 
-    public static void LeerArchivo(String DireccionArchivo)
-    {
+    public static void LeerArchivo(String DireccionArchivo) {
         try { // para leer el log en tiempo real
             BufferedReader reader = new BufferedReader(new FileReader(DireccionArchivo));
             String linea;

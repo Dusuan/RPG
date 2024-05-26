@@ -510,7 +510,8 @@ public class Duelo {
     }
 
 
-    public void Logger(String LOG, String DireccionArchivo) {
+    public void Logger(String LOG, String DireccionArchivo) { // esta funcion basicamente va a guardar la linea de lo que pase en el momento ocurrir alguna interaccion
+        // creo que lo ideales que cuando se cree una nueva batalla, se guarde un nuevo archivo txt para que no se junten todos los logs.
         try { // toma un archivo y escribe en el lo que se meta en el log
             BufferedWriter writer = new BufferedWriter(new FileWriter(DireccionArchivo));
             writer.write(LOG);

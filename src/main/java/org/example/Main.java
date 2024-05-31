@@ -6,10 +6,7 @@ import org.example.ItemsDefinidos.*;
 
 import pokemones.*;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
@@ -88,8 +85,8 @@ public class Main {
 
         //Buff and Debuff
 
-        Movimientos num31 = new buff("Agua","OMG",50,3);
-        Movimientos num32 = new Debuff("Fuego","Tacos",30,2);
+        Movimientos num31 = new buff("Agua", "OMG", 50, 3);
+        Movimientos num32 = new Debuff("Fuego", "Tacos", 30, 2);
 
         ListaDE<Movimientos> movimientosPlayers = new ListaDE<>();
 
@@ -138,35 +135,35 @@ public class Main {
 
         //Mousntritos
 
-        Mounstritos mon1 = new tipoFuego("Andy Chad",200,200,movimientosPlayers,500,200,"No definido",true);
-        Mounstritos mon2 = new tipoRoca("Many Dormilon",500,500,movimientosPlayers,100,50,"No definido",true);
-        Mounstritos mon3 = new tipoAgua("Pepino White",300,350,movimientosPlayers,200,75,"No definido",true);
-        Mounstritos mon4 = new tipoAire("Blind Guy",250,250,movimientosPlayers,175,100,"No definido",true);
-        Mounstritos mon5 = new tipoFuego("Huh Guy",300,350,movimientosPlayers,350,50,"No definido",true);
+        Mounstritos mon1 = new tipoFuego("Andy Chad", 200, 200, movimientosPlayers, 500, 200, "No definido", true);
+        Mounstritos mon2 = new tipoRoca("Many Dormilon", 500, 500, movimientosPlayers, 100, 50, "No definido", true);
+        Mounstritos mon3 = new tipoAgua("Pepino White", 300, 350, movimientosPlayers, 200, 75, "No definido", true);
+        Mounstritos mon4 = new tipoAire("Blind Guy", 250, 250, movimientosPlayers, 175, 100, "No definido", true);
+        Mounstritos mon5 = new tipoFuego("Huh Guy", 300, 350, movimientosPlayers, 350, 50, "No definido", true);
 
-        Mounstritos mon6 = new tipoPlanta("White Bro",200,200,movimientosPlayers,300,150,"No definido",true);
-        Mounstritos mon7 = new tipoAire("Helicopter",400,400,movimientosPlayers,400,20,"No definido",true);
-        Mounstritos mon8 = new tipoRoca("Juan",450,450,movimientosPlayers,90,50,"No definido",true);
-        Mounstritos mon9 = new tipoRoca("Omni-Man",350,350,movimientosPlayers,400,25,"No definido",true);
-        Mounstritos mon10 = new tipoPlanta("Pepina",200,200,movimientosPlayers,200,100,"No definido",true);
+        Mounstritos mon6 = new tipoPlanta("White Bro", 200, 200, movimientosPlayers, 300, 150, "No definido", true);
+        Mounstritos mon7 = new tipoAire("Helicopter", 400, 400, movimientosPlayers, 400, 20, "No definido", true);
+        Mounstritos mon8 = new tipoRoca("Juan", 450, 450, movimientosPlayers, 90, 50, "No definido", true);
+        Mounstritos mon9 = new tipoRoca("Omni-Man", 350, 350, movimientosPlayers, 400, 25, "No definido", true);
+        Mounstritos mon10 = new tipoPlanta("Pepina", 200, 200, movimientosPlayers, 200, 100, "No definido", true);
 
-        Mounstritos mon11 = new tipoAgua("Te Falta Alcohol",350,350,movimientosPlayers,1000,300,"No definido",true);
-        Mounstritos mon12 = new tipoFuego("No quema Cuh",250,250,movimientosPlayers,350,120,"No definido",true);
-        Mounstritos mon13 = new tipoFuego("Kenny",1,1,movimientosPlayers,300,100,"No definido",true);
-        Mounstritos mon14 = new tipoPlanta("Uwu",200,200,movimientosPlayers,275,150,"No definido",true);
-        Mounstritos mon15 = new tipoAgua("NPC AVERAGE",150,250,movimientosPlayers,325,250,"No definido",true);
+        Mounstritos mon11 = new tipoAgua("Te Falta Alcohol", 350, 350, movimientosPlayers, 1000, 300, "No definido", true);
+        Mounstritos mon12 = new tipoFuego("No quema Cuh", 250, 250, movimientosPlayers, 350, 120, "No definido", true);
+        Mounstritos mon13 = new tipoFuego("Kenny", 1, 1, movimientosPlayers, 300, 100, "No definido", true);
+        Mounstritos mon14 = new tipoPlanta("Uwu", 200, 200, movimientosPlayers, 275, 150, "No definido", true);
+        Mounstritos mon15 = new tipoAgua("NPC AVERAGE", 150, 250, movimientosPlayers, 325, 250, "No definido", true);
 
-        Mounstritos mon16 = new tipoAgua("Frozono",240,240,movimientosPlayers,300,75,"No definido",true);
-        Mounstritos mon17 = new tipoAire("Ting Ling",220,220,movimientosPlayers,250,100,"No definido",true);
-        Mounstritos mon18 = new tipoFuego("Wilson",350,350,movimientosPlayers,450,125,"No definido",true);
-        Mounstritos mon19= new tipoAire("Va a ganar el Cruz Azul we",150,250,movimientosPlayers,250,50,"No definido",true);
-        Mounstritos mon20 = new tipoPlanta("NPC",150,150,movimientosPlayers,200,75,"No definido",true);
+        Mounstritos mon16 = new tipoAgua("Frozono", 240, 240, movimientosPlayers, 300, 75, "No definido", true);
+        Mounstritos mon17 = new tipoAire("Ting Ling", 220, 220, movimientosPlayers, 250, 100, "No definido", true);
+        Mounstritos mon18 = new tipoFuego("Wilson", 350, 350, movimientosPlayers, 450, 125, "No definido", true);
+        Mounstritos mon19 = new tipoAire("Va a ganar el Cruz Azul we", 150, 250, movimientosPlayers, 250, 50, "No definido", true);
+        Mounstritos mon20 = new tipoPlanta("NPC", 150, 150, movimientosPlayers, 200, 75, "No definido", true);
 
-        Mounstritos mon21= new tipoAire("OMG",300,300,movimientosPlayers,300,175,"No definido",true);
-        Mounstritos mon22= new tipoRoca("KikeKun",500,500,movimientosPlayers,200,20,"No definido",true);
-        Mounstritos mon23 = new tipoPlanta("Eric-Chan",80,80,movimientosPlayers,150,300,"No definido",true);
-        Mounstritos mon24= new tipoAgua("Tucan",50,50,movimientosPlayers,666,205,"No definido",true);
-        Mounstritos mon25 = new tipoRoca("Little Demon",50,200,movimientosPlayers,777,50,"No definido",true);
+        Mounstritos mon21 = new tipoAire("OMG", 300, 300, movimientosPlayers, 300, 175, "No definido", true);
+        Mounstritos mon22 = new tipoRoca("KikeKun", 500, 500, movimientosPlayers, 200, 20, "No definido", true);
+        Mounstritos mon23 = new tipoPlanta("Eric-Chan", 80, 80, movimientosPlayers, 150, 300, "No definido", true);
+        Mounstritos mon24 = new tipoAgua("Tucan", 50, 50, movimientosPlayers, 666, 205, "No definido", true);
+        Mounstritos mon25 = new tipoRoca("Little Demon", 50, 200, movimientosPlayers, 777, 50, "No definido", true);
 
         pokemones.adicionar(mon1);
         pokemones.adicionar(mon2);
@@ -202,15 +199,14 @@ public class Main {
         ListaDE<Mounstritos> mons1 = new ListaDE<>();
         ListaDE<Mounstritos> mons2 = new ListaDE<>();
 
-        MousntritosMatch(pokemones,mons1,mons2); // llamamos al metodo
-
+        MousntritosMatch(pokemones, mons1, mons2); // llamamos al metodo
 
         //Falta completar los Items
-        Items item1 = new Berserk("Berserk",false);
-        Items item2 = new LifeTotem("LifeTotem",false);
-        Items item3 = new SantoHealing("SantoHealing",false);
-        Items item4 = new Tornado("Tornado",false);
-        Items item5 = new VidaVoodo("VidaVoodo",false);
+        Items item1 = new Berserk("Berserk", false);
+        Items item2 = new LifeTotem("LifeTotem", false);
+        Items item3 = new SantoHealing("SantoHealing", false);
+        Items item4 = new Tornado("Tornado", false);
+        Items item5 = new VidaVoodo("VidaVoodo", false);
 
         ListaDE<Items> Itemstotales = new ListaDE<>();
 
@@ -221,13 +217,187 @@ public class Main {
         Itemstotales.adicionar(item5);
 
 
+        Jugador player1 = new Jugador("NPC", mons1, Itemstotales); // Esta es como una version beta de la creacion de jugadores
+        Jugador player2 = new Jugador("NPC 2", mons2, Itemstotales);
+
+        Duelo match = new Duelo(1, player1, player2);
+
+
+        //Inicio de Partida // Version Beta
+
+        int cantidadDePokemones1 = match.getJugador1().getListaMounstritos().size();
+        int cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
+        Time time = new Time(match,30000); // Aun ando viendo como implemnetar los hilos, pero creo tener una idea
+
+        int turno = match.getTurno();
+        int opcion = 0;
+        int posicion1 =0; // posicion de la lista de mounstritos
+        int posicion2 = 0;
+
+        do{
+            try {
+                if (turno % 2 != 0) {
+                    System.out.println("Es turno del Jugador Uno: " + match.getJugador1().getNombre() );
+                    System.out.println("Tu Claser es : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                    System.out.println("Selecciona algun movimiento : [0] Movimiento 0 , [1] Movimiento 1 , [2] Movimiento 2, [3] Movimiento 3,[4] Ataque Default , [5] Swap Pokemon" );
+
+                    for(int i = 0;i<match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().size();i++){
+                        System.out.println("Movimiento " + i +  " : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(i).getNombre());
+                        System.out.println("Tipo : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(i).getTipo() );
+                        System.out.println("PP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(i).getPP());
+                        System.out.println("Acuracy : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(i).getAccuracy());
+
+                        if(match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(i) instanceof Ataques) {
+                            double damage = ((Ataques) match.ataquePokemon1(i, posicion1)).getDamage();
+                            System.out.println("Daño de Ataque : " + damage );
+                            System.out.println("--------------------");
+
+                        }
+                        else if(match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(i) instanceof Healing) {
+                            double heal = ((Healing) match.ataquePokemon1(i, posicion1)).getHeal();
+                            System.out.println("Recuperacion de Vida: " + heal );
+                            System.out.println("--------------------");
+                        }
+
+                        else if(match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(i) instanceof Default){
+                            double damage = ((Default) match.ataquePokemon1(i,posicion1)).getDamage();
+                            System.out.println("Daño : " + damage);
+                            System.out.println("--------------------");
+                        }
+
+                        else{
+                            System.out.println("--------------------");
+                        }
+
+                    }
+
+                    System.out.println("Movimiento 5 : Swap Pokemon");
+                    System.out.println("--------------------");
+                    opcion = sc.nextInt();
+
+                    switch (opcion){
+                        case 0:
+                            match.movimientoPLayer1(0,posicion1,posicion2);
+
+                            if(!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()){ // Checa si esta vivo todavia el pokemon rival
+                                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                System.out.println("El Clasher a muerto");
+                                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                                posicion2++;
+                            }
+
+                            turno = match.getTurno() + 1; // se le suma al turno
+
+                            break;
+                        case 1:
+                            match.movimientoPLayer1(1,posicion1,posicion2);
+                            break;
+                        case 2:
+                            match.movimientoPLayer1(2,posicion1,posicion2);
+                            break;
+                        case 3:
+                            match.movimientoPLayer1(3,posicion1,posicion2);
+                            break;
+                        case 4:
+                            match.movimientoPLayer1(4,posicion1,posicion2);
+                            break;
+                        case 5:
+                            System.out.println("Ingresa al nuevo Clasher : " );
+                            int position = sc.nextInt();
 
 
 
-        Jugador player1 = new Jugador("NPC",mons1, Itemstotales); // Esta es como una version beta de la creacion de jugadores
-        Jugador player2 = new Jugador("NPC 2",mons2, Itemstotales);
+                            match.cambioPoke1(position);
+                            break;
+
+                    }
+
+
+                } else {
+
+                    System.out.println("Es turno del Jugador Dos: " + match.getJugador2().getNombre() );
+                    System.out.println("Tu Claser es : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                    System.out.println("Selecciona algun movimiento : [0] Movimiento 0 , [1] Movimiento 1 , [2] Movimiento 2, [3] Movimiento 3,[4] Ataque Default , [5] Swap Pokemon" );
+
+                    for(int i = 0;i<match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().size();i++){
+                        System.out.println("Movimiento " + i +  " : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(i).getNombre());
+                        System.out.println("Tipo : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(i).getTipo() );
+                        System.out.println("PP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(i).getPP());
+                        System.out.println("Acuracy : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(i).getAccuracy());
+
+                        if(match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(i) instanceof Ataques) {
+                            double damage = ((Ataques) match.ataquePokemon2(i, posicion2)).getDamage();
+                            System.out.println("Daño de Ataque : " + damage );
+
+                        }
+                        else if(match.getJugador1().getListaMounstritos().obtener(posicion2).getAtaques().obtener(i) instanceof Healing) {
+                            double heal = ((Healing) match.ataquePokemon1(i, posicion2)).getHeal();
+                            System.out.println("Recuperacion de Vida: " + heal );
+                            System.out.println("--------------------");
+                        }
+
+                        else if(match.getJugador1().getListaMounstritos().obtener(posicion2).getAtaques().obtener(i) instanceof Default){
+                            double damage = ((Default) match.ataquePokemon1(i,posicion2)).getDamage();
+                            System.out.println("Daño : " + damage);
+                            System.out.println("--------------------");
+                        }
+
+                        else{
+                            System.out.println("--------------------");
+                        }
+
+                    }
+
+                    System.out.println("Movimiento 5 : Swap Pokemon");
+                    opcion = sc.nextInt();
+
+                    switch (opcion){
+                        case 1:
+
+                            match.movimientoPLayer2(0,posicion1,posicion2);
+
+                            if(!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()){ // Checa si esta vivo todavia el pokemon rival
+                                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                System.out.println("El Clasher a muerto");
+                                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                                posicion1++;
+                            }
+
+                            turno = match.getTurno() + 1;
+
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+
+                    }
+                }
+
+            }catch(Exception ex){
+                System.out.println("Ocurrio un error inesperado");
+            }
+
+        } while(cantidadDePokemones1 != 0 || cantidadDePokemones2 != 0);
+
+
+
+
+
+
+
+
+
 
         // Para debugear y ver que si se estan guardando bien los ataques y los pokemones
+
+        /*
         int opcion = 0;
         do{
 
@@ -303,7 +473,7 @@ public class Main {
 
         }while(opcion != 5);
 
-
+        */
 
 
     }

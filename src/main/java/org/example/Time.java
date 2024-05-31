@@ -2,19 +2,20 @@ package org.example;
 
 public class Time implements Runnable{
 
-    private Jugador player1;
-    private Jugador player2;
+    private Duelo match;
     private long sleepTime; //Creo que estaria bien que fuera de 30 segundos o menos
     private Jugador actualPlayer;
     private boolean movimientoRealizado;
 
-    public Time(Jugador player1,Jugador player2,long sleepTime){ // Constructor para crear el tiempo de juego del jugador
-        this.player1 = player1;
+    public Time(Duelo match,long sleepTime){ // Constructor para crear el tiempo de juego del jugador
+        this.match = match;
         this.sleepTime = sleepTime;
-        this.actualPlayer = player1; // Se iguala al primer jugador del turno
-        this.player2 = player2;
+        this.actualPlayer =  match.getJugador1() ; // Se iguala al primer jugador del turno
         this.movimientoRealizado = false;
     }
+
+    String LOGMESSAGE = ""; // le implemente logs aqui tambien
+
     @Override
     public void run() {
             try {
@@ -24,7 +25,7 @@ public class Time implements Runnable{
                         changeTurno(); // Cambia de turno automaticamente si no hizo nada
                     } else {
                         movimientoRealizado = false;// Se reinicia el hilo
-                        actualPlayer = player2;
+                        actualPlayer = match.getJugador2();
                     }
 
                 }
@@ -41,16 +42,24 @@ public class Time implements Runnable{
 
     public void changeTurno(){ //Este es el metdod0 que se encarga de cambiar de jugadores
 
+        Jugador player1 = match.getJugador1();
+        Jugador player2 = match.getJugador2();
+
         if(actualPlayer.equals(player1)){
-            System.out.println("El tiempo de " + player1.getNombre() + " a terminado ");
-            System.out.println("Es turno del siguiente jugador");
+
+            LOGMESSAGE = "El tiempo de " + player1.getNombre() + " a terminado"; // Se implementa en los logs
+            LOGMESSAGE = "Es turno del siguiente jugador";
+            LOGMESSAGE = "";
+
             actualPlayer = player2; // se iguala al jugador 2
         }
 
         else if(actualPlayer.equals(player2)){
-            System.out.println("El tiempo de " + player2.getNombre() + "a terminado");
-            System.out.println("Es turno del siguiente jugador");
-            actualPlayer = player1; // se iguala al jugador 1
+
+            LOGMESSAGE = "El tiempo de " + player2.getNombre() + " a terminado";
+            LOGMESSAGE = "Es turno del siguiente jugador";
+            LOGMESSAGE = "";
+            actualPlayer = player1;
         }
         else{
             System.out.println("Aun tienes tiempo");

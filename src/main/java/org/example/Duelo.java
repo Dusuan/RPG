@@ -179,7 +179,7 @@ public class Duelo {
                             pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - (DamageDefense1(ataque, pokemon1, pokemon2)+extraDamage));
 
                             LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha usado " + ataquePokemon1(ataque, pokemon1).getNombre()+ " en " + pokemonJugador2(pokemon2).getName() + " causando " + ((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()+ " de daño!";
-                            LOGMSSG = "Ataque super efectivo!";
+                            LOGMSSG = "Ataque super efectivo! El ataque de " + pokemonJugador1(pokemon1).getName() + " obtuvo " + extraDamage + "mas de daño ";
                             LOGMSSG = "";
                         }
 
@@ -361,7 +361,7 @@ public class Duelo {
                             pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() - (DamageDefense2(ataque, pokemon1, pokemon2)+extraDamage));
 
                             LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha usado " + ataquePokemon2(ataque, pokemon2).getNombre()+ " en " + pokemonJugador1(pokemon1).getName() + " causando " + ((Ataques) ataquePokemon2(ataque,pokemon2)).getDamage()+ " de daño!";
-                            LOGMSSG = "Ataque super efectivo!";
+                            LOGMSSG = "Ataque super efectivo! El ataque de " + pokemonJugador1(pokemon1).getName() + " obtuvo " + extraDamage + "mas de daño ";
                             LOGMSSG = "";
 
 

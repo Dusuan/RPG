@@ -1,6 +1,8 @@
 package pokemones;
 
 import listas.ListaDE;
+import movimientos.Debuff;
+import movimientos.Default;
 import movimientos.Movimientos;
 
 import java.util.HashSet;
@@ -51,6 +53,10 @@ public abstract class Mounstritos {
             }
 
         }
+
+            Movimientos num1 = new Default("Fuego","Atack 3000",99,100); // Aqui se inicializa el default
+
+            ataques.adicionar(num1); // Se añade a la lista de ataques
 
     }
 
@@ -123,7 +129,6 @@ public abstract class Mounstritos {
     public void setBuffActivado(boolean buffActivado) {
         this.buffActivado = buffActivado;
     }
-
 
     public boolean isDebuffActivado() {
         return debuffActivado;

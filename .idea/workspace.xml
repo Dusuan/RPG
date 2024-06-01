@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/movimientos/Default.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/movimientos/Default.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/movimientos/Ataques.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/movimientos/Ataques.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Duelo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pokemones/Mounstritos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pokemones/Mounstritos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +34,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="e50e648e-7259-48ce-bad9-0c8c93b9677d" />
+        <option name="accountId" value="6b1b605e-de57-46b9-9c78-b0f391bf4677" />
         <option name="url" value="https://github.com/Dusuan/RPG.git" />
       </UrlAndAccount>
     </option>
@@ -240,7 +238,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716762461069</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte">
+      <option name="closed" value="true" />
+      <created>1717138627295</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1717138627295</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,7 +279,9 @@
     <MESSAGE value="Comenze con los logs de el duelo, me faltan gran parte de los ataques" />
     <MESSAGE value="Algunos logs y el mas importante de player 1" />
     <MESSAGE value="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere" />
+    <MESSAGE value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd" />
+    <MESSAGE value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -286,6 +294,20 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
+          <line>333</line>
+          <properties class="org.example.Duelo" method="movimientoPLayer2">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>501</line>
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

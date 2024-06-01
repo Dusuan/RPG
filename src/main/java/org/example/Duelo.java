@@ -222,6 +222,7 @@ public class Duelo {
                     else{
                         LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
                         LOGMSSG = "";
+                        ((Ataques)pokemonJugador1(pokemon1).getAtaques().obtener(ataque)).setAtaqueEfectivo(false);
                     }
                 }
             }
@@ -386,10 +387,10 @@ public class Duelo {
                             ((Ataques) ataquePokemon2(ataque,pokemon2)).setDamage(((Ataques) ataquePokemon2(ataque,pokemon2)).getDamage()*2);
                         }
 
-                        if(pokemonJugador1(pokemon1).isDebuffActivado())
+                        if(pokemonJugador2(pokemon2).isDebuffActivado())
                         {
-                            pokemonJugador1(pokemon1).setDebuffActivado(false);
-                            pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()*2);
+                            pokemonJugador2(pokemon1).setDebuffActivado(false);
+                            pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()*2);
                         }
                         //checar si sigue vivo el pokemon
                         if (pokemonJugador1(pokemon1).getHP() <= 0)
@@ -403,13 +404,14 @@ public class Duelo {
                     else{
                         LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha fallado!";
                         LOGMSSG = "";
+                        ((Ataques)pokemonJugador2(pokemon2).getAtaques().obtener(ataque)).setAtaqueEfectivo(false); // Aqui se implemneta el booleano
                     }
                 }
 
 
             }
             //Healing
-            else if (ataquePokemon1(ataque, pokemon1) instanceof Healing)
+            else if (ataquePokemon2(ataque, pokemon1) instanceof Healing)
             {
                 if(ataquePokemon2(ataque,pokemon2).getPP()>0)
                 {

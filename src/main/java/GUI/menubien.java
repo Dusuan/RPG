@@ -27,8 +27,6 @@ import pokemones.*;
 public class menubien extends javax.swing.JFrame {
 
         int bg;
-        int pokeuno;
-        int pokedos;
         jPanelGradient gradientPanel = new jPanelGradient();
         JFrame frame = new JFrame("Menu");
     /**
@@ -367,7 +365,6 @@ public class menubien extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         Duelo duelo = inicializarJuego();
-
         new turnoimpardos(bg, duelo).setVisible(true);
         
                 

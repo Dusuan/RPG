@@ -4,12 +4,14 @@
  */
 package GUI;
 
+import org.example.Duelo;
+
 import java.util.Random;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import javax.swing.ImageIcon;
+import javax.swing.*;
 
 /**
  *
@@ -18,36 +20,29 @@ import javax.swing.ImageIcon;
 public class turnoimpardos extends javax.swing.JFrame {
 
     public int bg;
-    public int pokeuno;
-    public int pokedos;
-    
+    public Duelo duelo;
 
-        Random rand = new Random();
-    Random randos = new Random();
-
-        // Generate random integers in range 0 to 999
-    int unorand = rand.nextInt(23);
-    int dosrand = randos.nextInt(23);
-    
-    public turnoimpardos(int bg, int pokeuno, int pokedos) {
+    public turnoimpardos(int bg, Duelo duelo) {
         initComponents();
         this.bg = bg;
-        this.pokeuno = pokeuno;
-        this.pokedos = pokedos;
+        this.duelo = duelo;
+
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
-        int pokeone = unorand + 1;
-        String pokeunoPath = pokemon(pokeone);
-        pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
-        int poketwo = dosrand + 1;
-        String pokedosPath = pokemon(poketwo);
-        pokedosshow.setIcon(new ImageIcon(pokedosPath));
+        try {
+            String pokeunoPath = pokemon(duelo.getJugador1().getListaMounstritos().obtener(0).getSprite());
+            pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
+            String pokedosPath = pokemon(duelo.getJugador2().getListaMounstritos().obtener(0).getSprite());
+            pokedosshow.setIcon(new ImageIcon(pokedosPath));
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
+                    "ERROR", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
-    public String pokemon(int poke){
-        String img = "";
-        
-        switch (poke) { 
+    public String pokemon(String img){
+     /*   switch (poke) {
                 case 1:
                     img = "andy-cachondo.png";
                     break;
@@ -124,12 +119,16 @@ public class turnoimpardos extends javax.swing.JFrame {
                 default:
                     img = "kikekum.png";
         }
-        
+
+
+      */
+
+
+
         String camino = "src\\main\\resources\\"+img;
         
         return camino;
     }
-    
         public String backgroundChoose(int bg){
     
             String img = "";

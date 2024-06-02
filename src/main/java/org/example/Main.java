@@ -10,6 +10,7 @@ import java.util.*;
 
 public class Main {
 
+
     public static void MousntritosMatch(ListaDE<Mounstritos> mons,ListaDE<Mounstritos> monsPlayer1,ListaDE<Mounstritos> monsPlayer2) throws Exception { // Este es el metodo para seleccionar 4 mounstritos al azar para cada juagdor y que no se repitan
 
         Random random = new Random();

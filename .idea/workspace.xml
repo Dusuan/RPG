@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="ya inicializé la clase duelo en el gui y cambie todas las rutas de las imágenes para que saliera la del primer pokemon">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/menubien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/menubien.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/turnopar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/turnopar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

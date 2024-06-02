@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Implemnete como podria funcionar el utimate y arregle el main paraque se pueda debugear como funciona el juego, aun esta el error de como se resta la vida y el extra damage y todavia falta implementa los buff, los items y los hilos">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/turnoimpardos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/turnoimpardos.java" afterDir="false" />
-    </list>
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Implemnete como podria funcionar el utimate y arregle el main paraque se pueda debugear como funciona el juego, aun esta el error de como se resta la vida y el extra damage y todavia falta implementa los buff, los items y los hilos" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

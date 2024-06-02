@@ -340,7 +340,8 @@ public class Main {
                                                 match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
+                                                cantidadDePokemones2--;
+                                                posicion1 = 0; // Si el pokemon que fue eliminado no es el primero de la lista, se pone por default el primero
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -367,7 +368,8 @@ public class Main {
                                                 match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
+                                                cantidadDePokemones2--;
+                                                posicion2 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -395,7 +397,8 @@ public class Main {
                                                 match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
+                                                cantidadDePokemones2--;
+                                                posicion2 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -423,7 +426,8 @@ public class Main {
                                                 match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
+                                                cantidadDePokemones2--;
+                                                posicion2 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -450,7 +454,8 @@ public class Main {
                                                 match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
+                                                cantidadDePokemones2--;
+                                                posicion2 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -581,7 +586,8 @@ public class Main {
                                                 match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
+                                                cantidadDePokemones1--;
+                                                posicion1= 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -611,7 +617,8 @@ public class Main {
                                                 match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
+                                                cantidadDePokemones1--;
+                                                posicion1 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -640,7 +647,8 @@ public class Main {
                                                 match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
+                                                cantidadDePokemones1--;
+                                                posicion1 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -670,7 +678,8 @@ public class Main {
                                                 match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
+                                                cantidadDePokemones1--;
+                                                posicion1 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");
@@ -697,7 +706,8 @@ public class Main {
                                                 match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                                                 System.out.println("El Clasher a muerto");
                                                 System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
+                                                cantidadDePokemones1--;
+                                                posicion1 = 0;
 
                                             } else {
                                                 System.out.println("Vida del Clasher rival : ");

@@ -2,11 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.uiproyect;
+package GUI;
 
 import java.util.Random;
-import com.mycompany.uiproyect.Uiproyect;
-import com.mycompany.uiproyect.turnoimpardos;
+import GUI.turnoimpardos;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;

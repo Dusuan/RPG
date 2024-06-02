@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Ya quedo la logica de los turnos y el ultimate, y el swap pokemon, aun que todavia tengo que arreglar el caso en que se elimine el actual y regresar al primero de la lista">
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Implemnete como podria funcionar el utimate y arregle el main paraque se pueda debugear como funciona el juego, aun esta el error de como se resta la vida y el extra damage y todavia falta implementa los buff, los items y los hilos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/turnoimpardos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/turnoimpardos.java" afterDir="false" />
@@ -253,15 +253,7 @@
       <option name="project" value="LOCAL" />
       <updated>1717201563826</updated>
     </task>
-    <task id="LOCAL-00024" summary="Ya quedo la logica de los turnos y el ultimate, y el swap pokemon, aun que todavia tengo que arreglar el caso en que se elimine el actual y regresar al primero de la lista">
-      <option name="closed" value="true" />
-      <created>1717295198229</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1717295198230</updated>
-    </task>
-    <option name="localTasksCounter" value="25" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -297,8 +289,7 @@
     <MESSAGE value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd" />
     <MESSAGE value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte" />
     <MESSAGE value="Implemnete como podria funcionar el utimate y arregle el main paraque se pueda debugear como funciona el juego, aun esta el error de como se resta la vida y el extra damage y todavia falta implementa los buff, los items y los hilos" />
-    <MESSAGE value="Ya quedo la logica de los turnos y el ultimate, y el swap pokemon, aun que todavia tengo que arreglar el caso en que se elimine el actual y regresar al primero de la lista" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ya quedo la logica de los turnos y el ultimate, y el swap pokemon, aun que todavia tengo que arreglar el caso en que se elimine el actual y regresar al primero de la lista" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemnete como podria funcionar el utimate y arregle el main paraque se pueda debugear como funciona el juego, aun esta el error de como se resta la vida y el extra damage y todavia falta implementa los buff, los items y los hilos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -308,24 +299,6 @@
           <line>20</line>
           <properties field="pokeuno" class="turnoimpardos" />
           <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>148</line>
-          <properties class="org.example.Duelo" method="movimientoPLayer1">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>333</line>
-          <properties class="org.example.Duelo" method="movimientoPLayer2">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

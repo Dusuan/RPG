@@ -215,7 +215,7 @@ public class menubien extends javax.swing.JFrame {
             Itemstotales.adicionar(item5);
 
             Jugador jugador1 = new Jugador("Primus", mons1, Itemstotales);
-            Jugador jugador2 = new Jugador("Primus", mons2, Itemstotales);
+            Jugador jugador2 = new Jugador("Secundo", mons2, Itemstotales);
 
 
             duelo = new Duelo(0, jugador1, jugador2);

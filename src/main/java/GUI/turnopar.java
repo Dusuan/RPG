@@ -23,9 +23,9 @@ public class turnopar extends javax.swing.JFrame {
     public Duelo duelo;
 
     public turnopar(int bg, Duelo duelo) {
-        initComponents();
         this.bg = bg;
         this.duelo = duelo;
+        initComponents();
 
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
@@ -39,6 +39,7 @@ public class turnopar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
                     "ERROR", JOptionPane.ERROR_MESSAGE);
         }
+
     }
 
     public String pokemon(String img){
@@ -220,44 +221,46 @@ public class turnopar extends javax.swing.JFrame {
 
         Mounstritos poke = null;
         int turno = 0;
-        String nombre1;
-        String nombre2;
-        String nombre3;
-        String nombre4;
+        String nombre1 ="a";
+        String nombre2 ="b";
+        String nombre3 ="c";
+        String nombre4 ="d";
 
-        try {
+
          poke = duelo.getJugador1().getListaMounstritos().obtener(0);
+
          turno = duelo.getTurno();
-}
-catch(Exception e){
-    e.printStackTrace();
-}
+         nombre1 = poke.getAtaques().obtener(0).getNombre();
+         nombre2 = poke.getAtaques().obtener(1).getNombre();
+         nombre3 = poke.getAtaques().obtener(2).getNombre();
+         nombre4 = poke.getAtaques().obtener(3).getNombre();
+
 
 
         jLabel1.setText("TURNO "+turno);
 
-        jButton1.setText("ataque1.1");
+        jButton1.setText(nombre1);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("ataque1.2");
+        jButton2.setText(nombre2);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("ataque1.3");
+        jButton3.setText(nombre3);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("ataque1.4");
+        jButton4.setText(nombre4);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -480,27 +483,37 @@ catch(Exception e){
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // ataque 1
+            duelo.ataquePokemon1(0, 0);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         // ataque 2
+        duelo.ataquePokemon1(1, 0);
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         // ataque 3
+        duelo.ataquePokemon1(2, 0);
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         // ataque 4
+        duelo.ataquePokemon1(3, 0);
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         // cambiar clasher
+
+        // pues otro gui
+
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**

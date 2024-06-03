@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte">
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="creo q pude papu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/menubien.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/menubien.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/GUI/turnopar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/turnopar.java" afterDir="false" />
@@ -265,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717138627295</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="creo q pude papu">
+      <option name="closed" value="true" />
+      <created>1717390641886</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1717390641886</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -300,7 +308,8 @@
     <MESSAGE value="Ya hay logs en los dos movimientos, pero falta poner un log de cuando un pokemon muere" />
     <MESSAGE value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd" />
     <MESSAGE value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambie los atributos de la clase Time para que se adaptara mejor al juego y empece a debugear las partidad y me di cuenta que cuando se hace un ataque y luego se le resta la vida , dan numeros muy grandes, por ejemplo, si hizo 100 de daño, el otro mounstrito spawnea con 20000 de hp xd, esta es la primera parte" />
+    <MESSAGE value="creo q pude papu" />
+    <option name="LAST_COMMIT_MESSAGE" value="creo q pude papu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -322,6 +331,16 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GUI/turnopar.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/GUI/turnopar.java</url>
+          <line>224</line>
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

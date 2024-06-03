@@ -5,6 +5,7 @@
 package GUI;
 
 import org.example.Duelo;
+import pokemones.Mounstritos;
 
 import java.util.Random;
 import java.awt.Color;
@@ -18,7 +19,6 @@ import javax.swing.*;
  * @author Rhamses
  */
 public class turnopar extends javax.swing.JFrame {
-
     public int bg;
     public Duelo duelo;
 
@@ -195,7 +195,7 @@ public class turnopar extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    try {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -218,7 +218,23 @@ public class turnopar extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(770, 570));
 
-        jLabel1.setText("TURNO X");
+        Mounstritos poke = null;
+        int turno = 0;
+        String nombre1;
+        String nombre2;
+        String nombre3;
+        String nombre4;
+
+        try {
+         poke = duelo.getJugador1().getListaMounstritos().obtener(0);
+         turno = duelo.getTurno();
+}
+catch(Exception e){
+    e.printStackTrace();
+}
+
+
+        jLabel1.setText("TURNO "+turno);
 
         jButton1.setText("ataque1.1");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -450,6 +466,10 @@ public class turnopar extends javax.swing.JFrame {
         );
 
         pack();
+    }
+    catch(Exception e ){
+
+    }
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed

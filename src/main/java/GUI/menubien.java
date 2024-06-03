@@ -218,7 +218,7 @@ public class menubien extends javax.swing.JFrame {
             Jugador jugador2 = new Jugador("Primus", mons2, Itemstotales);
 
 
-            duelo = new Duelo(1, jugador1, jugador2);
+            duelo = new Duelo(0, jugador1, jugador2);
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
@@ -365,9 +365,8 @@ public class menubien extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
         Duelo duelo = inicializarJuego();
-        new turnoimpardos(bg, duelo).setVisible(true);
-        
-                
+        new turnopar(bg, duelo).setVisible(true);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="a" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -281,7 +281,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717510379880</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default">
+      <option name="closed" value="true" />
+      <created>1717526295904</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1717526295904</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -319,32 +327,15 @@
     <MESSAGE value="Cambie las cantidades del defense en main, pues estaban muy altos. Estos los pienso como porcentajes y los pongo por debajo de 50" />
     <MESSAGE value="no se" />
     <MESSAGE value="a" />
-    <option name="LAST_COMMIT_MESSAGE" value="a" />
+    <MESSAGE value="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>146</line>
-          <properties class="org.example.Duelo">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>327</line>
-          <properties class="org.example.Duelo">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GUI/turnopar.java</url>
-          <line>264</line>
+          <line>269</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>

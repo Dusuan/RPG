@@ -271,7 +271,6 @@ public class turnopar extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
@@ -405,13 +404,6 @@ public class turnopar extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setText("Usar Ultimate");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
@@ -429,12 +421,9 @@ public class turnopar extends javax.swing.JFrame {
                         .addGap(208, 208, 208)
                         .addComponent(jButton5))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,9 +471,7 @@ public class turnopar extends javax.swing.JFrame {
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(15, 15, 15)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton6)
-                            .addComponent(jButton7))
+                        .addComponent(jButton6)
                         .addGap(6, 6, 6))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(33, 33, 33)
@@ -741,59 +728,6 @@ public class turnopar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-          if(dañoAcumulado2 > 500){ try {
-            // Esta es una posible implemnetacion del ultimate , que depsues de cierto daño acumulado le pregunte al jugador si lo va a usar
-            
-            System.out.println("Ultimate disponible");
-            
-            match.Ulti1(posicion1,posicion2);
-            System.out.println("La ulti fue usada");
-            System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
-            match.setdañoAcumulado2(0); // se reinicia el contador
-              if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                    match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                    System.out.println("El Clasher a muerto");
-                    System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                    cantidadDePokemones1--;
-                    match.setPosicion1(0);
-                    
-                } else {
-                    System.out.println("Vida del Clasher rival : ");
-                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
-                }
-            
-            } catch (Exception ex) {
-                Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        
-        }
-        
-        else{
-            
-            double faltante = 500 - dañoAcumulado2;
-                JOptionPane.showMessageDialog(null, "El ultimate aun no esta disponible" + " Daño Faltante : " + faltante);
-                }
-            
-              if(match.ChecarEquipoVivo(match.getJugador1())) {
-                
-                match.nextTurn(); // se le suma al turno
-                new turnoimpardos(bg, match).setVisible(true);
-                this.dispose();
-                
-            }
-            else {
-                JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
-                  registrarLog("El jugador 2 ha ganado!");
-
-                  new menubien().setVisible(true);
-                this.dispose();
-            }
-               
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -837,7 +771,6 @@ public class turnopar extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

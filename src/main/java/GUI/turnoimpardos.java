@@ -230,6 +230,11 @@ public class turnoimpardos extends javax.swing.JFrame {
         poke2 = new javax.swing.JLayeredPane();
         pokeunoshow = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(770, 570));
@@ -335,22 +340,61 @@ public class turnoimpardos extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Usar Ultimate");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(jLabel2)
                         .addGap(208, 208, 208)
                         .addComponent(jButton5))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1)
+                        .addGap(28, 28, 28)
+                        .addComponent(jButton2)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton3)
+                        .addGap(31, 31, 31)
+                        .addComponent(jButton4))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(31, 31, 31)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton6)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -378,12 +422,20 @@ public class turnoimpardos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 512, Short.MAX_VALUE)
+                        .addGap(512, 512, 512)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jButton5))
-                        .addGap(89, 89, 89)
-                        .addComponent(jButton6)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton6)
+                            .addComponent(jButton7))
                         .addGap(6, 6, 6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -417,7 +469,7 @@ public class turnoimpardos extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 675, Short.MAX_VALUE)
+            .addGap(0, 679, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -438,6 +490,188 @@ public class turnoimpardos extends javax.swing.JFrame {
         // pues otro gui
 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            match.movimientoPLayer1(0, posicion1, posicion2);
+
+            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0) instanceof Ataques) { //
+                damage = ((Ataques) match.ataquePokemon1(0, posicion1)).getDamage();
+
+                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                    dañoAcumulado1 += damage;
+
+                }
+            }
+
+            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                System.out.println("El Clasher a muerto");
+                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                cantidadDePokemones2--;
+                posicion2 = 0;
+
+            } else {
+                System.out.println("Vida del Clasher rival : ");
+                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+            }
+            if(match.ChecarEquipoVivo(match.getJugador2())) {
+                
+                match.nextTurn(); // se le suma al turno
+                
+                new turnopar(bg, match).setVisible(true);
+                this.dispose();
+                
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+                new menubien().setVisible(true);
+                this.dispose();
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        try {                                         
+            // TODO add your handling code here:
+            
+            match.movimientoPLayer1(3, posicion1, posicion2);
+
+            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3) instanceof Ataques) { // Verifica que el movimiento realizado sea un ataque
+                damage = ((Ataques) match.ataquePokemon1(3, posicion1)).getDamage();
+
+                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                    dañoAcumulado1 += damage;
+                }
+
+            }
+            
+            
+            try {
+                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                    System.out.println("El Clasher a muerto");
+                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                    cantidadDePokemones2--;
+                    posicion2 = 0;
+                    
+                } else {
+                    System.out.println("Vida del Clasher rival : ");
+                    System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                    System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+                }
+            } catch (Exception ex) {
+                Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            if(match.ChecarEquipoVivo(match.getJugador2())) {
+                match.nextTurn(); // se le suma al turno
+                
+                new turnopar(bg, match).setVisible(true);
+                this.dispose();
+                
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+                new menubien().setVisible(true);
+                this.dispose();
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            match.movimientoPLayer1(1, posicion1, posicion2);
+
+            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1) instanceof Ataques) { //
+                damage = ((Ataques) match.ataquePokemon1(1, posicion1)).getDamage();
+
+                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                    dañoAcumulado1 += damage;
+                }
+
+            }
+
+            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                System.out.println("El Clasher a muerto");
+                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                cantidadDePokemones2--;
+                posicion2 = 0;
+
+            } else {
+                System.out.println("Vida del Clasher rival : ");
+                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+            }
+            if(match.ChecarEquipoVivo(match.getJugador2())) {
+                match.nextTurn(); // se le suma al turno
+                
+                new turnopar(bg, match).setVisible(true);
+                this.dispose();
+                
+            }  else {
+                JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+                new menubien().setVisible(true);
+                this.dispose();
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            match.movimientoPLayer1(2, posicion1, posicion2);
+            
+            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2) instanceof Ataques) { //
+                damage = ((Ataques) match.ataquePokemon1(2, posicion1)).getDamage();
+
+                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                    dañoAcumulado1 += damage;
+                }
+
+            }
+
+            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                System.out.println("El Clasher a muerto");
+                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                cantidadDePokemones2--;
+                posicion2 = 0;
+
+            } else {
+                System.out.println("Vida del Clasher rival : ");
+                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+            }
+            if(match.ChecarEquipoVivo(match.getJugador2())) {
+                match.nextTurn(); // se le suma al turno
+                
+                new turnopar(bg, match).setVisible(true);
+                this.dispose();
+                
+            }  else {
+                JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+                new menubien().setVisible(true);
+                this.dispose();
+            }
+        } catch (Exception ex) {
+            Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -475,8 +709,13 @@ public class turnoimpardos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;

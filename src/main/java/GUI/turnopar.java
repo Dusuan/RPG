@@ -17,6 +17,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
 
+import static org.example.Duelo.registrarLog;
+
 /**
  *
  * @author Rhamses
@@ -544,6 +546,8 @@ public class turnopar extends javax.swing.JFrame {
             }
             else {
                 JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
+                registrarLog("El jugador 2 ha ganado!");
+
                 new menubien().setVisible(true);
                 this.dispose();
             }
@@ -588,6 +592,8 @@ public class turnopar extends javax.swing.JFrame {
                 
             }  else {
                 JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
+                registrarLog("El jugador 2 ha ganado!");
+
                 new menubien().setVisible(true);
                 this.dispose();
             }
@@ -632,6 +638,8 @@ public class turnopar extends javax.swing.JFrame {
             }
             else {
                 JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
+                registrarLog("El jugador 2 ha ganado!");
+
                 new menubien().setVisible(true);
                 this.dispose();
             }
@@ -679,6 +687,8 @@ public class turnopar extends javax.swing.JFrame {
             }
             else {
                 JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
+                registrarLog("El jugador 2 ha ganado!");
+
                 new menubien().setVisible(true);
                 this.dispose();
             }
@@ -721,7 +731,9 @@ public class turnopar extends javax.swing.JFrame {
             }
             else {
                 JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
-                new menubien().setVisible(true);
+                  registrarLog("El jugador 2 ha ganado!");
+
+                  new menubien().setVisible(true);
                 this.dispose();
             }
                

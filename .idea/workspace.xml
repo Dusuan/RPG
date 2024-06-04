@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="no se" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/turnopar.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/turnopar.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GUI/turnopar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GUI/turnopar.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +277,31 @@
       <option name="project" value="LOCAL" />
       <updated>1717508026017</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="a">
+      <option name="closed" value="true" />
+      <created>1717510379880</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1717510379880</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default">
+      <option name="closed" value="true" />
+      <created>1717526295904</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1717526295904</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default">
+      <option name="closed" value="true" />
+      <created>1717526447446</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1717526447446</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,7 +322,6 @@
     <MESSAGE value="Agregue la funcion de healing" />
     <MESSAGE value="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien" />
     <MESSAGE value="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
-    <MESSAGE value="a" />
     <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
     <MESSAGE value="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
     <MESSAGE value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
@@ -311,32 +338,16 @@
     <MESSAGE value="creo q pude papu" />
     <MESSAGE value="Cambie las cantidades del defense en main, pues estaban muy altos. Estos los pienso como porcentajes y los pongo por debajo de 50" />
     <MESSAGE value="no se" />
-    <option name="LAST_COMMIT_MESSAGE" value="no se" />
+    <MESSAGE value="a" />
+    <MESSAGE value="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregue el ataque dedfautl com un else en todos los movimientos, por si se acaba el pp del movimiento, para que haga el default" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>146</line>
-          <properties class="org.example.Duelo">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/Duelo.java</url>
-          <line>327</line>
-          <properties class="org.example.Duelo">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/GUI/turnopar.java</url>
-          <line>264</line>
+          <line>295</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>

@@ -171,10 +171,6 @@ public class Duelo {
     }
 
 
-
-
-
-
   // ya hay logs de player1
     public void movimientoPLayer1(int ataque, int pokemon1, int pokemon2)
     {
@@ -466,7 +462,6 @@ public class Duelo {
                         ((Ataques)pokemonJugador2(pokemon2).getAtaques().obtener(ataque)).setAtaqueEfectivo(false); // Aqui se implemneta el booleano
                     }
                 }
-
 
             }
             //Healing

@@ -6,6 +6,7 @@ package GUI;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.example.Duelo;
 
 /**
@@ -32,73 +33,30 @@ public class cambiarPokemon extends javax.swing.JFrame {
               
         int size = match.getJugador1().getListaMounstritos().size();  // Get list size
 
-        if (match.getTurno() % 2 != 0) {
+         
+        try{
             
-             for (int i = 0;i < size; i++) {
-                    String clasherName = match.getJugador1().getListaMounstritos().obtener(i).getName();
-                    boolean vivo = match.getJugador1().getListaMounstritos().obtener(i).isVivo();
-                    if (vivo && i == 0) {
-                    jButton1.setText(clasherName);
-                    }
-                     else {
-                     jButton1.setText("No esta disponible");
-                     
-                    }
-                    if(vivo && i == 1){
-                    jButton2.setText(clasherName);
-                            }
-                     else {
-                     jButton2.setText("No esta disponible");
-                    }
-                    if(vivo && i == 2){
-                    jButton3.setText(clasherName);
-                            }
-                     else {
-                     jButton3.setText("No esta disponible");
-                    }
-                   if(vivo && i == 3){
-                    jButton4.setText(clasherName);
-                            }
-                     else {
-                     jButton4.setText("No esta disponible");
-                     
-                   }
-                   
-             }
+            if(match.getTurno() % 2 != 0){
+                
+        jButton1.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+        jButton2.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+        jButton3.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+        jButton4.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+        
+            }
             
-            
-            
-    
-             }       else {
-                    for (int i = 0;i < size; i++) {
-                    String clasherName = match.getJugador2().getListaMounstritos().obtener(i).getName();
-                    if (clasherName != null && i == 0) {
-                    jButton1.setText(clasherName);
-                    }
-                     else {
-                     jButton1.setText("No esta disponible");
-                     
-                    }
-                    if(clasherName != null && i == 1){
-                    jButton2.setText(clasherName);
-                            }
-                     else {
-                     jButton2.setText("No esta disponible");
-                    }
-                    if(clasherName != null && i == 2){
-                    jButton3.setText(clasherName);
-                            }
-                     else {
-                     jButton3.setText("No esta disponible");
-                    }
-                   if(clasherName != null && i == 3){
-                    jButton4.setText(clasherName);
-                            }
-                     else {
-                     jButton4.setText("No esta disponible");
-                     
-                   }
-                    }
+            else{
+                
+                jButton1.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                jButton2.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                jButton3.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                jButton4.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+        
+            }
+          
+                
+        }catch(Exception ex){
+            JOptionPane.showMessageDialog(null, "El clasher no se encuentra disponible");
         }
                    
       

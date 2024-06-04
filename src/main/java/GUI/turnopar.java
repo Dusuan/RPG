@@ -536,9 +536,10 @@ public class turnopar extends javax.swing.JFrame {
             }
 
             if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                 System.out.println("El Clasher a muerto");
+                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
                 cantidadDePokemones1--;
-                System.out.println("Al Jugador 1 solo le restan : " + cantidadDePokemones1 + " Clashers");
                 match.setPosicion1(0);
 
             } else {
@@ -584,9 +585,10 @@ public class turnopar extends javax.swing.JFrame {
             }
 
             if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-               cantidadDePokemones1--;
+                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                 System.out.println("El Clasher a muerto");
-                System.out.println("Al Jugador 1 solo le restan : " + cantidadDePokemones1 + " Clashers");
+                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                cantidadDePokemones1--;
                 match.setPosicion1(0);
 
             } else {
@@ -628,9 +630,10 @@ public class turnopar extends javax.swing.JFrame {
             }
 
             if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                cantidadDePokemones1--;
+                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                 System.out.println("El Clasher a muerto");
-                System.out.println("Al Jugador 1 solo le restan : " + cantidadDePokemones1 + " Clashers");
+                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                cantidadDePokemones1--;
                 match.setPosicion1(0);
 
             } else {
@@ -676,9 +679,10 @@ public class turnopar extends javax.swing.JFrame {
             
             
             if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                cantidadDePokemones1--;
+                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                 System.out.println("El Clasher a muerto");
                 System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                cantidadDePokemones1--;
                 match.setPosicion1(0);
 
             } else {
@@ -718,9 +722,10 @@ public class turnopar extends javax.swing.JFrame {
             System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
             dañoAcumulado2 = 0; // se reinicia el contador
               if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                    cantidadDePokemones1--;
+                    match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                     System.out.println("El Clasher a muerto");
-                    System.out.println("Al Jugador 1 solo le restan : " + cantidadDePokemones1 + " Clashers");
+                    System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                    cantidadDePokemones1--;
                     match.setPosicion1(0);
                     
                 } else {

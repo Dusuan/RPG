@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import org.example.Duelo;
+import pokemones.Mounstritos;
 
 /**
  *
@@ -38,19 +39,19 @@ public class cambiarPokemon extends javax.swing.JFrame {
             
             if(match.getTurno() % 2 != 0){
                 
-        jButton1.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-        jButton2.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-        jButton3.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-        jButton4.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+        jButton1.setText(getValidName(match.getJugador1().getListaMounstritos().obtener(0)));
+        jButton2.setText(getValidName(match.getJugador1().getListaMounstritos().obtener(1)));
+        jButton3.setText(getValidName(match.getJugador1().getListaMounstritos().obtener(2)));
+        jButton4.setText(getValidName(match.getJugador1().getListaMounstritos().obtener(3)));
         
             }
             
             else{
                 
-                jButton1.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                jButton2.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                jButton3.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                jButton4.setText(match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+               jButton1.setText(getValidName(match.getJugador2().getListaMounstritos().obtener(0)));
+                jButton2.setText(getValidName(match.getJugador2().getListaMounstritos().obtener(1)));
+                jButton3.setText(getValidName(match.getJugador2().getListaMounstritos().obtener(2)));
+                jButton4.setText(getValidName(match.getJugador2().getListaMounstritos().obtener(3)));
         
             }
           
@@ -65,6 +66,8 @@ public class cambiarPokemon extends javax.swing.JFrame {
             Logger.getLogger(cambiarPokemon.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -148,6 +151,16 @@ public class cambiarPokemon extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    
+private String getValidName(Mounstritos monstruo) {
+    try {
+        return monstruo.getName();
+    } catch (Exception e) {
+        return "No existe";  // Default message
+    }
+}
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:

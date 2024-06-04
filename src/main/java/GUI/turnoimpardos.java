@@ -50,7 +50,7 @@ public class turnoimpardos extends javax.swing.JFrame {
         cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
 
         damage= 0;
-        dañoAcumulado1 = 0;
+        dañoAcumulado1 = match.getdañoAcumulado1();
 
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
@@ -767,8 +767,23 @@ public class turnoimpardos extends javax.swing.JFrame {
             match.Ulti1(posicion1,posicion2);
             System.out.println("La ulti fue usada");
             System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
-            dañoAcumulado1 = 0; // se reinicia el contador
+            match.setdañoAcumulado1(0); // se reinicia el contador
             match.setPosicion2(0);
+            
+            
+                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                    System.out.println("El Clasher a muerto");
+                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                    cantidadDePokemones2--;
+                    match.setPosicion2(0);
+                    
+                } else {
+                    System.out.println("Vida del Clasher rival : ");
+                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+                }
+            
             
             } catch (Exception ex) {
                 Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);

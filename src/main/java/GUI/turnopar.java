@@ -46,7 +46,7 @@ public class turnopar extends javax.swing.JFrame {
         cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
 
         damage= 0;
-        dañoAcumulado2 = 0;
+        dañoAcumulado2 = match.getdañoAcumulado2();
         
         int turno = match.getTurno();
         jLabel1.setText("Turno " + Integer.toString(turno));
@@ -720,7 +720,7 @@ public class turnopar extends javax.swing.JFrame {
             match.Ulti1(posicion1,posicion2);
             System.out.println("La ulti fue usada");
             System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
-            dañoAcumulado2 = 0; // se reinicia el contador
+            match.setdañoAcumulado2(0); // se reinicia el contador
               if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
                     match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
                     System.out.println("El Clasher a muerto");

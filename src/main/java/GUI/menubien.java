@@ -403,7 +403,7 @@ public class menubien extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton1ActionPerformed
         Calendar calendar = Calendar.getInstance();
 
-        String NombreDuelo = "Duelo_"+calendar.get(Calendar.DAY_OF_MONTH)+ "/" + calendar.get(Calendar.MONTH) + calendar.get(Calendar.YEAR) + " - " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
+        String NombreDuelo = "Duelo_"+ calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
         Duelo duelo = inicializarJuego();
         Duelo.IniciarLogDuelo(NombreDuelo);
 

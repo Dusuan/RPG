@@ -710,25 +710,25 @@ public class Duelo {
 
     public static void IniciarLogDuelo (String Batalla){
 
-        try{
-            String nombreArchivo = Batalla + ".txt" ;
 
-            File directorioLogs = new File("LOGS");
+                    String nombreArchivo = Batalla + ".txt";
 
-            if (!directorioLogs.exists()) {
-                directorioLogs.mkdirs(); // Create all necessary parent directories
-            }
+                    File projectDir = new File(System.getProperty("user.dir"));
 
-            File archivo = new File("LOGS", nombreArchivo);
+                    File directorioLogs = new File(projectDir, "LOGS");
+                    if (!directorioLogs.exists()) {
+                      directorioLogs.mkdirs(); // 
+                    }
 
-            if(!archivo.exists()){
-                archivo.createNewFile();
-            }
-            Log = archivo;
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
+                    File archivo = new File(directorioLogs, nombreArchivo);
+
+                    System.out.println("Log file path: " + archivo.getAbsolutePath());
+                     try{
+                    archivo.createNewFile();
+                     }catch(Exception e){
+                         System.out.println("IniciarLogDuelo error");
+                     }
+                    Log = archivo;
     }
     public static void registrarLog(String log) {
         if (Log != null) {

@@ -63,8 +63,7 @@ public class turnopar extends javax.swing.JFrame {
         jButton1.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(0).getNombre());
         jButton2.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(1).getNombre());
         jButton3.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(2).getNombre());
-        jButton4.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(3).getNombre());
-        }
+        jButton4.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(3).getNombre());}
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
                     "ERROR", JOptionPane.ERROR_MESSAGE);

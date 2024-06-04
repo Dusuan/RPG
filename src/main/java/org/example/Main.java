@@ -218,9 +218,6 @@ public class Main {
         Itemstotales.adicionar(item5);
 
 
-
-
-
         //Inicio de Partida // Version Beta
 
         int menu =0 ;

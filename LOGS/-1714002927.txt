@@ -1,0 +1,44 @@
+Comienza el duelo -1714002927
+Wilson ha fallado!
+Little Demon ha fallado!
+Wilson ha fallado!
+Little Demon ha fallado!
+Wilson ha fallado!
+Little Demon ha fallado!
+Wilson ha fallado!
+Little Demon ha fallado!
+Wilson ha fallado!
+Little Demon ha fallado!
+Wilson ha fallado!
+Little Demon ha usado Backend in JS en Wilson causando 100.0 de daño!
+Ataque super efectivo! El ataque de Wilson obtuvo 17500.0mas de daño 
+El mounstrito Wilsondel jugador Primus ha fallecido!
+Helicopter ha fallado!
+Little Demon ha fallado!
+Helicopter ha fallado!
+Little Demon ha fallado!
+Helicopter ha fallado!
+Little Demon ha fallado!
+Helicopter ha fallado!
+Little Demon ha usado Try-Catch en Helicopter causando 125.0 de daño!
+Ataque super efectivo! El ataque de Helicopter obtuvo 25000.0mas de daño 
+El mounstrito Helicopterdel jugador Primus ha fallecido!
+Eric-Chan ha fallado!
+Little Demon ha fallado!
+Eric-Chan se ha curado una cantidad de 150 de vida
+Little Demon ha fallado!
+Eric-Chan se ha curado una cantidad de 150 de vida
+Little Demon ha usado Mini Pekka en Eric-Chan causando 500.0 de daño!
+Eric-Chan ha fallado!
+Eric-Chan ha fallado!
+Little Demon ha usado Try-Catch en Eric-Chan causando 125.0 de daño!
+Ataque super efectivo! El ataque de Eric-Chan obtuvo 5000.0mas de daño 
+Eric-Chan ha fallado!
+Little Demon ha fallado!
+Eric-Chan ha fallado!
+Eric-Chan ha fallado!
+Eric-Chan ha fallado!
+Little Demon ha usado Try-Catch en Eric-Chan causando 125.0 de daño!
+Ataque super efectivo! El ataque de Eric-Chan obtuvo 5000.0mas de daño 
+Eric-Chan ha usado ICloud full en Little Demon causando 45.0 de daño!
+El mounstrito Little Demondel jugador Secundo ha fallecido!

@@ -83,46 +83,46 @@ public class menubien extends javax.swing.JFrame {
 
             //Ataques
             Movimientos num1 = new Ataques("Fuego", "FIREBALL", 75, 5, 50);
-            Movimientos num2 = new Ataques("Fuego", "Bucle Infinito", 33, 2, 200);
-            Movimientos num3 = new Ataques("Fuego", "Funa Intensiva", 32, 4, 100);
-            Movimientos num4 = new Ataques("Fuego", "Try-Catch", 45, 3, 125);
-            Movimientos num5 = new Ataques("Fuego", "JS", 15, 1, 500);
+            Movimientos num2 = new Ataques("Fuego", "Bucle Infinito", 45, 2, 200);
+            Movimientos num3 = new Ataques("Fuego", "Funa Intensiva", 50, 4, 100);
+            Movimientos num4 = new Ataques("Fuego", "Try-Catch", 65, 3, 125);
+            Movimientos num5 = new Ataques("Fuego", "JS", 35, 1, 500);
 
-            Movimientos num6 = new Ataques("Aire", "Borrar System 32", 10, 1, 500);
+            Movimientos num6 = new Ataques("Aire", "Borrar System 32", 50, 1, 500);
             Movimientos num7 = new Ataques("Aire", "Air Pods Pro Max", 75, 4, 70);
-            Movimientos num8 = new Ataques("Agua", "Costas Clasistas", 40, 3, 95);
+            Movimientos num8 = new Ataques("Agua", "Costas Clasistas", 80, 3, 95);
             Movimientos num9 = new Ataques("Agua", "Mago de Hielo", 20, 2, 195);
-            Movimientos num10 = new Ataques("Planta", "Mari-IGUANA", 50, 3, 90);
+            Movimientos num10 = new Ataques("Planta", "Mari-IGUANA", 70, 3, 90);
 
-            Movimientos num11 = new Ataques("Roca", "Meteorito Temporada 8", 33, 2, 125);
+            Movimientos num11 = new Ataques("Roca", "Meteorito Temporada 8", 63, 2, 125);
             Movimientos num12 = new Ataques("Planta", "Lanza-Guisantes", 75, 5, 40);
-            Movimientos num13 = new Ataques("Planta", "Cacahuete", 15, 1, 280);
+            Movimientos num13 = new Ataques("Planta", "Cacahuete", 35, 1, 280);
             Movimientos num14 = new Ataques("Agua", "Chorros Chorreantes", 65, 4, 60);
-            Movimientos num15 = new Ataques("Roca", "Paris blast", 10, 1, 550);
+            Movimientos num15 = new Ataques("Roca", "Paris blast", 30, 1, 550);
 
             Movimientos num16 = new Ataques("Roca", "Backend in JS", 50, 3, 100);
-            Movimientos num17 = new Ataques("Aire", "Aniversario Volaris", 20, 3, 95);
+            Movimientos num17 = new Ataques("Aire", "Aniversario Volaris", 40, 3, 95);
             Movimientos num18 = new Ataques("Agua", "Mini Pekka", 11, 1, 500);
             Movimientos num19 = new Ataques("Aire", "ICloud full", 66, 5, 45);
             Movimientos num20 = new Ataques("Roca", "Maze", 80, 5, 55);
 
-            Movimientos num21 = new Ataques("Planta", "Cebolla", 25, 2, 175);
-            Movimientos num22 = new Ataques("Aire", "Vientos Vientosos", 21, 2, 155);
+            Movimientos num21 = new Ataques("Planta", "Cebolla", 55, 2, 175);
+            Movimientos num22 = new Ataques("Aire", "Vientos Vientosos", 51, 2, 155);
             Movimientos num23 = new Ataques("Agua", "Water Fall", 85, 5, 35);
             Movimientos num24 = new Ataques("Planta", "Pasto Fino", 65, 4, 80);
-            Movimientos num25 = new Ataques("Roca", "Bowler", 45, 4, 85);
+            Movimientos num25 = new Ataques("Roca", "Bowler", 75, 4, 85);
 
             //Healing
             Movimientos num26 = new Healing("Planta", "Plantitas Planteras", 70, 5, 50);
             Movimientos num27 = new Healing("Agua", "Oleas Oleadas", 50, 4, 100);
-            Movimientos num28 = new Healing("Aire", "Aires Clasistas", 40, 3, 150);
+            Movimientos num28 = new Healing("Aire", "Aires Clasistas", 60, 3, 150);
             Movimientos num29 = new Healing("Roca", "Rocky", 33, 2, 175);
             Movimientos num30 = new Healing("Fuego", "Fueguitos", 10, 1, 250);
 
             //Buff and Debuff
 
             Movimientos num31 = new buff("Agua", "OMG", 50, 3);
-            Movimientos num32 = new Debuff("Fuego", "Tacos", 30, 2);
+            Movimientos num32 = new Debuff("Fuego", "Tacos", 60, 2);
 
             ListaDE<Movimientos> movimientosPlayers = new ListaDE<>();
 

@@ -118,12 +118,10 @@ public class objetos extends javax.swing.JFrame {
         
         if(match.getTurno() % 2 != 0){
             match.UsarITEMJugador1(0);
-            this.dispose();
         }
         
         else{
             match.UsarITEMJugador2(0);
-            this.dispose();
         }
         
         this.dispose();

@@ -369,6 +369,11 @@ public class turnopar extends javax.swing.JFrame {
         });
 
         jButton7.setText("Usar Ultimate");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -674,6 +679,45 @@ public class turnopar extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+          if(dañoAcumulado2 > 500){ try {
+            // Esta es una posible implemnetacion del ultimate , que depsues de cierto daño acumulado le pregunte al jugador si lo va a usar
+            
+            System.out.println("Ultimate disponible");
+            
+            match.Ulti1(posicion1,posicion2);
+            System.out.println("La ulti fue usada");
+            System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
+            dañoAcumulado2 = 0; // se reinicia el contador
+            
+            } catch (Exception ex) {
+                Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        }
+        
+        else{
+            
+            double faltante = 500 - dañoAcumulado2;
+                JOptionPane.showMessageDialog(null, "El ultimate aun no esta disponible" + " Daño Faltante : " + faltante);
+                }
+            
+              if(match.ChecarEquipoVivo(match.getJugador1())) {
+                
+                match.nextTurn(); // se le suma al turno
+                new turnoimpardos(bg, match).setVisible(true);
+                this.dispose();
+                
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
+                new menubien().setVisible(true);
+                this.dispose();
+            }
+               
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments

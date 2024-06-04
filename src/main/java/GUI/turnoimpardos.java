@@ -48,6 +48,9 @@ public class turnoimpardos extends javax.swing.JFrame {
 
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
+        
+        int turno = match.getTurno();
+        jLabel1.setText(Integer.toString(turno));
         try {
             String pokeunoPath = pokemon(match.getJugador1().getListaMounstritos().obtener(0).getSprite());
             pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
@@ -277,7 +280,7 @@ public class turnoimpardos extends javax.swing.JFrame {
         panelzonLayout.setVerticalGroup(
             panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelzonLayout.createSequentialGroup()
-                .addContainerGap(428, Short.MAX_VALUE)
+                .addContainerGap(427, Short.MAX_VALUE)
                 .addGroup(panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
                     .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -369,6 +372,11 @@ public class turnoimpardos extends javax.swing.JFrame {
         });
 
         jButton7.setText("Usar Ultimate");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -672,6 +680,47 @@ public class turnoimpardos extends javax.swing.JFrame {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        
+        if(dañoAcumulado1 > 500){ try {
+            // Esta es una posible implemnetacion del ultimate , que depsues de cierto daño acumulado le pregunte al jugador si lo va a usar
+            
+            System.out.println("Ultimate disponible");
+            
+            match.Ulti1(posicion1,posicion2);
+            System.out.println("La ulti fue usada");
+            System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
+            dañoAcumulado1 = 0; // se reinicia el contador
+            
+            } catch (Exception ex) {
+                Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        }
+        
+        else{
+            
+            double faltante = 500 - dañoAcumulado1;
+                JOptionPane.showMessageDialog(null, "El ultimate aun no esta disponible" + " Daño Faltante : " + faltante);
+                }
+        
+          if(match.ChecarEquipoVivo(match.getJugador2())) {
+                
+                match.nextTurn(); // se le suma al turno
+                new turnoimpardos(bg, match).setVisible(true);
+                this.dispose();
+                
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
+                new menubien().setVisible(true);
+                this.dispose();
+            }
+               
+ 
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments

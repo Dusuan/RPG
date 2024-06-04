@@ -2,6 +2,7 @@ package org.example;
 import java.io.*;
 import java.util.Random;
 
+import listas.ListaDE;
 import movimientos.*;
 import pokemones.Mounstritos;
 public class Duelo {
@@ -716,6 +717,13 @@ public class Duelo {
 
         try{
             String nombreArchivo = Batalla + ".txt" ;
+
+            File directorioLogs = new File("LOGS");
+
+            if (!directorioLogs.exists()) {
+                directorioLogs.mkdirs(); // Create all necessary parent directories
+            }
+
             File archivo = new File("LOGS", nombreArchivo);
 
             if(!archivo.exists()){
@@ -746,6 +754,19 @@ public class Duelo {
         }
     }
 
+    public boolean ChecarEquipoVivo(Jugador jugador){
+        ListaDE<Mounstritos>  equipo = jugador.getListaMounstritos();
+    try {
+        for (int i = 0; i < equipo.size(); i++) {
+            if (equipo.obtener(i).isVivo()) {
+                return true;
+            }
+        }
+    }catch(Exception e ){
+        System.out.println("Error en ChecarEquipoVIvo");
+    }
+        return false;
+    }
 }
 
 

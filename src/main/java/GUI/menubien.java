@@ -182,7 +182,7 @@ public class menubien extends javax.swing.JFrame {
             Mounstritos mon10 = new tipoPlanta("Pepina", 200, 200, movimientosPlayers, 200, 100, "pepina.png", true);
 
             Mounstritos mon11 = new tipoAgua("Te Falta Alcohol", 350, 350, movimientosPlayers, 1000, 300, "te-falta-alcohol.png", true);
-            Mounstritos mon12 = new tipoFuego("No quema Cuh", 250, 250, movimientosPlayers, 350, 120, "no-quema-cuh.png", true);
+            Mounstritos mon12 = new tipoFuego("No quema Cuh", 250, 250, movimientosPlayers, 350, 120, "no-quema-cu.png", true);
             Mounstritos mon13 = new tipoFuego("Kenny", 1, 1, movimientosPlayers, 300, 100, "kenny.png", true);
             Mounstritos mon14 = new tipoPlanta("Uwu", 200, 200, movimientosPlayers, 275, 150, "uwu.png", true);
             Mounstritos mon15 = new tipoAgua("NPC AVERAGE", 150, 250, movimientosPlayers, 325, 250, "npc-average.png", true);
@@ -403,9 +403,10 @@ public class menubien extends javax.swing.JFrame {
 
         String NombreDuelo = "Duelo_"+calendar.get(Calendar.DAY_OF_MONTH)+ "/" + calendar.get(Calendar.MONTH) + calendar.get(Calendar.YEAR) + " - " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
         Duelo duelo = inicializarJuego();
-        duelo.IniciarLogDuelo(NombreDuelo);
+        Duelo.IniciarLogDuelo(NombreDuelo);
 
         new turnoimpardos(bg, duelo).setVisible(true);
+        this.dispose();
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

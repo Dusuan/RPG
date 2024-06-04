@@ -6,10 +6,17 @@ import listas.ListaDE;
 import movimientos.*;
 import pokemones.Mounstritos;
 public class Duelo {
+    
     private static File Log;
     private int turno;
     private Jugador jugador1;
     private Jugador jugador2;
+    
+    private static int posicion1 = 0;
+    private static int posicion2 = 0;
+    
+    private static double dañoAcumulado1 = 0;
+    private static double dañoAcumulado2 = 0;
 
     public Duelo(int turno, Jugador jugador1, Jugador jugador2) {
         this.turno = turno;
@@ -33,6 +40,40 @@ public class Duelo {
     public void setLOGMSSG(String LOGMSSG) {
         this.LOGMSSG = LOGMSSG;
     }
+    
+    public int getPosicion1(){
+        return posicion1;
+    }
+    
+    public int getPosicion2(){
+        return  posicion2;
+    }
+    
+    public void setPosicion1(int posicion){
+        posicion1 = posicion;
+    }
+    
+     public void setPosicion2(int posicion){
+        posicion2 = posicion;
+    }
+     
+      public int getdañoAcumulado1(){
+        return posicion1;
+    }
+    
+    public int getdañoAcumulado2(){
+        return  posicion2;
+    }
+    
+    public void setdañoAcumulado1(double dañoAcumulado){
+        dañoAcumulado1 = dañoAcumulado;
+    }
+    
+    public void setdañoAcumulado2(double dañoAcumulado){
+        dañoAcumulado2 = dañoAcumulado;
+    }
+    
+     
 
     public int getTurno() {
         return turno;

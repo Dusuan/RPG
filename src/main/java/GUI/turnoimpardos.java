@@ -43,26 +43,33 @@ public class turnoimpardos extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
 
-        posicion1 = 0;
-        posicion2 = 0;
+        posicion1 = match.getPosicion1();
+        posicion2 = match.getPosicion2();
 
         cantidadDePokemones1 = match.getJugador1().getListaMounstritos().size();
         cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
 
         damage= 0;
-        dañoAcumulado1 = 0;
+        dañoAcumulado1 = match.getdañoAcumulado1();
 
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
         
         int turno = match.getTurno();
-        jLabel1.setText(Integer.toString(turno));
+        jLabel1.setText("Turno" + Integer.toString(turno));
+        
         try {
-            String pokeunoPath = pokemon(match.getJugador1().getListaMounstritos().obtener(0).getSprite());
+            String pokeunoPath = pokemon(match.getJugador1().getListaMounstritos().obtener(posicion1).getSprite());
             pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
-            String pokedosPath = pokemon(match.getJugador2().getListaMounstritos().obtener(0).getSprite());
+            String pokedosPath = pokemon(match.getJugador2().getListaMounstritos().obtener(posicion2).getSprite());
             pokedosshow.setIcon(new ImageIcon(pokedosPath));
             refresh();
+            
+        jButton1.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0).getNombre());
+        jButton2.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1).getNombre());
+        jButton3.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2).getNombre());
+        jButton4.setText(match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3).getNombre());
+        
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
@@ -519,9 +526,8 @@ public class turnoimpardos extends javax.swing.JFrame {
         try {
             // bolsa de items
 
-            new objetos(match);
-            setVisible(true);
-            
+            new objetos(match).setVisible(true);
+           
         } catch (Exception ex) {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -537,6 +543,7 @@ public class turnoimpardos extends javax.swing.JFrame {
         // TODO add your handling code here:
         // cambiar clasher
 
+        new cambiarPokemon(match).setVisible(true);
         // pues otro gui
 
     }//GEN-LAST:event_jButton6ActionPerformed
@@ -561,7 +568,7 @@ public class turnoimpardos extends javax.swing.JFrame {
                 System.out.println("El Clasher a muerto");
                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
                 cantidadDePokemones2--;
-                posicion2 = 0;
+                match.setPosicion2(0);
 
             } else {
                 System.out.println("Vida del Clasher rival : ");
@@ -615,7 +622,7 @@ public class turnoimpardos extends javax.swing.JFrame {
                     System.out.println("El Clasher a muerto");
                     System.out.println("Al Jugador 2 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
                     cantidadDePokemones2--;
-                    posicion2 = 0;
+                    match.setPosicion2(0);
                     
                 } else {
                     System.out.println("Vida del Clasher rival : ");
@@ -669,7 +676,7 @@ public class turnoimpardos extends javax.swing.JFrame {
                 System.out.println("El Clasher a muerto");
                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
                 cantidadDePokemones2--;
-                posicion2 = 0;
+                match.setPosicion2(0);
 
             } else {
                 System.out.println("Vida del Clasher rival : ");
@@ -718,7 +725,7 @@ public class turnoimpardos extends javax.swing.JFrame {
                 System.out.println("El Clasher a muerto");
                 System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
                 cantidadDePokemones2--;
-                posicion2 = 0;
+                match.setPosicion2(0);
 
             } else {
                 System.out.println("Vida del Clasher rival : ");
@@ -760,7 +767,23 @@ public class turnoimpardos extends javax.swing.JFrame {
             match.Ulti1(posicion1,posicion2);
             System.out.println("La ulti fue usada");
             System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
-            dañoAcumulado1 = 0; // se reinicia el contador
+            match.setdañoAcumulado1(0); // se reinicia el contador
+            match.setPosicion2(0);
+            
+            
+                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                    System.out.println("El Clasher a muerto");
+                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                    cantidadDePokemones2--;
+                    match.setPosicion2(0);
+                    
+                } else {
+                    System.out.println("Vida del Clasher rival : ");
+                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+                }
+            
             
             } catch (Exception ex) {
                 Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);

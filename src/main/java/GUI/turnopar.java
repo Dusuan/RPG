@@ -551,7 +551,7 @@ public class turnopar extends javax.swing.JFrame {
 
         }
         else {
-            JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+            JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
             new menubien().setVisible(true);
             this.dispose();
         }
@@ -592,7 +592,7 @@ public class turnopar extends javax.swing.JFrame {
             this.dispose();
 
         }  else {
-            JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+            JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
             new menubien().setVisible(true);
             this.dispose();
         }
@@ -634,7 +634,7 @@ public class turnopar extends javax.swing.JFrame {
 
         }
         else {
-            JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+            JOptionPane.showMessageDialog(null, "El jugador 2 ha ganado!");
             new menubien().setVisible(true);
             this.dispose();
         }

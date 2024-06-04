@@ -13,6 +13,10 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -58,6 +62,7 @@ public class turnoimpardos extends javax.swing.JFrame {
             pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
             String pokedosPath = pokemon(match.getJugador2().getListaMounstritos().obtener(0).getSprite());
             pokedosshow.setIcon(new ImageIcon(pokedosPath));
+            refresh();
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
@@ -65,7 +70,27 @@ public class turnoimpardos extends javax.swing.JFrame {
         }
 
     }
+   public void refresh() throws IOException{
+            jTextArea1.setText("");
+           FileReader log;
+        try {
+            log = new FileReader(match.getLog());
+            BufferedReader buffer = new BufferedReader(log);
+            jTextArea1.setText("");
+            String linea;
+            while((linea = buffer.readLine())!=null){
+                
+                jTextArea1.append(linea+"\n");
+                
+            }
+        log.close();
 
+        } catch (FileNotFoundException ex) {
+            System.out.println("Algo salio mal con actualizar los logs");
+        }
+        
+
+    }    
     public String pokemon(String img){
      /*   switch (poke) {
                 case 1:
@@ -148,7 +173,7 @@ public class turnoimpardos extends javax.swing.JFrame {
 
       */
 
-
+        
 
         String camino = "src\\main\\resources\\"+img;
 
@@ -225,7 +250,6 @@ public class turnoimpardos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         panelzon = new javax.swing.JLayeredPane();
         background = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
@@ -240,6 +264,8 @@ public class turnoimpardos extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(770, 570));
@@ -254,8 +280,6 @@ public class turnoimpardos extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
-
-        jLabel4.setText("fichero");
 
         jProgressBar1.setString("100%");
 
@@ -380,6 +404,10 @@ public class turnoimpardos extends javax.swing.JFrame {
             }
         });
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -406,9 +434,9 @@ public class turnoimpardos extends javax.swing.JFrame {
                         .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton6)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(300, Short.MAX_VALUE)
@@ -429,9 +457,9 @@ public class turnoimpardos extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jLabel1)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
                         .addGap(512, 512, 512)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -445,11 +473,11 @@ public class turnoimpardos extends javax.swing.JFrame {
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
-                            .addComponent(jButton7))
-                        .addGap(6, 6, 6))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                            .addComponent(jButton7)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jScrollPane1)))
+                .addGap(6, 6, 6))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(330, Short.MAX_VALUE)
@@ -471,11 +499,11 @@ public class turnoimpardos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 696, Short.MAX_VALUE)
+            .addGap(0, 795, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, Short.MAX_VALUE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(0, 7, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -498,7 +526,11 @@ public class turnoimpardos extends javax.swing.JFrame {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
+ try{
+        refresh();
+           }catch(Exception e){
+               System.out.println("ALgo salio mal");
+           }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -554,7 +586,11 @@ public class turnoimpardos extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+ try{
+        refresh();
+           }catch(Exception e){
+               System.out.println("ALgo salio mal");
+           }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -606,6 +642,11 @@ public class turnoimpardos extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }
+         try{
+        refresh();
+           }catch(Exception e){
+               System.out.println("ALgo salio mal");
+           }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -650,7 +691,11 @@ public class turnoimpardos extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+ try{
+        refresh();
+           }catch(Exception e){
+               System.out.println("ALgo salio mal");
+           }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -697,6 +742,11 @@ public class turnoimpardos extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }
+         try{
+        refresh();
+           }catch(Exception e){
+               System.out.println("ALgo salio mal");
+           }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -738,6 +788,11 @@ public class turnoimpardos extends javax.swing.JFrame {
               new menubien().setVisible(true);
                 this.dispose();
             }
+           try{
+        refresh();
+           }catch(Exception e){
+               System.out.println("ALgo salio mal");
+           }
                
  
     }//GEN-LAST:event_jButton7ActionPerformed
@@ -787,10 +842,11 @@ public class turnoimpardos extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLayeredPane panelzon;
     private javax.swing.JLayeredPane poke1;
     private javax.swing.JLayeredPane poke2;

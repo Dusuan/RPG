@@ -30,22 +30,29 @@ public class cambiarPokemon extends javax.swing.JFrame {
             posicion1 = match.getPosicion1();
             posicion2 = match.getPosicion2();
               
-            if(match.getTurno() % 2 != 0){
-            jButton1.setText(match.getJugador1().getListaMounstritos().obtener(0).getName());
-            jButton2.setText(match.getJugador1().getListaMounstritos().obtener(1).getName());
-            jButton3.setText(match.getJugador1().getListaMounstritos().obtener(2).getName());
-            jButton4.setText(match.getJugador1().getListaMounstritos().obtener(3).getName());
-            
-            }
-            
-            else{
-                
-            jButton1.setText(match.getJugador2().getListaMounstritos().obtener(0).getName());
-            jButton2.setText(match.getJugador2().getListaMounstritos().obtener(1).getName());
-            jButton3.setText(match.getJugador2().getListaMounstritos().obtener(2).getName());
-            jButton4.setText(match.getJugador2().getListaMounstritos().obtener(3).getName());
-            }
-            
+        int size = match.getJugador1().getListaMounstritos().size();  // Get list size
+
+        if (match.getTurno() % 2 != 0) {
+                for (int i = 0; i < size; i++){
+                String clasherName = match.getJugador1().getListaMounstritos().obtener(i).getName();
+                if (clasherName != null) {
+                    jButton1.setText(clasherName);
+             } else {
+                 jButton1.setText("No esta disponible");  
+        }
+        
+    }
+}           else {
+                    for (int i = 0;i < size; i++) {
+                    String clasherName = match.getJugador2().getListaMounstritos().obtener(i).getName();
+                    if (clasherName != null) {
+                    jButton1.setText(clasherName);
+                } else {
+                     jButton1.setText("No esta disponible");
+        }
+        
+    }
+}
             
         } catch (Exception ex) {
             Logger.getLogger(cambiarPokemon.class.getName()).log(Level.SEVERE, null, ex);

@@ -5,8 +5,6 @@ public class ListaDE<T> implements Interface<T>
     private NodoDE <T> headDE;
     public ListaDE()
     {}
-
-
     @Override
     public boolean empty()
     {
@@ -45,43 +43,6 @@ public class ListaDE<T> implements Interface<T>
         }
     }
 
-    @Override
-    public void insertar(T x, int posicion) throws Exception {
-        if (posicion < 0 || posicion > size())  // poner || empty() ya que en el caso de usar la posicion 0,
-        //implica que la lista debe tener minimo algo
-        {
-            throw new Exception("Error, posición fuera de rango");
-        }
-        NodoDE<T> nodo = new NodoDE<>(x);
-        if (posicion == 0)
-        {
-            //esto es por si la posicion 0 esta ocupada por head=null;
-            if (headDE != null) { // Verificar si la lista no está vacía,
-                // ya que en caso de no estarla nodo se pone antes de head, y head puede apuntar hacia nodo
-                // para atras
-                nodo.setSiguienteDE(headDE);
-                headDE.setAnteriorDE(nodo);
-            }
-            // en caso de head ser null, solo head se vuelve nodo
-            headDE = nodo;
-        }
-        else
-        {
-            NodoDE<T> anterior = headDE;
-            for (int i = 0; i < posicion - 1; i++) {
-                anterior = anterior.getSiguienteDE();
-            }
-            nodo.setSiguienteDE(anterior.getSiguienteDE());
-            //en caso de que no estemos apuntando a la ultima posicion, pues el siguiente a esta es null
-            if (anterior.getSiguienteDE() != null)
-            {
-                anterior.getSiguienteDE().setAnteriorDE(nodo);//la que esta en la posoicion apunta al nuevo nodo
-            }
-
-            anterior.setSiguienteDE(nodo);
-            nodo.setAnteriorDE(anterior);
-        }
-    }
 
     @Override
     public void eliminar(int posicion) throws Exception
@@ -134,24 +95,6 @@ public class ListaDE<T> implements Interface<T>
         return actual.getDatoDE();
     }
 
-    @Override
-    public T buscar(T x) throws Exception
-    {
-        if(empty())
-        {
-            throw new Exception("");
-        }
-        NodoDE<T> actual = headDE;
-        while (actual != null)
-        {
-            if (actual.getDatoDE().equals(x))
-            {
-                return actual.getDatoDE();
-            }
-            actual = actual.getSiguienteDE();
-        }
-        throw new Exception("El dato no se encontró en la lista");
-    }
 
     public void SwapPoke(int poke)
     {

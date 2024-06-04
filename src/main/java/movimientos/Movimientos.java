@@ -6,7 +6,6 @@ public abstract class Movimientos {
     protected int accuracy;
     protected int PP;
 
-
     public Movimientos(String tipo, String nombre, int accuracy, int PP)
     {
         this.tipo = tipo;

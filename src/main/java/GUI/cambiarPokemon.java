@@ -33,26 +33,74 @@ public class cambiarPokemon extends javax.swing.JFrame {
         int size = match.getJugador1().getListaMounstritos().size();  // Get list size
 
         if (match.getTurno() % 2 != 0) {
-                for (int i = 0; i < size; i++){
-                String clasherName = match.getJugador1().getListaMounstritos().obtener(i).getName();
-                if (clasherName != null) {
+            
+             for (int i = 0;i < size; i++) {
+                    String clasherName = match.getJugador1().getListaMounstritos().obtener(i).getName();
+                    if (clasherName != null && i == 0) {
                     jButton1.setText(clasherName);
-             } else {
-                 jButton1.setText("No esta disponible");  
-        }
-        
-    }
-}           else {
+                    }
+                     else {
+                     jButton1.setText("No esta disponible");
+                     
+                    }
+                    if(clasherName != null && i == 1){
+                    jButton2.setText(clasherName);
+                            }
+                     else {
+                     jButton2.setText("No esta disponible");
+                    }
+                    if(clasherName != null && i == 2){
+                    jButton3.setText(clasherName);
+                            }
+                     else {
+                     jButton3.setText("No esta disponible");
+                    }
+                   if(clasherName != null && i == 3){
+                    jButton4.setText(clasherName);
+                            }
+                     else {
+                     jButton4.setText("No esta disponible");
+                     
+                   }
+                   
+             }
+            
+            
+            
+    
+             }       else {
                     for (int i = 0;i < size; i++) {
                     String clasherName = match.getJugador2().getListaMounstritos().obtener(i).getName();
-                    if (clasherName != null) {
+                    if (clasherName != null && i == 0) {
                     jButton1.setText(clasherName);
-                } else {
+                    }
+                     else {
                      jButton1.setText("No esta disponible");
+                     
+                    }
+                    if(clasherName != null && i == 1){
+                    jButton2.setText(clasherName);
+                            }
+                     else {
+                     jButton2.setText("No esta disponible");
+                    }
+                    if(clasherName != null && i == 2){
+                    jButton3.setText(clasherName);
+                            }
+                     else {
+                     jButton3.setText("No esta disponible");
+                    }
+                   if(clasherName != null && i == 3){
+                    jButton4.setText(clasherName);
+                            }
+                     else {
+                     jButton4.setText("No esta disponible");
+                     
+                   }
+                    }
         }
-        
-    }
-}
+                   
+      
             
         } catch (Exception ex) {
             Logger.getLogger(cambiarPokemon.class.getName()).log(Level.SEVERE, null, ex);

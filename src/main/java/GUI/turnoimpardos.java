@@ -486,7 +486,15 @@ public class turnoimpardos extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // bolsa de items
+        try {
+            // bolsa de items
+
+            new objetos(match);
+            setVisible(true);
+            
+        } catch (Exception ex) {
+            Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
 
     }//GEN-LAST:event_jButton5ActionPerformed
@@ -709,7 +717,7 @@ public class turnoimpardos extends javax.swing.JFrame {
           if(match.ChecarEquipoVivo(match.getJugador2())) {
                 
                 match.nextTurn(); // se le suma al turno
-                new turnoimpardos(bg, match).setVisible(true);
+                new turnopar(bg, match).setVisible(true);
                 this.dispose();
                 
             }

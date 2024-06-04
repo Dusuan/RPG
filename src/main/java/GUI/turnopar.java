@@ -49,9 +49,9 @@ public class turnopar extends javax.swing.JFrame {
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
         try {
-            String pokeunoPath = pokemon(match.getJugador1().getListaMounstritos().obtener(0).getSprite());
+            String pokeunoPath = pokemon(match.getJugador2().getListaMounstritos().obtener(0).getSprite());
             pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
-            String pokedosPath = pokemon(match.getJugador2().getListaMounstritos().obtener(0).getSprite());
+            String pokedosPath = pokemon(match.getJugador1().getListaMounstritos().obtener(0).getSprite());
             pokedosshow.setIcon(new ImageIcon(pokedosPath));
         }
         catch(Exception e){
@@ -485,7 +485,15 @@ public class turnopar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // bolsa de items
+        try {
+            // bolsa de items
+
+            new objetos(match);
+             setVisible(true);
+        } catch (Exception ex) {
+            Logger.getLogger(turnopar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
 
 
     }//GEN-LAST:event_jButton5ActionPerformed

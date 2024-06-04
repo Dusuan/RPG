@@ -8,16 +8,11 @@ import movimientos.Ataques;
 import org.example.Duelo;
 import pokemones.Mounstritos;
 
-
 import java.util.Random;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -49,6 +44,7 @@ public class turnopar extends javax.swing.JFrame {
 
         cantidadDePokemones1 = match.getJugador1().getListaMounstritos().size();
         cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
+
         damage= 0;
         dañoAcumulado2 = 0;
 
@@ -59,7 +55,7 @@ public class turnopar extends javax.swing.JFrame {
             pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
             String pokedosPath = pokemon(match.getJugador1().getListaMounstritos().obtener(0).getSprite());
             pokedosshow.setIcon(new ImageIcon(pokedosPath));
-                    refresh();
+
         jButton1.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(0).getNombre());
         jButton2.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(1).getNombre());
         jButton3.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(2).getNombre());
@@ -69,34 +65,7 @@ public class turnopar extends javax.swing.JFrame {
                     "ERROR", JOptionPane.ERROR_MESSAGE);
         }
 
-   
-        
-        
     }
-         public void refresh() throws IOException{
-            jTextArea1.setText("");
-           FileReader log = null;
-        try {
-            log = new FileReader(match.getLog());
-            BufferedReader buffer = new BufferedReader(log);
-            jTextArea1.setText("");
-            String linea;
-            while((linea = buffer.readLine())!=null){
-                
-                jTextArea1.append(linea+"\n");
-                
-            }
-            
-        log.close();
-
-        } catch (FileNotFoundException ex) {
-            System.out.println("Algo salio mal con actualizar los logs");
-        }
-        
-
-    }       
-             
-
 
     public String pokemon(String img){
      /*   switch (poke) {
@@ -257,6 +226,7 @@ public class turnopar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
         panelzon = new javax.swing.JLayeredPane();
         background = new javax.swing.JLabel();
         jProgressBar1 = new javax.swing.JProgressBar();
@@ -271,8 +241,6 @@ public class turnopar extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(770, 570));
@@ -287,6 +255,8 @@ public class turnopar extends javax.swing.JFrame {
                 jButton5ActionPerformed(evt);
             }
         });
+
+        jLabel4.setText("fichero");
 
         jProgressBar1.setString("100%");
 
@@ -411,10 +381,6 @@ public class turnopar extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -443,8 +409,8 @@ public class turnopar extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -464,30 +430,29 @@ public class turnopar extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 512, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jButton5))
                         .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
                             .addComponent(jButton7))
-                        .addGap(6, 6, 6))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 634, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))))
+                        .addGap(6, 6, 6))))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addContainerGap(330, Short.MAX_VALUE)
@@ -509,15 +474,15 @@ public class turnopar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
+            .addGap(0, 696, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, Short.MAX_VALUE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 679, Short.MAX_VALUE)
+            .addGap(0, 675, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -534,11 +499,9 @@ public class turnopar extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnopar.class.getName()).log(Level.SEVERE, null, ex);
         }
-           try{
-        refresh();
-           }catch(Exception e){
-               System.out.println("ALgo salio mal");
-           }
+           
+
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -546,11 +509,6 @@ public class turnopar extends javax.swing.JFrame {
         // cambiar clasher
 
         // pues otro gui
-         try{
-        refresh();
-           }catch(Exception e){
-               System.out.println("ALgo salio mal");
-           }
 
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -600,11 +558,6 @@ public class turnopar extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnopar.class.getName()).log(Level.SEVERE, null, ex);
         }
-         try{
-        refresh();
-           }catch(Exception e){
-               System.out.println("ALgo salio mal");
-           }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -651,11 +604,6 @@ public class turnopar extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnopar.class.getName()).log(Level.SEVERE, null, ex);
         }
-         try{
-        refresh();
-           }catch(Exception e){
-               System.out.println("ALgo salio mal");
-           }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -702,11 +650,7 @@ public class turnopar extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnopar.class.getName()).log(Level.SEVERE, null, ex);
         }
- try{
-        refresh();
-           }catch(Exception e){
-               System.out.println("ALgo salio mal");
-           }
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -755,11 +699,7 @@ public class turnopar extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(turnopar.class.getName()).log(Level.SEVERE, null, ex);
         }
- try{
-        refresh();
-           }catch(Exception e){
-               System.out.println("ALgo salio mal");
-           }
+
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -800,11 +740,6 @@ public class turnopar extends javax.swing.JFrame {
                   new menubien().setVisible(true);
                 this.dispose();
             }
-               try{
-        refresh();
-           }catch(Exception e){
-               System.out.println("ALgo salio mal");
-           }
                
     }//GEN-LAST:event_jButton7ActionPerformed
 
@@ -854,11 +789,10 @@ public class turnopar extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JProgressBar jProgressBar2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLayeredPane panelzon;
     private javax.swing.JLayeredPane poke1;
     private javax.swing.JLayeredPane poke2;

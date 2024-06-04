@@ -4,6 +4,7 @@
  */
 package GUI;
 
+import movimientos.Ataques;
 import org.example.Duelo;
 import pokemones.Mounstritos;
 
@@ -20,19 +21,31 @@ import javax.swing.*;
  */
 public class turnopar extends javax.swing.JFrame {
     public int bg;
-    public Duelo duelo;
+    public Duelo match;
+    int posicion1; // Inicializo las variables
+    int posicion2;
+    int cantidadDePokemones1;
+    double damage;
+    double dañoAcumulado2;
 
-    public turnopar(int bg, Duelo duelo) {
+    public turnopar(int bg, Duelo match) {
         this.bg = bg;
-        this.duelo = duelo;
+        this.match= match;
         initComponents();
+
+        posicion1 = 0;
+        posicion2 = 0;
+
+        cantidadDePokemones1 = match.getJugador1().getListaMounstritos().size();
+        damage= 0;
+        dañoAcumulado2 = 0;
 
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
         try {
-            String pokeunoPath = pokemon(duelo.getJugador1().getListaMounstritos().obtener(0).getSprite());
+            String pokeunoPath = pokemon(match.getJugador1().getListaMounstritos().obtener(0).getSprite());
             pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
-            String pokedosPath = pokemon(duelo.getJugador2().getListaMounstritos().obtener(0).getSprite());
+            String pokedosPath = pokemon(match.getJugador2().getListaMounstritos().obtener(0).getSprite());
             pokedosshow.setIcon(new ImageIcon(pokedosPath));
         }
         catch(Exception e){
@@ -45,7 +58,7 @@ public class turnopar extends javax.swing.JFrame {
     public String pokemon(String img){
      /*   switch (poke) {
                 case 1:
-                    img = "andy-cachondo.png";
+                    img = "andy-chad.png";
                     break;
                 case 2:
                     img = "many-dormilon.png";
@@ -227,9 +240,9 @@ public class turnopar extends javax.swing.JFrame {
         String nombre4 ="d";
 
 
-         poke = duelo.getJugador1().getListaMounstritos().obtener(0);
+         poke = match.getJugador2().getListaMounstritos().obtener(0);
 
-         turno = duelo.getTurno();
+         turno = match.getTurno();
          nombre1 = poke.getAtaques().obtener(0).getNombre();
          nombre2 = poke.getAtaques().obtener(1).getNombre();
          nombre3 = poke.getAtaques().obtener(2).getNombre();
@@ -237,33 +250,49 @@ public class turnopar extends javax.swing.JFrame {
 
 
 
-        jLabel1.setText("TURNO "+turno);
+        jLabel1.setText("TURNO "+ turno);
 
         jButton1.setText(nombre1);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                try {
+                    jButton1ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
         jButton2.setText(nombre2);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                try {
+                    jButton2ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
         jButton3.setText(nombre3);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                try {
+                    jButton3ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
         jButton4.setText(nombre4);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                try {
+                    jButton4ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -481,30 +510,131 @@ public class turnopar extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton1ActionPerformed
         // ataque 1
-            duelo.ataquePokemon1(0, 0);
+
+        match.movimientoPLayer2(0, posicion1, posicion2);
+
+        if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(0) instanceof Ataques) { //
+            damage = ((Ataques) match.ataquePokemon2(0, posicion2)).getDamage();
+
+            if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado2 += damage;
+
+            }
+        }
+
+        if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones1--;
+            posicion1 = 0;
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+            System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+        }
+
+
+        match.nextTurn(); // se le suma al turno
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         // ataque 2
-        duelo.ataquePokemon1(1, 0);
+        match.movimientoPLayer2(1, posicion1, posicion2);
+
+        if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(1) instanceof Ataques) { //
+            damage = ((Ataques) match.ataquePokemon2(1, posicion2)).getDamage();
+
+            if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado2 += damage;
+            }
+
+        }
+
+        if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones1--;
+            posicion1 = 0;
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+            System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+        }
+
+        match.nextTurn(); // se le suma al turno
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         // ataque 3
-        duelo.ataquePokemon1(2, 0);
+
+        match.movimientoPLayer2(2, posicion1, posicion2);
+
+        if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(2) instanceof Ataques) { //
+            damage = ((Ataques) match.ataquePokemon2(2, posicion2)).getDamage();
+
+            if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(2)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado2 += damage;
+            }
+
+        }
+
+        if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones1--;
+            posicion1 = 0;
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+            System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+        }
+
+        match.nextTurn(); // se le suma al turno
 
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         // ataque 4
-        duelo.ataquePokemon1(3, 0);
+        match.movimientoPLayer2(3, posicion1, posicion2);
+
+        if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(3) instanceof Ataques) { // Verifica que el movimiento realizado sea un ataque
+            damage = ((Ataques) match.ataquePokemon2(3, posicion2)).getDamage();
+
+            if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado2 += damage;
+            }
+
+        }
+
+
+        if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones1--;
+            posicion1 = 0;
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+            System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+        }
+
+        match.nextTurn(); // se le suma al turno
 
     }//GEN-LAST:event_jButton4ActionPerformed
 

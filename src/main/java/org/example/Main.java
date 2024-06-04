@@ -246,12 +246,16 @@ public class Main {
                     double dañoAcumulado1 = 0;
                     double dañoAcumulado2 = 0;
                     double damage = 0;
-                    Time time = new Time(match, 30000); // Aun ando viendo como implemnetar los hilos, pero creo tener una idea
+
+                    // Inicializaicion del hilo
+                    Time time = new Time(match,10000);// Aun ando viendo como implemnetar los hilos, pero creo tener una idea
+                    Thread timer = new Thread(time);
+                    timer.start();
 
                     int cantidadDePokemones1 = match.getJugador1().getListaMounstritos().size();
                     int cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
 
-                    int turno = match.getTurno();
+
                     int opcion = 0;
                     int posicion1 = 0; // posicion de la lista de mounstritos
                     int posicion2 = 0;
@@ -261,7 +265,7 @@ public class Main {
 
                             boolean turnoFinalizado = false;
 
-                            if (turno % 2 != 0) { // Cuando es turno del jugador 1
+                            if (match.getTurno() % 2 != 0) { // Cuando es turno del jugador 1
                                 System.out.println("Es turno del Jugador Uno: " + match.getJugador1().getNombre());
                                 System.out.println("Tu Claser es : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
 
@@ -278,7 +282,7 @@ public class Main {
                                         System.out.println("La ulti fue usada");
                                         System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
                                         dañoAcumulado1 = 0; // se reinicia el contador
-                                        turno++; // se le suma 1 a los turnos
+                                        match.nextTurn(); // se le suma 1 a los turnos
                                         turnoFinalizado = true; // Indica que se acaba el turno del jugador 1
                                     }
 
@@ -321,158 +325,159 @@ public class Main {
                                     System.out.println("--------------------");
                                     opcion = sc.nextInt();
 
-                                    switch (opcion) {
 
-                                        case 0:
+                                        switch (opcion) {
 
-                                            match.movimientoPLayer1(0, posicion1, posicion2); // Primero se realiza el movimiento
+                                            case 0:
 
-                                            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0) instanceof Ataques) { // Checo si el movimiento fue un ataque
-                                                damage = ((Ataques) match.ataquePokemon1(0, posicion1)).getDamage(); // Aqui obtengo el damagae, falta ver si se suma los plus si es debilidad
+                                                match.movimientoPLayer1(0, posicion1, posicion2); // Primero se realiza el movimiento
 
-                                                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado1 += damage;
+                                                if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0) instanceof Ataques) { // Checo si el movimiento fue un ataque
+                                                    damage = ((Ataques) match.ataquePokemon1(0, posicion1)).getDamage(); // Aqui obtengo el damagae, falta ver si se suma los plus si es debilidad
+
+                                                    if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado1 += damage;
+                                                    }
+
                                                 }
 
-                                            }
+                                                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones2--;
+                                                    posicion2 = 0; // Si el pokemon que fue eliminado no es el primero de la lista, se pone por default el primero
 
-                                            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
-                                                posicion1 = 0; // Si el pokemon que fue eliminado no es el primero de la lista, se pone por default el primero
-
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                                                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-                                            }
-
-                                            turno++; // se le suma al turno
-
-                                            break;
-                                        case 1:
-
-                                            match.movimientoPLayer1(1, posicion1, posicion2);
-
-                                            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon1(1, posicion1)).getDamage();
-
-                                                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado1 += damage;
-                                                }
-                                            }
-
-                                            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
-                                                posicion2 = 0;
-
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                                                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-                                            }
-
-                                            turno++; // se le suma al turno
-
-                                            break;
-                                        case 2:
-
-                                            match.movimientoPLayer1(2, posicion1, posicion2);
-
-                                            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon1(2, posicion1)).getDamage();
-
-                                                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado1 += damage;
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                                                    System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
                                                 }
 
-                                            }
+                                                match.nextTurn(); // se le suma al turno
 
-                                            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
-                                                posicion2 = 0;
+                                                break;
+                                            case 1:
 
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                                                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-                                            }
+                                                match.movimientoPLayer1(1, posicion1, posicion2);
 
-                                            turno++; // se le suma al turno
+                                                if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon1(1, posicion1)).getDamage();
 
-                                            break;
-
-                                        case 3:
-
-                                            match.movimientoPLayer1(3, posicion1, posicion2);
-
-                                            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon1(3, posicion1)).getDamage();
-
-                                                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado1 += damage;
+                                                    if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado1 += damage;
+                                                    }
                                                 }
-                                            }
 
-                                            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
-                                                posicion2 = 0;
+                                                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones2--;
+                                                    posicion2 = 0;
 
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                                                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-                                            }
-
-                                            turno++; // se le suma al turno
-
-                                            break;
-                                        case 4:
-
-                                            match.movimientoPLayer1(4, posicion1, posicion2);
-
-                                            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(4) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon1(4, posicion1)).getDamage();
-
-                                                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(4)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado1 += damage;
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                                                    System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
                                                 }
-                                            }
 
-                                            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones2--;
-                                                posicion2 = 0;
+                                                match.nextTurn(); // se le suma al turno
 
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                                                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-                                            }
+                                                break;
+                                            case 2:
 
-                                            turno++; // se le suma al turno
+                                                match.movimientoPLayer1(2, posicion1, posicion2);
 
-                                            break;
+                                                if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon1(2, posicion1)).getDamage();
 
-                                        case 5: // Ya quedo
+                                                    if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado1 += damage;
+                                                    }
 
-                                            boolean validClasher = false; // Sirve para verificar si el usuario ya ingreso un  indice valido
-                                            int newPosition = -1; // se inicializa la variable
+                                                }
 
-                                            while(!validClasher) {
+                                                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones2--;
+                                                    posicion2 = 0;
+
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                                                    System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+                                                }
+
+                                                match.nextTurn(); // se le suma al turno
+
+                                                break;
+
+                                            case 3:
+
+                                                match.movimientoPLayer1(3, posicion1, posicion2);
+
+                                                if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon1(3, posicion1)).getDamage();
+
+                                                    if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado1 += damage;
+                                                    }
+                                                }
+
+                                                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones2--;
+                                                    posicion2 = 0;
+
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                                                    System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+                                                }
+
+                                                match.nextTurn(); // se le suma al turno
+
+                                                break;
+                                            case 4:
+
+                                                match.movimientoPLayer1(4, posicion1, posicion2);
+
+                                                if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(4) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon1(4, posicion1)).getDamage();
+
+                                                    if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(4)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado1 += damage;
+                                                    }
+                                                }
+
+                                                if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones2--;
+                                                    posicion2 = 0;
+
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+                                                    System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+                                                }
+
+                                                match.nextTurn();// se le suma al turno
+
+                                                break;
+
+                                            case 5: // Ya quedo
+
+                                                boolean validClasher = false; // Sirve para verificar si el usuario ya ingreso un  indice valido
+                                                int newPosition = -1; // se inicializa la variable
+
+                                                while (!validClasher) {
 
                                                     System.out.println("--------------------");
 
@@ -493,22 +498,26 @@ public class Main {
                                                         validClasher = true; //
                                                         posicion1 = newPosition; // se iguala a la posicion actual del pokemon
 
-                                                    }
-                                                    else{
+                                                    } else {
                                                         System.out.println("Ingresa un indice valido");
                                                     }
 
 
-                                            }
+                                                }
 
-                                            break;
+                                                break;
 
-                                    }
+                                        }
+
 
                                 }
 
 
                             } else { // Cuando es turno del jugador 2
+
+                                Time time2 = new Time(match,10000);
+                                Thread timer2 = new Thread(time2);
+                                timer2.start();
 
                                 System.out.println("Es turno del Jugador Dos: " + match.getJugador2().getNombre());
                                 System.out.println("Tu Claser es : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
@@ -525,8 +534,8 @@ public class Main {
                                         match.Ulti2(posicion1, posicion2);
                                         System.out.println("La ulti fue usada");
                                         System.out.println("Causo un daño de " + match.getJugador1().getListaMounstritos().obtener(posicion1).getUltimate());
-                                        dañoAcumulado1 = 0; // se reinicia el contador
-                                        turno++; // se acaba el turno del jugador 2
+                                        dañoAcumulado2 = 0; // se reinicia el contador
+                                        match.nextTurn(); // se acaba el turno del jugador 2
                                         turnoFinalizado = true;
                                     }
 
@@ -568,191 +577,194 @@ public class Main {
                                     System.out.println("Movimiento 5 : Swap Pokemon");
                                     opcion = sc.nextInt();
 
-                                    switch (opcion) {
-                                        case 0:
 
-                                            match.movimientoPLayer2(0, posicion1, posicion2);
+                                        switch (opcion) {
+                                            case 0:
 
-                                            if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(0) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon2(0, posicion2)).getDamage();
+                                                match.movimientoPLayer2(0, posicion1, posicion2);
 
-                                                if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado2 += damage;
+                                                if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(0) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon2(0, posicion2)).getDamage();
 
-                                                }
-                                            }
+                                                    if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado2 += damage;
 
-                                            if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
-                                                posicion1= 0;
-
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-                                                System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
-                                            }
-
-
-                                            turno++; // se le suma al turno
-
-
-                                            break;
-                                        case 1:
-
-                                            match.movimientoPLayer2(1, posicion1, posicion2);
-
-                                            if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(1) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon2(1, posicion2)).getDamage();
-
-                                                if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado2 += damage;
+                                                    }
                                                 }
 
-                                            }
+                                                if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones1--;
+                                                    posicion1 = 0;
 
-                                            if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
-                                                posicion1 = 0;
-
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-                                                System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
-                                            }
-
-                                            turno++; // se le suma al turno
-
-
-                                            break;
-                                        case 2:
-
-                                            match.movimientoPLayer2(2, posicion1, posicion2);
-
-                                            if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(2) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon2(2, posicion2)).getDamage();
-
-                                                if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(2)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado2 += damage;
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                                                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
                                                 }
 
-                                            }
 
-                                            if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
-                                                posicion1 = 0;
-
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-                                                System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
-                                            }
-
-                                            turno++; // se le suma al turno
+                                                match.nextTurn(); // se le suma al turno
 
 
-                                            break;
-                                        case 3:
+                                                break;
+                                            case 1:
 
-                                            match.movimientoPLayer2(3, posicion1, posicion2);
+                                                match.movimientoPLayer2(1, posicion1, posicion2);
 
-                                            if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(3) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon2(3, posicion2)).getDamage();
+                                                if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(1) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon2(1, posicion2)).getDamage();
 
-                                                if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado2 += damage;
-                                                }
-
-                                            }
-
-
-                                            if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
-                                                posicion1 = 0;
-
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-                                                System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
-                                            }
-
-                                            turno++; // se le suma al turno
-
-                                            break;
-                                        case 4:
-
-                                            match.movimientoPLayer2(4, posicion1, posicion2);
-
-                                            if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(4) instanceof Ataques) { //
-                                                damage = ((Ataques) match.ataquePokemon2(4, posicion2)).getDamage();
-
-                                                if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(4)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                                                    dañoAcumulado2 += damage;
-                                                }
-                                            }
-
-                                            if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                                                match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                                                System.out.println("El Clasher a muerto");
-                                                System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                                                cantidadDePokemones1--;
-                                                posicion1 = 0;
-
-                                            } else {
-                                                System.out.println("Vida del Clasher rival : ");
-                                                System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
-                                                System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
-                                            }
-
-                                            turno++; // se le suma al turno
-
-                                            break;
-                                        case 5: // ya quedo
-
-                                            boolean validClasher = false; // Sirve para verificar
-                                            int newPosition = -1;
-
-                                            while(!validClasher) {
-
-                                                try {
-
-                                                    System.out.println("--------------------");
-
-                                                    System.out.println("Clashers disponibles : ");
-
-                                                    for (int i = 0; i < match.getJugador2().getListaMounstritos().size(); i++) {
-                                                        System.out.println("Clasher : " + i);
-                                                        System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(i).getName());
-                                                        System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(i).getHP());
-                                                        System.out.println("Defense : " + match.getJugador2().getListaMounstritos().obtener(i).getDefense());
-                                                        System.out.println("--------------------");
+                                                    if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado2 += damage;
                                                     }
 
-                                                    System.out.println("Ingresa al nuevo Clasher : ");
-                                                    newPosition = sc.nextInt();
-                                                    validClasher = true;
-                                                    posicion2 = newPosition;
-
-                                                }catch(Exception ex){
-                                                    System.out.println("Ingresa un indice valido");
                                                 }
 
-                                            }
+                                                if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones1--;
+                                                    posicion1 = 0;
 
-                                            break;
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                                                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+                                                }
 
-                                    }
+                                                match.nextTurn(); // se le suma al turno
+
+
+                                                break;
+                                            case 2:
+
+                                                match.movimientoPLayer2(2, posicion1, posicion2);
+
+                                                if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(2) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon2(2, posicion2)).getDamage();
+
+                                                    if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(2)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado2 += damage;
+                                                    }
+
+                                                }
+
+                                                if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones1--;
+                                                    posicion1 = 0;
+
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                                                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+                                                }
+
+                                                match.nextTurn(); // se le suma al turno
+
+
+                                                break;
+                                            case 3:
+
+                                                match.movimientoPLayer2(3, posicion1, posicion2);
+
+                                                if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(3) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon2(3, posicion2)).getDamage();
+
+                                                    if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado2 += damage;
+                                                    }
+
+                                                }
+
+
+                                                if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones1--;
+                                                    posicion1 = 0;
+
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                                                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+                                                }
+
+                                                match.nextTurn(); // se le suma al turno
+
+                                                break;
+                                            case 4:
+
+                                                match.movimientoPLayer2(4, posicion1, posicion2);
+
+                                                if (match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(4) instanceof Ataques) { //
+                                                    damage = ((Ataques) match.ataquePokemon2(4, posicion2)).getDamage();
+
+                                                    if (((Ataques) match.getJugador2().getListaMounstritos().obtener(posicion2).getAtaques().obtener(4)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                                                        dañoAcumulado2 += damage;
+                                                    }
+                                                }
+
+                                                if (!match.getJugador1().getListaMounstritos().obtener(posicion1).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+                                                    match.getJugador1().getListaMounstritos().eliminar(posicion1);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+                                                    System.out.println("El Clasher a muerto");
+                                                    System.out.println("Al Jugador 1 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
+                                                    cantidadDePokemones1--;
+                                                    posicion1 = 0;
+
+                                                } else {
+                                                    System.out.println("Vida del Clasher rival : ");
+                                                    System.out.println("Name : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getName());
+                                                    System.out.println("HP : " + match.getJugador1().getListaMounstritos().obtener(posicion1).getHP());
+                                                }
+
+                                                match.nextTurn(); // se le suma al turno
+
+                                                break;
+                                            case 5: // ya quedo
+
+                                                boolean validClasher = false; // Sirve para verificar
+                                                int newPosition = -1;
+
+                                                while (!validClasher) {
+
+                                                    try {
+
+                                                        System.out.println("--------------------");
+
+                                                        System.out.println("Clashers disponibles : ");
+
+                                                        for (int i = 0; i < match.getJugador2().getListaMounstritos().size(); i++) {
+                                                            System.out.println("Clasher : " + i);
+                                                            System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(i).getName());
+                                                            System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(i).getHP());
+                                                            System.out.println("Defense : " + match.getJugador2().getListaMounstritos().obtener(i).getDefense());
+                                                            System.out.println("--------------------");
+                                                        }
+
+                                                        System.out.println("Ingresa al nuevo Clasher : ");
+                                                        newPosition = sc.nextInt();
+                                                        validClasher = true;
+                                                        posicion2 = newPosition;
+
+                                                    } catch (Exception ex) {
+                                                        System.out.println("Ingresa un indice valido");
+                                                    }
+
+                                                }
+
+                                                break;
+
+                                        }
+
+
                                 }
 
                             }

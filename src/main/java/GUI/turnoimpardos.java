@@ -4,7 +4,9 @@
  */
 package GUI;
 
+import movimientos.Ataques;
 import org.example.Duelo;
+import pokemones.Mounstritos;
 
 import java.util.Random;
 import java.awt.Color;
@@ -20,19 +22,30 @@ import javax.swing.*;
 public class turnoimpardos extends javax.swing.JFrame {
 
     public int bg;
-    public Duelo duelo;
+    public Duelo match;
+    int posicion1;
+    int posicion2;
+    double damage;
+    double dañoAcumulado1;
+    int cantidadDePokemones2;
 
-    public turnoimpardos(int bg, Duelo duelo) {
+    public turnoimpardos(int bg, Duelo match) throws Exception {
         initComponents();
         this.bg = bg;
-        this.duelo = duelo;
+        this.match = match;
+        posicion1 = 0;
+        posicion2 = 0;
+
+        damage = 0;
+        dañoAcumulado1 = 0;
+        cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
 
         String backgroundPath = backgroundChoose(bg);
         background.setIcon(new ImageIcon(backgroundPath));
         try {
-            String pokeunoPath = pokemon(duelo.getJugador1().getListaMounstritos().obtener(0).getSprite());
+            String pokeunoPath = pokemon(match.getJugador1().getListaMounstritos().obtener(0).getSprite());
             pokeunoshow.setIcon(new ImageIcon(pokeunoPath));
-            String pokedosPath = pokemon(duelo.getJugador2().getListaMounstritos().obtener(0).getSprite());
+            String pokedosPath = pokemon(match.getJugador2().getListaMounstritos().obtener(0).getSprite());
             pokedosshow.setIcon(new ImageIcon(pokedosPath));
         }
         catch(Exception e){
@@ -44,7 +57,7 @@ public class turnoimpardos extends javax.swing.JFrame {
     public String pokemon(String img){
      /*   switch (poke) {
                 case 1:
-                    img = "andy-cachondo.png";
+                    img = "andy-chad.png";
                     break;
                 case 2:
                     img = "many-dormilon.png";
@@ -194,7 +207,7 @@ public class turnoimpardos extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents() throws Exception {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -218,33 +231,65 @@ public class turnoimpardos extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(770, 570));
 
-        jLabel1.setText("TURNO X");
+        Mounstritos poke = null;
+        int turno = 0;
+        String nombre1 ="a";
+        String nombre2 ="b";
+        String nombre3 ="c";
+        String nombre4 ="d";
 
-        jButton1.setText("ataque1.1");
+
+        poke = match.getJugador1().getListaMounstritos().obtener(0);
+
+        turno = match.getTurno();
+        nombre1 = poke.getAtaques().obtener(0).getNombre();
+        nombre2 = poke.getAtaques().obtener(1).getNombre();
+        nombre3 = poke.getAtaques().obtener(2).getNombre();
+        nombre4 = poke.getAtaques().obtener(3).getNombre();
+
+        jLabel1.setText("TURNO " + turno);
+
+        jButton1.setText(nombre1);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                try {
+                    jButton1ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
-        jButton2.setText("ataque1.2");
+        jButton2.setText(nombre2);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                try {
+                    jButton2ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
-        jButton3.setText("ataque1.3");
+        jButton3.setText(nombre3);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                try {
+                    jButton3ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
-        jButton4.setText("ataque1.4");
+        jButton4.setText(nombre4);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                try {
+                    jButton4ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -458,23 +503,127 @@ public class turnoimpardos extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton1ActionPerformed
    // ataque 1
+
+        match.movimientoPLayer1(0, posicion1, posicion2); // Primero se realiza el movimiento
+
+        if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0) instanceof Ataques) { // Checo si el movimiento fue un ataque
+            damage = ((Ataques) match.ataquePokemon1(0, posicion1)).getDamage(); // Aqui obtengo el damagae, falta ver si se suma los plus si es debilidad
+
+            if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado1 += damage;
+            }
+
+        }
+
+        if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones2--;
+            posicion2 = 0; // Si el pokemon que fue eliminado no es el primero de la lista, se pone por default el primero
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+            System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+        }
+
+        match.nextTurn(); // se le suma al turno
+
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         // ataque 2
+
+        match.movimientoPLayer1(1, posicion1, posicion2);
+
+        if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1) instanceof Ataques) { //
+            damage = ((Ataques) match.ataquePokemon1(1, posicion1)).getDamage();
+
+            if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado1 += damage;
+            }
+        }
+
+        if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones2--;
+            posicion2 = 0;
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+            System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+        }
+
+        match.nextTurn(); // se le suma al turno
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         // ataque 3
+
+        match.movimientoPLayer1(2, posicion1, posicion2);
+
+        if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2) instanceof Ataques) { //
+            damage = ((Ataques) match.ataquePokemon1(2, posicion1)).getDamage();
+
+            if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado1 += damage;
+            }
+        }
+
+        if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones2--;
+            posicion2 = 0;
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+            System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+        }
+
+        match.nextTurn(); // se le suma al turno
+
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+
+        match.movimientoPLayer1(3, posicion1, posicion2);
+
+        if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3) instanceof Ataques) { //
+            damage = ((Ataques) match.ataquePokemon1(3, posicion1)).getDamage();
+
+            if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(4)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
+                dañoAcumulado1 += damage;
+            }
+        }
+
+        if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
+            match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
+            System.out.println("El Clasher a muerto");
+            System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
+            cantidadDePokemones2--;
+            posicion2 = 0;
+
+        } else {
+            System.out.println("Vida del Clasher rival : ");
+            System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
+            System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
+        }
+
+        match.nextTurn();// se le suma al turno
         // ataque 4
     }//GEN-LAST:event_jButton4ActionPerformed
 

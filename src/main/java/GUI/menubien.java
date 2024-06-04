@@ -8,10 +8,12 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.HashSet;
+import java.util.Random;
+import java.util.Set;
 import javax.swing.JFrame;
 
 import static javax.swing.SwingUtilities.paintComponent;
-import static org.example.Main.MousntritosMatch;
 
 import javax.swing.JOptionPane;
 
@@ -37,9 +39,40 @@ public class menubien extends javax.swing.JFrame {
 
     }
 
+    //Agregue el metodo para poner los clasher random
+    public void MousntritosMatch(ListaDE<Mounstritos> mons,ListaDE<Mounstritos> monsPlayer1,ListaDE<Mounstritos> monsPlayer2) throws Exception { // Este es el metodo para seleccionar 4 mounstritos al azar para cada juagdor y que no se repitan
+
+        Random random = new Random();
+        Set<Integer> mousntritosSeleccionados = new HashSet<>(); // Se usa un Hashset para guaradr los indices de los pokemones ya utilizados
+
+        while(monsPlayer1.size() < 4){
+
+            int index = random.nextInt(mons.size()); // se obtiene un indice random dependiendo del tamaño de la lista
+
+            if(!mousntritosSeleccionados.contains(index)) { // si el indice no esta en el set contunua el codigo
+                monsPlayer1.adicionar(mons.obtener(index)); // se adiciona a la lista nueva el mounstrito seleccionado
+                mousntritosSeleccionados.add(index); // se guarda el indice para que no se repita
+            }
+
+        }
+
+        while(monsPlayer2.size() < 4){
+
+            int index = random.nextInt(mons.size()); // se obtiene un indice random dependiendo del tamaño de la lista del jugador 2
+
+            if(!mousntritosSeleccionados.contains(index)) { // si el indice no esta en el set contunua el codigo
+                monsPlayer2.adicionar(mons.obtener(index)); // se adiciona a la lista del jugador 2 el mounstrito seleccionado
+                mousntritosSeleccionados.add(index); // se guarda el indice para que no se repita
+            }
+
+        }
+
+    }
+
     public Duelo inicializarJuego() {
         Duelo duelo = null;
         try {
+
             // Estan en el orden del Docs
             //Movimientos
 
@@ -133,7 +166,7 @@ public class menubien extends javax.swing.JFrame {
 
             //Mousntritos
 
-            Mounstritos mon1 = new tipoFuego("Andy Chad", 200, 200, movimientosPlayers, 500, 200, "andy-cachondo.png", true);
+            Mounstritos mon1 = new tipoFuego("Andy Chad", 200, 200, movimientosPlayers, 500, 200, "andy-chad.png", true);
             Mounstritos mon2 = new tipoRoca("Many Dormilon", 500, 500, movimientosPlayers, 100, 50, "many-dormilon.png", true);
             Mounstritos mon3 = new tipoAgua("Pepino White", 300, 350, movimientosPlayers, 200, 75, "pepino-white.png", true);
             Mounstritos mon4 = new tipoAire("Blind Guy", 250, 250, movimientosPlayers, 175, 100, "blind-guy.png", true);
@@ -218,7 +251,9 @@ public class menubien extends javax.swing.JFrame {
             Jugador jugador2 = new Jugador("Secundo", mons2, Itemstotales);
 
 
-            duelo = new Duelo(0, jugador1, jugador2);
+            duelo = new Duelo(1, jugador1, jugador2);
+
+
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
@@ -238,10 +273,6 @@ public class menubien extends javax.swing.JFrame {
           color1 = c1;
           color2 = c2;
         }
-
-
-
-
 
 
 

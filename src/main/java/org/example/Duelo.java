@@ -1,9 +1,7 @@
 package org.example;
 import java.io.*;
 import java.util.Random;
-import java.util.logging.Logger;
 
-import listas.NodoDE;
 import movimientos.*;
 import pokemones.Mounstritos;
 public class Duelo {
@@ -41,6 +39,9 @@ public class Duelo {
         this.jugador2 = jugador2;
     }
 
+    public void nextTurn(){ // metodo para sumar de turno
+        turno++;
+    } // metodo tryhard
 
     String LOGMSSG = "";
 

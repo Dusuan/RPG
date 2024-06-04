@@ -39,8 +39,8 @@ public class turnopar extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
 
-        posicion1 = 0;
-        posicion2 = 0;
+        posicion1 = match.getPosicion1();
+        posicion2 = match.getPosicion2();
 
         cantidadDePokemones1 = match.getJugador1().getListaMounstritos().size();
         cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
@@ -60,6 +60,8 @@ public class turnopar extends javax.swing.JFrame {
         jButton2.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(1).getNombre());
         jButton3.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(2).getNombre());
         jButton4.setText(match.getJugador2().getListaMounstritos().obtener(0).getAtaques().obtener(3).getNombre());}
+        
+        
         catch(Exception e){
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
                     "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -443,11 +445,12 @@ public class turnopar extends javax.swing.JFrame {
                             .addComponent(jLabel2)
                             .addComponent(jButton5))
                         .addGap(32, 32, 32)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(15, 15, 15)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton6)
@@ -507,6 +510,8 @@ public class turnopar extends javax.swing.JFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         // cambiar clasher
+        
+        new cambiarPokemon(match).setVisible(true);
 
         // pues otro gui
 

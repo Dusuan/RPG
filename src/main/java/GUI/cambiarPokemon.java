@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.example.Duelo;
 
 /**
@@ -11,13 +13,32 @@ import org.example.Duelo;
  * @author XxDus
  */
 public class cambiarPokemon extends javax.swing.JFrame {
-public int bg;
+    public int bg;
     public Duelo match;
+    
+    
+    int posicion1;
+    int posicion2;
     /**
      * Creates new form cambiarPokemon
      */
-    public cambiarPokemon() {
-        initComponents();
+    public cambiarPokemon(Duelo match) {
+        try {
+            
+            this.match = match;
+            initComponents();
+            posicion1 = match.getPosicion1();
+            posicion2 = match.getPosicion2();
+              
+            jButton1.setText(match.getJugador1().getListaMounstritos().obtener(0).getName());
+            jButton2.setText(match.getJugador1().getListaMounstritos().obtener(1).getName());
+            jButton1.setText(match.getJugador1().getListaMounstritos().obtener(2).getName());
+            jButton3.setText(match.getJugador1().getListaMounstritos().obtener(3).getName());
+            
+            
+        } catch (Exception ex) {
+            Logger.getLogger(cambiarPokemon.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -33,6 +54,7 @@ public int bg;
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,34 +81,43 @@ public int bg;
 
         jLabel1.setText("¿A qué pokemon deseas cambiar?");
 
+        jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLabel1)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(41, 41, 41)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(281, 281, 281))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(98, Short.MAX_VALUE)
+                .addContainerGap(66, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(30, 30, 30)
+                .addGap(62, 62, 62)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54))
         );
 
@@ -97,6 +128,15 @@ public int bg;
         // TODO add your handling code here:
         // poke1
         
+        if(match.getTurno() % 2 != 0){
+           match.setPosicion1(0);
+        }
+        else{
+            match.setPosicion2(0);
+        }
+        
+        this.dispose();
+        
                 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -104,12 +144,48 @@ public int bg;
         // TODO add your handling code here:
         // poke2
         
+         if(match.getTurno() % 2 != 0){
+           match.setPosicion1(1);
+        }
+        else{
+           match.setPosicion2(1);
+        }
+         
+         this.dispose();
+        
+          
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         // poke3
+        
+         if(match.getTurno() % 2 != 0){
+           match.setPosicion1(2);
+        }
+        else{
+            match.setPosicion1(2);
+        }
+        
+         this.dispose();
+          
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+         if(match.getTurno() % 2 != 0){
+          match.setPosicion1(3); 
+        }
+        else{
+            match.setPosicion1(3);
+        }
+         
+         this.dispose();
+        
+          
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,7 +217,7 @@ public int bg;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new cambiarPokemon().setVisible(true);
+       
             }
         });
     }
@@ -150,6 +226,7 @@ public int bg;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

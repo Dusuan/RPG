@@ -725,10 +725,12 @@ public class Duelo {
                     System.out.println("Log file path: " + archivo.getAbsolutePath());
                      try{
                     archivo.createNewFile();
+                     Log = archivo;
+
+                    System.out.println("File created successfully!");
                      }catch(Exception e){
                          System.out.println("IniciarLogDuelo error");
                      }
-                    Log = archivo;
     }
     public static void registrarLog(String log) {
         if (Log != null) {

@@ -38,6 +38,8 @@ public class menubien extends javax.swing.JFrame {
      */
     public menubien() {
         initComponents();
+        setLocationRelativeTo(null);
+
 
     }
 

@@ -71,6 +71,7 @@ public class menubien extends javax.swing.JFrame {
 
     }
 
+
     public Duelo inicializarJuego() {
         Duelo duelo = null;
         try {
@@ -256,6 +257,7 @@ public class menubien extends javax.swing.JFrame {
             duelo = new Duelo(1, jugador1, jugador2);
 
 
+     
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Algo mal ocurrió en el constructor e inicializador",
@@ -275,9 +277,6 @@ public class menubien extends javax.swing.JFrame {
           color1 = c1;
           color2 = c2;
         }
-
-
-
 
 
         public void paintComponent(Graphics g){
@@ -333,7 +332,11 @@ public class menubien extends javax.swing.JFrame {
         jButton1.setText("EMPEZAR DUELO");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                try {
+                    jButton1ActionPerformed(evt);
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -395,14 +398,14 @@ public class menubien extends javax.swing.JFrame {
         bg = entorno.getSelectedIndex();
     }//GEN-LAST:event_aplicarActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton1ActionPerformed
         Calendar calendar = Calendar.getInstance();
 
         String NombreDuelo = "Duelo_"+calendar.get(Calendar.DAY_OF_MONTH)+ "/" + calendar.get(Calendar.MONTH) + calendar.get(Calendar.YEAR) + " - " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
         Duelo duelo = inicializarJuego();
         duelo.IniciarLogDuelo(NombreDuelo);
 
-        new turnopar(bg, duelo).setVisible(true);
+        new turnoimpardos(bg, duelo).setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 

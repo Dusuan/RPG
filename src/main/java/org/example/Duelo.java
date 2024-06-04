@@ -61,6 +61,16 @@ public class Duelo {
         turno++;
     } // metodo tryhard
 
+    public boolean endGame(int cant1,int cant2){
+
+        if(cant1 == 0 || cant2 == 0){
+            return true;
+        }
+
+        return false;
+
+    }
+
     String LOGMSSG = "";
 
     // funciones del Pokemon 1

@@ -25,6 +25,7 @@ public class turnopar extends javax.swing.JFrame {
     int posicion1; // Inicializo las variables
     int posicion2;
     int cantidadDePokemones1;
+    int cantidadDePokemones2;
     double damage;
     double dañoAcumulado2;
 
@@ -37,6 +38,8 @@ public class turnopar extends javax.swing.JFrame {
         posicion2 = 0;
 
         cantidadDePokemones1 = match.getJugador1().getListaMounstritos().size();
+        cantidadDePokemones2 = match.getJugador2().getListaMounstritos().size();
+
         damage= 0;
         dañoAcumulado2 = 0;
 
@@ -539,6 +542,7 @@ public class turnopar extends javax.swing.JFrame {
 
 
         match.nextTurn(); // se le suma al turno
+
 
 
     }//GEN-LAST:event_jButton1ActionPerformed

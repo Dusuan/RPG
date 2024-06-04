@@ -519,9 +519,8 @@ public class turnoimpardos extends javax.swing.JFrame {
         try {
             // bolsa de items
 
-            new objetos(match);
-            setVisible(true);
-            
+            new objetos(match).setVisible(true);
+           
         } catch (Exception ex) {
             Logger.getLogger(turnoimpardos.class.getName()).log(Level.SEVERE, null, ex);
         }

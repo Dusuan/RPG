@@ -5,6 +5,8 @@ import org.example.Jugador;
 
 import java.util.Random;
 
+import static org.example.Duelo.registrarLog;
+
 
 public class Tornado extends Items{
 
@@ -21,7 +23,8 @@ public class Tornado extends Items{
         jugador2.getListaMounstritos().SwapPoke(randomIntInRange);
 
         LOGMESSAGE = "El jugador "+jugadorAfectado.getNombre()+ " ha cambiado el orden de los mounstros del jugador "+jugador2.getNombre() +"!";
+        registrarLog(LOGMESSAGE);
 
-        usado = true;}
+            usado = true;}
     }
 }

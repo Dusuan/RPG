@@ -4,6 +4,8 @@ import org.example.Items;
 import org.example.Jugador;
 import pokemones.Mounstritos;
 
+import static org.example.Duelo.registrarLog;
+
 public class LifeTotem extends Items {
     public LifeTotem(String nombre, boolean usado) {
         super(nombre, usado);
@@ -22,6 +24,7 @@ else {
             usado = true;
 
             LOGMESSAGE = "El jugador "+jugadorAfectado.getNombre()+" ha revivido a "+lol.getName()+"!";
+            registrarLog(LOGMESSAGE);
 
             break;
         }

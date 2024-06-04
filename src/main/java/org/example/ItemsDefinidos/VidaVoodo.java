@@ -3,6 +3,8 @@ package org.example.ItemsDefinidos;
 import org.example.Items;
 import org.example.Jugador;
 
+import static org.example.Duelo.registrarLog;
+
 public class VidaVoodo extends Items {
     public VidaVoodo(String nombre, boolean usado) {
         super(nombre, usado);
@@ -21,6 +23,7 @@ try{
   usado = true;
 
         LOGMESSAGE = "El mounstrito "+ jugadorAfectado.getListaMounstritos().obtener(0)+ " de " +jugadorAfectado.getNombre()+ " ha cambiado su vida por la del mounstrito "+jugador2.getListaMounstritos().obtener(0) + " del jugador "+ jugador2.getNombre() ;
+        registrarLog(LOGMESSAGE);
 
 
     }

@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.io.File;
+import java.util.Calendar;
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
@@ -394,8 +396,12 @@ public class menubien extends javax.swing.JFrame {
     }//GEN-LAST:event_aplicarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Calendar calendar = Calendar.getInstance();
 
+        String NombreDuelo = "Duelo_"+calendar.get(Calendar.DAY_OF_MONTH)+ "/" + calendar.get(Calendar.MONTH) + calendar.get(Calendar.YEAR) + " - " + calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
         Duelo duelo = inicializarJuego();
+        duelo.IniciarLogDuelo(NombreDuelo);
+
         new turnopar(bg, duelo).setVisible(true);
 
     }//GEN-LAST:event_jButton1ActionPerformed

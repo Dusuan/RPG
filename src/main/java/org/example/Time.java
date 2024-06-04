@@ -1,5 +1,7 @@
 package org.example;
 
+import static org.example.Duelo.registrarLog;
+
 public class Time implements Runnable{
 
     private Duelo match;
@@ -48,7 +50,9 @@ public class Time implements Runnable{
         if(actualPlayer.equals(player1)){
 
             LOGMESSAGE = "El tiempo de " + player1.getNombre() + " a terminado"; // Se implementa en los logs
+            registrarLog(LOGMESSAGE);
             LOGMESSAGE = "Es turno del siguiente jugador";
+            registrarLog(LOGMESSAGE);
             LOGMESSAGE = "";
 
             actualPlayer = player2; // se iguala al jugador 2
@@ -57,7 +61,9 @@ public class Time implements Runnable{
         else if(actualPlayer.equals(player2)){
 
             LOGMESSAGE = "El tiempo de " + player2.getNombre() + " a terminado";
+            registrarLog(LOGMESSAGE);
             LOGMESSAGE = "Es turno del siguiente jugador";
+            registrarLog(LOGMESSAGE);
             LOGMESSAGE = "";
             actualPlayer = player1;
         }

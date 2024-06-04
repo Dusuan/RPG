@@ -6,6 +6,8 @@ import org.example.Items;
 import org.example.Jugador;
 import pokemones.Mounstritos;
 
+import static org.example.Duelo.registrarLog;
+
 public class Berserk extends Items {
     public Berserk(String nombre, boolean usado) {
         super(nombre, usado);
@@ -31,7 +33,7 @@ public class Berserk extends Items {
                 usado = true;
 
                 LOGMESSAGE = "El jugador "+jugadorAfectado.getNombre()+" ha usado Berserk en "+Afectado.getName()+"!";
-
+                registrarLog(LOGMESSAGE);
             }
 
 

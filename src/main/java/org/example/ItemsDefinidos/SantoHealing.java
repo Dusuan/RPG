@@ -4,6 +4,8 @@ import org.example.Items;
 import org.example.Jugador;
 import pokemones.Mounstritos;
 
+import static org.example.Duelo.registrarLog;
+
 public class SantoHealing extends Items {
     public SantoHealing(String nombre, boolean usado) {
         super(nombre, usado);
@@ -23,6 +25,7 @@ public class SantoHealing extends Items {
         usado = true;
 
             LOGMESSAGE = "El jugador "+jugadorAfectado.getNombre()+" ha curado a todos sus pokemones es un 10% !!!";
+            registrarLog(LOGMESSAGE);
 
 
             }

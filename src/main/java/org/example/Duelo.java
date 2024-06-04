@@ -5,6 +5,7 @@ import java.util.Random;
 import movimientos.*;
 import pokemones.Mounstritos;
 public class Duelo {
+    private static File Log;
     private int turno;
     private Jugador jugador1;
     private Jugador jugador2;
@@ -13,6 +14,23 @@ public class Duelo {
         this.turno = turno;
         this.jugador1 = jugador1;
         this.jugador2 = jugador2;
+        this.Log = null;
+    }
+
+    public File getLog() {
+        return Log;
+    }
+
+    public void setLog(File log) {
+        Log = log;
+    }
+
+    public String getLOGMSSG() {
+        return LOGMSSG;
+    }
+
+    public void setLOGMSSG(String LOGMSSG) {
+        this.LOGMSSG = LOGMSSG;
     }
 
     public int getTurno() {
@@ -180,7 +198,10 @@ public class Duelo {
                             pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - (DamageDefense1(ataque, pokemon1, pokemon2)+extraDamage));
 
                             LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha usado " + ataquePokemon1(ataque, pokemon1).getNombre()+ " en " + pokemonJugador2(pokemon2).getName() + " causando " + ((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()+ " de daño!";
+                            registrarLog(LOGMSSG);
                             LOGMSSG = "Ataque super efectivo! El ataque de " + pokemonJugador1(pokemon1).getName() + " obtuvo " + extraDamage + "mas de daño ";
+                            registrarLog(LOGMSSG);
+
                             LOGMSSG = "";
                         }
 
@@ -190,6 +211,7 @@ public class Duelo {
                             //Primero consigo la vida del pokemno activo del jugador 2, del ataque consigo el daño que hace, Multiplico el daño por la vida del pokemon, para que me de un porcentaje
                             pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - DamageDefense1(ataque, pokemon1, pokemon2));
                             LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha usado " + ataquePokemon1(ataque, pokemon1).getNombre()+ " en " + pokemonJugador2(pokemon2).getName() + " causando " + ((Ataques) ataquePokemon1(ataque,pokemon1)).getDamage()+ " de daño!";
+                            registrarLog(LOGMSSG);
                             LOGMSSG = "";
                         }
                         //devolver el damage y el escudo a la normalidad despues de un buff
@@ -215,6 +237,7 @@ public class Duelo {
                         if (pokemonJugador2(pokemon2).getHP() <= 0)
                         {
                             LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                            registrarLog(LOGMSSG);
                             LOGMSSG = "";
                             pokemonJugador2(pokemon2).setVivo(false);
                         }
@@ -222,6 +245,7 @@ public class Duelo {
                     }
                     else{
                         LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                         ((Ataques)pokemonJugador1(pokemon1).getAtaques().obtener(ataque)).setAtaqueEfectivo(false);
                     }
@@ -251,11 +275,15 @@ public class Duelo {
                         }
 
                         LOGMSSG = pokemonJugador1(pokemon1).getName() + " se ha curado una cantidad de "+((Healing) ataquePokemon1(ataque, pokemon1)).getHeal()+ " de vida";
+                        registrarLog(LOGMSSG);
+
                         LOGMSSG = "";
 
                     }
                     else{
                         LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
+
                         LOGMSSG = "";
                     }
                     ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
@@ -270,6 +298,8 @@ public class Duelo {
                     if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
                     {
                         LOGMSSG = pokemonJugador1(pokemon1).getName()+" de "+jugador1.getNombre() + " ha aumentado su defensa el doble!" ;
+                        registrarLog(LOGMSSG);
+
                         LOGMSSG = "";
 
                         pokemonJugador1(pokemon1).setBuffActivado(true);
@@ -277,6 +307,8 @@ public class Duelo {
                     }
                     else{
                         LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
+
                         LOGMSSG = "";
                     }
                     ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
@@ -292,12 +324,16 @@ public class Duelo {
                     if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
                     {
                         LOGMSSG = pokemonJugador1(pokemon1).getName()+" de "+jugador1.getNombre() + " ha reducido la defensa de "+ pokemonJugador2(pokemon2).getName() + " a la mitad!" ;
+                        registrarLog(LOGMSSG);
+
                         LOGMSSG = "";
                         pokemonJugador2(pokemon2).setDebuffActivado(true);
                         pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()/2);
                     }
                     else{
                         LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
+
                         LOGMSSG = "";
                     }
                     ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
@@ -309,12 +345,15 @@ public class Duelo {
                 pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage() );
 
                 LOGMSSG = pokemonJugador1(pokemon1).getName() + " de " + jugador1.getNombre() + " ha hecho "+((Default) ataquePokemon1(ataque, pokemon1)).getDamage() +" de daño al mounstrito "+pokemonJugador2(pokemon2).getName();
+                registrarLog(LOGMSSG);
+
                 LOGMSSG = "";
 
                 //checar si sigue vivo el pokemon
                 if (pokemonJugador2(pokemon2).getHP() <= 0)
                 {
                     LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                    registrarLog(LOGMSSG);
                     LOGMSSG = "";
                     pokemonJugador2(pokemon2).setVivo(false);
                 }
@@ -362,8 +401,13 @@ public class Duelo {
                             double extraDamage = (attack2(ataque,pokemon1,pokemon2) * .5);
                             pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() - (DamageDefense2(ataque, pokemon1, pokemon2)+extraDamage));
 
+
                             LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha usado " + ataquePokemon2(ataque, pokemon2).getNombre()+ " en " + pokemonJugador1(pokemon1).getName() + " causando " + ((Ataques) ataquePokemon2(ataque,pokemon2)).getDamage()+ " de daño!";
+                            registrarLog(LOGMSSG);
+
                             LOGMSSG = "Ataque super efectivo! El ataque de " + pokemonJugador1(pokemon1).getName() + " obtuvo " + extraDamage + "mas de daño ";
+                            registrarLog(LOGMSSG);
+
                             LOGMSSG = "";
 
 
@@ -373,6 +417,7 @@ public class Duelo {
                             //Primero consigo la vida del pokemno activo del jugador 2, del ataque consigo el daño que hace, Multiplico el daño por la vida del pokemon, para que me de un porcentaje
                             pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - DamageDefense2(ataque, pokemon1, pokemon2));
                             LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha usado " + ataquePokemon2(ataque, pokemon2).getNombre()+ " en " + pokemonJugador1(pokemon1).getName() + " causando " + ((Ataques) ataquePokemon2(ataque,pokemon2)).getDamage()+ " de daño!";
+                            registrarLog(LOGMSSG);
                             LOGMSSG = "";
                         }
                         //devolver el damage y el escudo a la normalidad despues de un buff
@@ -397,6 +442,7 @@ public class Duelo {
                         if (pokemonJugador1(pokemon1).getHP() <= 0)
                         {
                             LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                            registrarLog(LOGMSSG);
                             LOGMSSG = "";
                             pokemonJugador1(pokemon1).setVivo(false);
                         }
@@ -404,6 +450,7 @@ public class Duelo {
                     }
                     else{
                         LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                         ((Ataques)pokemonJugador2(pokemon2).getAtaques().obtener(ataque)).setAtaqueEfectivo(false); // Aqui se implemneta el booleano
                     }
@@ -431,10 +478,12 @@ public class Duelo {
                             }
                         }
                         LOGMSSG = pokemonJugador2(pokemon2).getName() + " se ha curado una cantidad de "+((Healing) ataquePokemon2(ataque, pokemon2)).getHeal()+ " de vida";
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                     }
                     else{
                         LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                     }
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
@@ -451,12 +500,14 @@ public class Duelo {
                     if(ataquePokemon2(ataque, pokemon2).getAccuracy()>randomIntInRange)
                     {
                         LOGMSSG = pokemonJugador2(pokemon2).getName()+" de "+jugador2.getNombre() + " ha aumentado su defensa el doble!" ;
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                         pokemonJugador2(pokemon2).setBuffActivado(true);
                         pokemonJugador2(pokemon2).setDefense(pokemonJugador2(pokemon2).getDefense()*2);
                     }
                     else{
                         LOGMSSG = pokemonJugador1(pokemon1).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                     }
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
@@ -472,12 +523,14 @@ public class Duelo {
                     if(ataquePokemon2(ataque, pokemon2).getAccuracy()>randomIntInRange)
                     {
                         LOGMSSG = pokemonJugador2(pokemon2).getName()+" de "+jugador2.getNombre() + " ha reducido la defensa de "+ pokemonJugador1(pokemon1).getName() + " a la mitad!" ;
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                         pokemonJugador1(pokemon1).setBuffActivado(true);
                         pokemonJugador1(pokemon1).setDefense(pokemonJugador1(pokemon1).getDefense()/2);
                     }
                     else{
                         LOGMSSG = pokemonJugador2(pokemon2).getName() + " ha fallado!";
+                        registrarLog(LOGMSSG);
                         LOGMSSG = "";
                     }
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
@@ -488,12 +541,14 @@ public class Duelo {
             {
                 pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - ((Default) ataquePokemon2(ataque, pokemon2)).getDamage());
                 LOGMSSG = pokemonJugador2(pokemon2).getName() + " de " + jugador2.getNombre() + " ha hecho "+((Default) ataquePokemon2(ataque, pokemon2)).getDamage() +" de daño al mounstrito "+pokemonJugador1(pokemon1).getName();
+                registrarLog(LOGMSSG);
                 LOGMSSG = "";
 
                 //checar si sigue vivo el pokemon
                 if (pokemonJugador1(pokemon1).getHP() <= 0)
                 {
                     LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                    registrarLog(LOGMSSG);
                     LOGMSSG = "";
                     pokemonJugador1(pokemon1).setVivo(false);
                 }
@@ -521,12 +576,14 @@ public class Duelo {
         pokemonJugador1(pokemon1).setHP(pokemonJugador1(pokemon1).getHP() - pokemonJugador2(pokemon2).getUltimate());
 
         LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha usado su Ultimate!";
+        registrarLog(LOGMSSG);
         LOGMSSG = "";
 
         //checar si sigue vivo el pokemon
         if (pokemonJugador1(pokemon1).getHP() <= 0)
         {
             LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+            registrarLog(LOGMSSG);
             LOGMSSG = "";
             pokemonJugador1(pokemon1).setVivo(false);
         }
@@ -536,12 +593,14 @@ public class Duelo {
         pokemonJugador2(pokemon2).setHP(pokemonJugador2(pokemon2).getHP() - pokemonJugador1(pokemon1).getUltimate());
 
         LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha usado su Ultimate!";
+        registrarLog(LOGMSSG);
         LOGMSSG = "";
 
         //checar si sigue vivo el pokemon
         if (pokemonJugador1(pokemon2).getHP() <= 0)
         {
             LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+            registrarLog(LOGMSSG);
             LOGMSSG = "";
             pokemonJugador2(pokemon2).setVivo(false);
         }
@@ -560,6 +619,7 @@ public class Duelo {
                         .getListaMounstritos()
                         .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar, REVISAR!
                 LOGMSSG = jugador1.getNombre()+" ha cambiado "+jugador1.getListaMounstritos().obtener(0).getName()+ " por "+jugador1.getListaMounstritos().obtener(poke).getName();
+                registrarLog(LOGMSSG);
                 LOGMSSG = "";
             }
             else
@@ -585,6 +645,7 @@ public class Duelo {
                         .getListaMounstritos()
                         .SwapPoke(poke); // implempente un metodo para cambiar dos nodos, no estoy seguro si funciona bien porque no es mi lista, pero segun yo deberia de jalar!
                         LOGMSSG = jugador2.getNombre()+" ha cambiado "+jugador2.getListaMounstritos().obtener(0).getName()+ " por "+jugador2.getListaMounstritos().obtener(poke).getName();
+                        registrarLog(LOGMSSG);
 
                         LOGMSSG = " ";
 
@@ -630,27 +691,48 @@ public class Duelo {
     }
 
 
-    public void Logger(String LOG, String DireccionArchivo) { // esta funcion basicamente va a guardar la linea de lo que pase en el momento ocurrir alguna interaccion
-        // creo que lo ideales que cuando se cree una nueva batalla, se guarde un nuevo archivo txt para que no se junten todos los logs.
-        try { // toma un archivo y escribe en el lo que se meta en el log
-            BufferedWriter writer = new BufferedWriter(new FileWriter(DireccionArchivo));
-            writer.write(LOG);
-            writer.close();
-        } catch (IOException ex) {
-            System.out.println("NO se logeo bien papu");
+//    public void Logger(String LOG, String DireccionArchivo) { // esta funcion basicamente va a guardar la linea de lo que pase en el momento ocurrir alguna interaccion
+//        // creo que lo ideales que cuando se cree una nueva batalla, se guarde un nuevo archivo txt para que no se junten todos los logs.
+//        try { // toma un archivo y escribe en el lo que se meta en el log
+//            BufferedWriter writer = new BufferedWriter(new FileWriter(DireccionArchivo));
+//            writer.write(LOG);
+//            writer.close();
+//        } catch (IOException ex) {
+//            System.out.println("NO se logeo bien papu");
+//        }
+//    }
+
+    public static void IniciarLogDuelo (String Batalla){
+
+        try{
+            String nombreArchivo = Batalla + ".txt" ;
+            File archivo = new File("LOGS", nombreArchivo);
+
+            if(!archivo.exists()){
+                archivo.createNewFile();
+            }
+            Log = archivo;
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+    public static void registrarLog(String log) {
+        if (Log != null) {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(Log, true))) {
+                writer.write(log);
+                writer.newLine();
+            } catch (IOException ex) {
+                System.out.println("Error al registrar log: " + ex.getMessage());
+            }
+        } else {
+            System.out.println("Se debe iniciar el registro de batalla antes de registrar logs.");
         }
     }
 
-    public static void LeerArchivo(String DireccionArchivo) {
-        try { // para leer el log en tiempo real
-            BufferedReader reader = new BufferedReader(new FileReader(DireccionArchivo));
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                System.out.println(linea);
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+    public static void finalizarRegistroDuelo() {
+        if (Log != null) {
+            Log = null;
         }
     }
 

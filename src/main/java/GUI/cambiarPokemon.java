@@ -36,26 +36,27 @@ public class cambiarPokemon extends javax.swing.JFrame {
             
              for (int i = 0;i < size; i++) {
                     String clasherName = match.getJugador1().getListaMounstritos().obtener(i).getName();
-                    if (clasherName != null && i == 0) {
+                    boolean vivo = match.getJugador1().getListaMounstritos().obtener(i).isVivo();
+                    if (vivo && i == 0) {
                     jButton1.setText(clasherName);
                     }
                      else {
                      jButton1.setText("No esta disponible");
                      
                     }
-                    if(clasherName != null && i == 1){
+                    if(vivo && i == 1){
                     jButton2.setText(clasherName);
                             }
                      else {
                      jButton2.setText("No esta disponible");
                     }
-                    if(clasherName != null && i == 2){
+                    if(vivo && i == 2){
                     jButton3.setText(clasherName);
                             }
                      else {
                      jButton3.setText("No esta disponible");
                     }
-                   if(clasherName != null && i == 3){
+                   if(vivo && i == 3){
                     jButton4.setText(clasherName);
                             }
                      else {

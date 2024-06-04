@@ -304,7 +304,7 @@ public class Duelo {
                     int randomIntInRange = random.nextInt(100);
                     if(ataquePokemon1(ataque, pokemon1).getAccuracy()>randomIntInRange)
                     {
-                        LOGMSSG = pokemonJugador1(pokemon1).getName()+" de "+jugador1.getNombre() + " ha aumentado su defensa el doble!" ;
+                        LOGMSSG = pokemonJugador1(pokemon1).getName()+" de "+jugador1.getNombre() + " ha aumentado su defensa y su daño al doble!" ;
                         registrarLog(LOGMSSG);
 
                         LOGMSSG = "";
@@ -708,40 +708,38 @@ public class Duelo {
 //        }
 //    }
 
-    public static void IniciarLogDuelo (String Batalla){
-
-
-                    String nombreArchivo = Batalla + ".txt";
-
-                    File projectDir = new File(System.getProperty("user.dir"));
-
-                    File directorioLogs = new File(projectDir, "LOGS");
-                    if (!directorioLogs.exists()) {
-                      directorioLogs.mkdirs(); // 
-                    }
-
-                    File archivo = new File(directorioLogs, nombreArchivo);
-
-                    System.out.println("Log file path: " + archivo.getAbsolutePath());
-                     try{
-                    archivo.createNewFile();
-                     Log = archivo;
-
-                    System.out.println("File created successfully!");
-                     }catch(Exception e){
-                         System.out.println("IniciarLogDuelo error");
-                     }
-    }
-    public static void registrarLog(String log) {
-        if (Log != null) {
-            try (BufferedWriter writer = new BufferedWriter(new FileWriter(Log, true))) {
-                writer.write(log);
-                writer.newLine();
-            } catch (IOException ex) {
-                System.out.println("Error al registrar log: " + ex.getMessage());
+    public static void IniciarLogDuelo() {
+        int batalla;
+        Random help = new Random();
+        batalla = help.nextInt();
+        try {
+            String nombreArchivo = batalla + ".txt";
+            File projectDir = new File(System.getProperty("user.dir"));
+            File directorioLogs = new File(projectDir, "LOGS");
+            if (!directorioLogs.exists()) {
+                directorioLogs.mkdirs();
             }
-        } else {
-            System.out.println("Se debe iniciar el registro de batalla antes de registrar logs.");
+            Log = new File(directorioLogs, nombreArchivo);
+            if (!Log.exists()) {
+                Log.createNewFile();
+            }
+            // Writing the initial log entry
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(Log, true))) {
+                writer.write("Comienza el duelo " + batalla + "\n");
+                System.out.println("Log file created: " + Log.getAbsolutePath());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void registrarLog(String log) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(Log, true))) {
+            writer.write(log + "\n");
+            writer.close();
+            System.out.println("Log: " + log);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

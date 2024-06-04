@@ -681,6 +681,7 @@ public class turnoimpardos extends javax.swing.JFrame {
                 
             }  else {
                 JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
+
                 new menubien().setVisible(true);
                 this.dispose();
             }

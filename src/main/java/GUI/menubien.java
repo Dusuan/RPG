@@ -401,11 +401,9 @@ public class menubien extends javax.swing.JFrame {
     }//GEN-LAST:event_aplicarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton1ActionPerformed
-        Calendar calendar = Calendar.getInstance();
 
-        String NombreDuelo = "Duelo_"+ calendar.get(Calendar.HOUR) + ":" + calendar.get(Calendar.MINUTE);
         Duelo duelo = inicializarJuego();
-        Duelo.IniciarLogDuelo(NombreDuelo);
+        Duelo.IniciarLogDuelo();
 
         new turnoimpardos(bg, duelo).setVisible(true);
         this.dispose();

@@ -30,10 +30,21 @@ public class cambiarPokemon extends javax.swing.JFrame {
             posicion1 = match.getPosicion1();
             posicion2 = match.getPosicion2();
               
+            if(match.getTurno() % 2 != 0){
             jButton1.setText(match.getJugador1().getListaMounstritos().obtener(0).getName());
             jButton2.setText(match.getJugador1().getListaMounstritos().obtener(1).getName());
-            jButton1.setText(match.getJugador1().getListaMounstritos().obtener(2).getName());
-            jButton3.setText(match.getJugador1().getListaMounstritos().obtener(3).getName());
+            jButton3.setText(match.getJugador1().getListaMounstritos().obtener(2).getName());
+            jButton4.setText(match.getJugador1().getListaMounstritos().obtener(3).getName());
+            
+            }
+            
+            else{
+                
+            jButton1.setText(match.getJugador2().getListaMounstritos().obtener(0).getName());
+            jButton2.setText(match.getJugador2().getListaMounstritos().obtener(1).getName());
+            jButton3.setText(match.getJugador2().getListaMounstritos().obtener(2).getName());
+            jButton4.setText(match.getJugador2().getListaMounstritos().obtener(3).getName());
+            }
             
             
         } catch (Exception ex) {

@@ -257,6 +257,23 @@ public class Duelo {
                         ((Ataques)pokemonJugador1(pokemon1).getAtaques().obtener(ataque)).setAtaqueEfectivo(false);
                     }
                 }
+                else {
+                    pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage());
+
+                    LOGMSSG = pokemonJugador1(pokemon1).getName() + " de " + jugador1.getNombre() + " ha hecho "+((Default) ataquePokemon1(ataque, pokemon1)).getDamage() +" de daño al mounstrito "+pokemonJugador2(pokemon2).getName();
+                    registrarLog(LOGMSSG);
+
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador2(pokemon2).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador2(pokemon2).setVivo(false);
+                    }
+                }
             }
             //Healing
             else if (ataquePokemon1(ataque, pokemon1) instanceof Healing)
@@ -295,6 +312,23 @@ public class Duelo {
                     }
                     ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
                 }
+                else {
+                    pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage());
+
+                    LOGMSSG = pokemonJugador1(pokemon1).getName() + " de " + jugador1.getNombre() + " ha hecho "+((Default) ataquePokemon1(ataque, pokemon1)).getDamage() +" de daño al mounstrito "+pokemonJugador2(pokemon2).getName();
+                    registrarLog(LOGMSSG);
+
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador2(pokemon2).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador2(pokemon2).setVivo(false);
+                    }
+                }
             }
             //buff
             else if (ataquePokemon1(ataque, pokemon1) instanceof buff)
@@ -321,6 +355,24 @@ public class Duelo {
                     ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
 
                 }
+                else
+                {
+                    pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage());
+
+                    LOGMSSG = pokemonJugador1(pokemon1).getName() + " de " + jugador1.getNombre() + " ha hecho "+((Default) ataquePokemon1(ataque, pokemon1)).getDamage() +" de daño al mounstrito "+pokemonJugador2(pokemon2).getName();
+                    registrarLog(LOGMSSG);
+
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador2(pokemon2).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador2(pokemon2).setVivo(false);
+                    }
+                }
             }
             //Debuff
             else if(ataquePokemon1(ataque, pokemon1) instanceof Debuff)
@@ -345,11 +397,28 @@ public class Duelo {
                     }
                     ataquePokemon1(ataque,pokemon1).setPP(ataquePokemon1(ataque,pokemon1).getPP()-1);
                 }
+                else{
+                    pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage());
+
+                    LOGMSSG = pokemonJugador1(pokemon1).getName() + " de " + jugador1.getNombre() + " ha hecho "+((Default) ataquePokemon1(ataque, pokemon1)).getDamage() +" de daño al mounstrito "+pokemonJugador2(pokemon2).getName();
+                    registrarLog(LOGMSSG);
+
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador2(pokemon2).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador2(pokemon2).getName() + "del jugador "+ jugador2.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador2(pokemon2).setVivo(false);
+                    }
+                }
             }
             //Default
             else if(ataquePokemon1(ataque, pokemon1) instanceof Default)
             {
-                pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage() );
+                pokemonJugador2(pokemon2).setHP( pokemonJugador2(pokemon2).getHP() - ((Default) ataquePokemon1(ataque, pokemon1)).getDamage());
 
                 LOGMSSG = pokemonJugador1(pokemon1).getName() + " de " + jugador1.getNombre() + " ha hecho "+((Default) ataquePokemon1(ataque, pokemon1)).getDamage() +" de daño al mounstrito "+pokemonJugador2(pokemon2).getName();
                 registrarLog(LOGMSSG);
@@ -462,6 +531,21 @@ public class Duelo {
                         ((Ataques)pokemonJugador2(pokemon2).getAtaques().obtener(ataque)).setAtaqueEfectivo(false); // Aqui se implemneta el booleano
                     }
                 }
+                else {
+                    pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - ((Default) ataquePokemon2(ataque, pokemon2)).getDamage());
+                    LOGMSSG = pokemonJugador2(pokemon2).getName() + " de " + jugador2.getNombre() + " ha hecho "+((Default) ataquePokemon2(ataque, pokemon2)).getDamage() +" de daño al mounstrito "+pokemonJugador1(pokemon1).getName();
+                    registrarLog(LOGMSSG);
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador1(pokemon1).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador1(pokemon1).setVivo(false);
+                    }
+                }
 
             }
             //Healing
@@ -494,6 +578,21 @@ public class Duelo {
                     }
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
                 }
+                else {
+                    pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - ((Default) ataquePokemon2(ataque, pokemon2)).getDamage());
+                    LOGMSSG = pokemonJugador2(pokemon2).getName() + " de " + jugador2.getNombre() + " ha hecho "+((Default) ataquePokemon2(ataque, pokemon2)).getDamage() +" de daño al mounstrito "+pokemonJugador1(pokemon1).getName();
+                    registrarLog(LOGMSSG);
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador1(pokemon1).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador1(pokemon1).setVivo(false);
+                    }
+                }
 
 
             }
@@ -519,6 +618,21 @@ public class Duelo {
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
 
                 }
+                else {
+                    pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - ((Default) ataquePokemon2(ataque, pokemon2)).getDamage());
+                    LOGMSSG = pokemonJugador2(pokemon2).getName() + " de " + jugador2.getNombre() + " ha hecho "+((Default) ataquePokemon2(ataque, pokemon2)).getDamage() +" de daño al mounstrito "+pokemonJugador1(pokemon1).getName();
+                    registrarLog(LOGMSSG);
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador1(pokemon1).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador1(pokemon1).setVivo(false);
+                    }
+                }
             }
             //Debuff
             else if(ataquePokemon2(ataque, pokemon2) instanceof Debuff)
@@ -540,6 +654,22 @@ public class Duelo {
                         LOGMSSG = "";
                     }
                     ataquePokemon2(ataque,pokemon2).setPP(ataquePokemon2(ataque,pokemon2).getPP()-1);
+                }
+                else
+                {
+                    pokemonJugador1(pokemon1).setHP( pokemonJugador1(pokemon1).getHP() - ((Default) ataquePokemon2(ataque, pokemon2)).getDamage());
+                    LOGMSSG = pokemonJugador2(pokemon2).getName() + " de " + jugador2.getNombre() + " ha hecho "+((Default) ataquePokemon2(ataque, pokemon2)).getDamage() +" de daño al mounstrito "+pokemonJugador1(pokemon1).getName();
+                    registrarLog(LOGMSSG);
+                    LOGMSSG = "";
+
+                    //checar si sigue vivo el pokemon
+                    if (pokemonJugador1(pokemon1).getHP() <= 0)
+                    {
+                        LOGMSSG = "El mounstrito "+ pokemonJugador1(pokemon1).getName() + "del jugador "+ jugador1.getNombre() + " ha fallecido!";
+                        registrarLog(LOGMSSG);
+                        LOGMSSG = "";
+                        pokemonJugador1(pokemon1).setVivo(false);
+                    }
                 }
             }
             //Default

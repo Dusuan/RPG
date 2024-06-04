@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="no se" />
+    <list default="true" id="228f609c-aa3b-45f8-8a38-f8bd7e35a217" name="Changes" comment="a" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -273,7 +273,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717508026017</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="a">
+      <option name="closed" value="true" />
+      <created>1717510379880</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1717510379880</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -294,7 +302,6 @@
     <MESSAGE value="Agregue la funcion de healing" />
     <MESSAGE value="Hice funciones de busqueda del ataque actual, como el pokemon actual, para que el codigo se vea más limpio. Lo aplique e heal y en damage. Falta agregar la funcion de escudo en damge.&#10;Buff falta crearlo y aplicarlo en damage. falta debuff tambien" />
     <MESSAGE value="Hice funciones de attack y de damage Defense, para agregar el uso de defense. Tambien a cada funcion le meti los parametros int ataque, int pokemon1, int pokemon2, para que no tuvieran 0, y que funcionara apropiadamente la funcion." />
-    <MESSAGE value="a" />
     <MESSAGE value="buff actualizado para tener un boolean y avizar si esta activado o no" />
     <MESSAGE value="Termine el debuff y el buff. Para checar si el buff o el debuff estan activados, los cambie a atributos de los pokemon" />
     <MESSAGE value="Hice el caso Default, este no es afectado por algun debuff, o buff, o el acurracy, o el nada. Solo hace 20 de damage y ya" />
@@ -311,7 +318,8 @@
     <MESSAGE value="creo q pude papu" />
     <MESSAGE value="Cambie las cantidades del defense en main, pues estaban muy altos. Estos los pienso como porcentajes y los pongo por debajo de 50" />
     <MESSAGE value="no se" />
-    <option name="LAST_COMMIT_MESSAGE" value="no se" />
+    <MESSAGE value="a" />
+    <option name="LAST_COMMIT_MESSAGE" value="a" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

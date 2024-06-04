@@ -33,6 +33,7 @@ public class turnoimpardos extends javax.swing.JFrame {
         this.bg = bg;
         this.match= match;
         initComponents();
+        setLocationRelativeTo(null);
 
         posicion1 = 0;
         posicion2 = 0;

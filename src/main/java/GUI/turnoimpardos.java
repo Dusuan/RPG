@@ -13,6 +13,8 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -213,299 +215,214 @@ public class turnoimpardos extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        try {
-            jPanel1 = new javax.swing.JPanel();
-            jLabel1 = new javax.swing.JLabel();
-            jButton1 = new javax.swing.JButton();
-            jButton2 = new javax.swing.JButton();
-            jButton3 = new javax.swing.JButton();
-            jButton4 = new javax.swing.JButton();
-            jLabel2 = new javax.swing.JLabel();
-            jButton5 = new javax.swing.JButton();
-            jLabel4 = new javax.swing.JLabel();
-            panelzon = new javax.swing.JLayeredPane();
-            background = new javax.swing.JLabel();
-            jProgressBar1 = new javax.swing.JProgressBar();
-            jProgressBar2 = new javax.swing.JProgressBar();
-            poke1 = new javax.swing.JLayeredPane();
-            pokedosshow = new javax.swing.JLabel();
-            poke2 = new javax.swing.JLayeredPane();
-            pokeunoshow = new javax.swing.JLabel();
-            jButton6 = new javax.swing.JButton();
 
-            setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-            setMinimumSize(new java.awt.Dimension(770, 570));
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        panelzon = new javax.swing.JLayeredPane();
+        background = new javax.swing.JLabel();
+        jProgressBar1 = new javax.swing.JProgressBar();
+        jProgressBar2 = new javax.swing.JProgressBar();
+        poke1 = new javax.swing.JLayeredPane();
+        pokedosshow = new javax.swing.JLabel();
+        poke2 = new javax.swing.JLayeredPane();
+        pokeunoshow = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
 
-            Mounstritos poke = null;
-            int turno = 0;
-            String nombre1 ="a";
-            String nombre2 ="b";
-            String nombre3 ="c";
-            String nombre4 ="d";
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(770, 570));
 
+        jLabel1.setText("TURNO X");
 
-            poke = match.getJugador1().getListaMounstritos().obtener(0);
+        jLabel2.setText("Que vas a querer hacer?");
 
-            turno = match.getTurno();
-            nombre1 = poke.getAtaques().obtener(0).getNombre();
-            nombre2 = poke.getAtaques().obtener(1).getNombre();
-            nombre3 = poke.getAtaques().obtener(2).getNombre();
-            nombre4 = poke.getAtaques().obtener(3).getNombre();
+        jButton5.setText("Bolsa con cositas mágicas");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
+        jLabel4.setText("fichero");
 
+        jProgressBar1.setString("100%");
 
-            jLabel1.setText("TURNO "+ turno);
+        panelzon.setLayer(background, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        panelzon.setLayer(jProgressBar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        panelzon.setLayer(jProgressBar2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-            jButton1.setText(nombre1);
-            jButton1.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    try {
-                        jButton1ActionPerformed(evt);
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
+        javax.swing.GroupLayout panelzonLayout = new javax.swing.GroupLayout(panelzon);
+        panelzon.setLayout(panelzonLayout);
+        panelzonLayout.setHorizontalGroup(
+            panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelzonLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(43, 43, 43)
+                .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(77, Short.MAX_VALUE))
+            .addGroup(panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelzonLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        panelzonLayout.setVerticalGroup(
+            panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelzonLayout.createSequentialGroup()
+                .addContainerGap(428, Short.MAX_VALUE)
+                .addGroup(panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
+                    .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(54, 54, 54))
+            .addGroup(panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(panelzonLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(background)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
-            jButton2.setText(nombre2);
-            jButton2.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    try {
-                        jButton2ActionPerformed(evt);
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
+        poke1.setBackground(new java.awt.Color(200, 200, 200));
 
-            jButton3.setText(nombre3);
-            jButton3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    try {
-                        jButton3ActionPerformed(evt);
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
+        pokedosshow.setBackground(new java.awt.Color(0, 0, 0));
 
-            jButton4.setText(nombre4);
-            jButton4.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    try {
-                        jButton4ActionPerformed(evt);
-                    } catch (Exception e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
+        poke1.setLayer(pokedosshow, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-            jLabel2.setText("Que vas a querer hacer?");
+        javax.swing.GroupLayout poke1Layout = new javax.swing.GroupLayout(poke1);
+        poke1.setLayout(poke1Layout);
+        poke1Layout.setHorizontalGroup(
+            poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 112, Short.MAX_VALUE)
+            .addGroup(poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pokedosshow, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+        );
+        poke1Layout.setVerticalGroup(
+            poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 112, Short.MAX_VALUE)
+            .addGroup(poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pokedosshow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+        );
 
-            jButton5.setText("Bolsa con cositas mágicas");
-            jButton5.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton5ActionPerformed(evt);
-                }
-            });
+        poke2.setBackground(new java.awt.Color(200, 200, 200));
 
-            jLabel4.setText("fichero");
+        pokeunoshow.setBackground(new java.awt.Color(0, 0, 0));
 
-            jProgressBar1.setString("100%");
+        poke2.setLayer(pokeunoshow, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-            panelzon.setLayer(background, javax.swing.JLayeredPane.DEFAULT_LAYER);
-            panelzon.setLayer(jProgressBar1, javax.swing.JLayeredPane.DEFAULT_LAYER);
-            panelzon.setLayer(jProgressBar2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        javax.swing.GroupLayout poke2Layout = new javax.swing.GroupLayout(poke2);
+        poke2.setLayout(poke2Layout);
+        poke2Layout.setHorizontalGroup(
+            poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 111, Short.MAX_VALUE)
+            .addGroup(poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(poke2Layout.createSequentialGroup()
+                    .addComponent(pokeunoshow, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        poke2Layout.setVerticalGroup(
+            poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 112, Short.MAX_VALUE)
+            .addGroup(poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(pokeunoshow, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+        );
 
-            javax.swing.GroupLayout panelzonLayout = new javax.swing.GroupLayout(panelzon);
-            panelzon.setLayout(panelzonLayout);
-            panelzonLayout.setHorizontalGroup(
-                    panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelzonLayout.createSequentialGroup()
-                                    .addGap(88, 88, 88)
-                                    .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(43, 43, 43)
-                                    .addComponent(jProgressBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(77, Short.MAX_VALUE))
-                            .addGroup(panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelzonLayout.createSequentialGroup()
-                                            .addGap(0, 0, Short.MAX_VALUE)
-                                            .addComponent(background)
-                                            .addGap(0, 0, Short.MAX_VALUE)))
-            );
-            panelzonLayout.setVerticalGroup(
-                    panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelzonLayout.createSequentialGroup()
-                                    .addContainerGap(428, Short.MAX_VALUE)
-                                    .addGroup(panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jProgressBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 18, Short.MAX_VALUE)
-                                            .addComponent(jProgressBar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGap(54, 54, 54))
-                            .addGroup(panelzonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(panelzonLayout.createSequentialGroup()
-                                            .addGap(0, 0, Short.MAX_VALUE)
-                                            .addComponent(background)
-                                            .addGap(0, 0, Short.MAX_VALUE)))
-            );
+        jButton6.setText("CAMBIAR CLASHER");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
-            poke1.setBackground(new java.awt.Color(200, 200, 200));
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addGap(208, 208, 208)
+                        .addComponent(jButton5))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton6)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(300, Short.MAX_VALUE)
+                    .addComponent(poke1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(300, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(111, Short.MAX_VALUE)
+                    .addComponent(poke2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(490, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelzon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(206, Short.MAX_VALUE)))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 512, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jButton5))
+                        .addGap(89, 89, 89)
+                        .addComponent(jButton6)
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(330, Short.MAX_VALUE)
+                    .addComponent(poke1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(233, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(329, Short.MAX_VALUE)
+                    .addComponent(poke2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(234, Short.MAX_VALUE)))
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addContainerGap(28, Short.MAX_VALUE)
+                    .addComponent(panelzon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(147, Short.MAX_VALUE)))
+        );
 
-            pokedosshow.setBackground(new java.awt.Color(0, 0, 0));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 696, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, Short.MAX_VALUE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 675, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
-            poke1.setLayer(pokedosshow, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-            javax.swing.GroupLayout poke1Layout = new javax.swing.GroupLayout(poke1);
-            poke1.setLayout(poke1Layout);
-            poke1Layout.setHorizontalGroup(
-                    poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGap(0, 112, Short.MAX_VALUE)
-                            .addGroup(poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pokedosshow, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
-            );
-            poke1Layout.setVerticalGroup(
-                    poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGap(0, 112, Short.MAX_VALUE)
-                            .addGroup(poke1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pokedosshow, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
-            );
-
-            poke2.setBackground(new java.awt.Color(200, 200, 200));
-
-            pokeunoshow.setBackground(new java.awt.Color(0, 0, 0));
-
-            poke2.setLayer(pokeunoshow, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-            javax.swing.GroupLayout poke2Layout = new javax.swing.GroupLayout(poke2);
-            poke2.setLayout(poke2Layout);
-            poke2Layout.setHorizontalGroup(
-                    poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGap(0, 111, Short.MAX_VALUE)
-                            .addGroup(poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(poke2Layout.createSequentialGroup()
-                                            .addComponent(pokeunoshow, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(0, 0, Short.MAX_VALUE)))
-            );
-            poke2Layout.setVerticalGroup(
-                    poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGap(0, 112, Short.MAX_VALUE)
-                            .addGroup(poke2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(pokeunoshow, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
-            );
-
-            jButton6.setText("CAMBIAR CLASHER");
-            jButton6.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButton6ActionPerformed(evt);
-                }
-            });
-
-            javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-            jPanel1.setLayout(jPanel1Layout);
-            jPanel1Layout.setHorizontalGroup(
-                    jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addContainerGap()
-                                                    .addComponent(jLabel1))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addGap(22, 22, 22)
-                                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addContainerGap()
-                                                    .addComponent(jLabel2)
-                                                    .addGap(208, 208, 208)
-                                                    .addComponent(jButton5))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                    .addContainerGap()
-                                                    .addComponent(jButton6)))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addContainerGap(300, Short.MAX_VALUE)
-                                            .addComponent(poke1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(300, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addContainerGap(111, Short.MAX_VALUE)
-                                            .addComponent(poke2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(490, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                            .addContainerGap()
-                                            .addComponent(panelzon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(206, Short.MAX_VALUE)))
-            );
-            jPanel1Layout.setVerticalGroup(
-                    jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addContainerGap()
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel1)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 512, Short.MAX_VALUE)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                            .addComponent(jLabel2)
-                                                            .addComponent(jButton5))
-                                                    .addGap(18, 18, 18)
-                                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGap(15, 15, 15)
-                                                    .addComponent(jButton6)
-                                                    .addGap(6, 6, 6))
-                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addContainerGap())))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addContainerGap(330, Short.MAX_VALUE)
-                                            .addComponent(poke1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(233, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addContainerGap(329, Short.MAX_VALUE)
-                                            .addComponent(poke2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(234, Short.MAX_VALUE)))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                            .addContainerGap(28, Short.MAX_VALUE)
-                                            .addComponent(panelzon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addContainerGap(147, Short.MAX_VALUE)))
-            );
-
-            javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-            getContentPane().setLayout(layout);
-            layout.setHorizontalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGap(0, 696, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 696, Short.MAX_VALUE)
-                                            .addGap(0, 0, Short.MAX_VALUE)))
-            );
-            layout.setVerticalGroup(
-                    layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGap(0, 675, Short.MAX_VALUE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            );
-
-            pack();
-        }
-        catch(Exception e ){
-
-        }
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -513,180 +430,6 @@ public class turnoimpardos extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton1ActionPerformed
-        // ataque 1
-
-
-            match.movimientoPLayer1(0, posicion1, posicion2);
-
-            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0) instanceof Ataques) { //
-                damage = ((Ataques) match.ataquePokemon1(0, posicion1)).getDamage();
-
-                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(0)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                    dañoAcumulado1 += damage;
-
-                }
-            }
-
-            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                System.out.println("El Clasher a muerto");
-                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                cantidadDePokemones2--;
-                posicion2 = 0;
-
-            } else {
-                System.out.println("Vida del Clasher rival : ");
-                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-            }
-        if(match.ChecarEquipoVivo(match.getJugador2())) {
-
-            match.nextTurn(); // se le suma al turno
-
-            new turnopar(bg, match).setVisible(true);
-            this.dispose();
-
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
-            new menubien().setVisible(true);
-            this.dispose();
-        }
-
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        // ataque 2
-
-
-            match.movimientoPLayer1(1, posicion1, posicion2);
-
-            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1) instanceof Ataques) { //
-                damage = ((Ataques) match.ataquePokemon1(1, posicion1)).getDamage();
-
-                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(1)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                    dañoAcumulado1 += damage;
-                }
-
-            }
-
-            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                System.out.println("El Clasher a muerto");
-                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                cantidadDePokemones2--;
-                posicion2 = 0;
-
-            } else {
-                System.out.println("Vida del Clasher rival : ");
-                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-            }
-        if(match.ChecarEquipoVivo(match.getJugador2())) {
-            match.nextTurn(); // se le suma al turno
-
-            new turnopar(bg, match).setVisible(true);
-            this.dispose();
-
-        }  else {
-            JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
-            new menubien().setVisible(true);
-            this.dispose();
-        }
-
-
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        // ataque 3
-
-
-            match.movimientoPLayer1(2, posicion1, posicion2);
-
-            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2) instanceof Ataques) { //
-                damage = ((Ataques) match.ataquePokemon1(2, posicion1)).getDamage();
-
-                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(2)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                    dañoAcumulado1 += damage;
-                }
-
-            }
-
-            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                System.out.println("El Clasher a muerto");
-                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador2().getListaMounstritos().size() + " Clashers");
-                cantidadDePokemones2--;
-                posicion2 = 0;
-
-            } else {
-                System.out.println("Vida del Clasher rival : ");
-                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-            }
-        if(match.ChecarEquipoVivo(match.getJugador2())) {
-            match.nextTurn(); // se le suma al turno
-
-            new turnopar(bg, match).setVisible(true);
-            this.dispose();
-
-        }  else {
-            JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
-            new menubien().setVisible(true);
-            this.dispose();
-        }
-
-
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) throws Exception {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        // ataque 4
-
-
-            match.movimientoPLayer1(3, posicion1, posicion2);
-
-            if (match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3) instanceof Ataques) { // Verifica que el movimiento realizado sea un ataque
-                damage = ((Ataques) match.ataquePokemon1(3, posicion1)).getDamage();
-
-                if (((Ataques) match.getJugador1().getListaMounstritos().obtener(posicion1).getAtaques().obtener(3)).isAtaqueEfectivo()) { // Checa si el daño fue efectivo para poder sumar ese damage al damageAcumulado
-                    dañoAcumulado1 += damage;
-                }
-
-            }
-
-
-            if (!match.getJugador2().getListaMounstritos().obtener(posicion2).isVivo()) { // Checa si esta vivo todavia el pokemon rival
-                match.getJugador2().getListaMounstritos().eliminar(posicion2);// No se si es buena idea eliminarlos de la lista, ya que se pueden eliminar permanentemente, por lo que se ocupa revisar ESO
-                System.out.println("El Clasher a muerto");
-                System.out.println("Al Jugador 2 solo le restan : " + match.getJugador1().getListaMounstritos().size() + " Clashers");
-                cantidadDePokemones2--;
-                posicion2 = 0;
-
-            } else {
-                System.out.println("Vida del Clasher rival : ");
-                System.out.println("Name : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getName());
-                System.out.println("HP : " + match.getJugador2().getListaMounstritos().obtener(posicion2).getHP());
-            }
-        if(match.ChecarEquipoVivo(match.getJugador2())) {
-            match.nextTurn(); // se le suma al turno
-
-            new turnopar(bg, match).setVisible(true);
-            this.dispose();
-
-        }
-        else {
-            JOptionPane.showMessageDialog(null, "El jugador 1 ha ganado!");
-            new menubien().setVisible(true);
-            this.dispose();
-        }
-
-    }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
@@ -732,10 +475,6 @@ public class turnoimpardos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel background;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
